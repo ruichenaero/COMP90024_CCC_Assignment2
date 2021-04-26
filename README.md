@@ -5,3 +5,9 @@ Directory:
 
     automation:
         Ansible scripts
+        
+    backend:
+        Backend project for the app
+        
+    frontend:
+        Frontend project for the app
