@@ -36,4 +36,4 @@ instances:
 
 instance_image: f8b79936-6616-4a22-b55d-0d0a1d27bceb
 instance_key_name: id-eresearch
-instance_flavor: uom.general.2c8g
+instance_flavor: uom.general.2c9g
