@@ -7,7 +7,7 @@
     state: present
   loop: '{{ security_groups }}'
 
-- name: Create a list of securty group names
+- name: Create a list of security group names
   set_fact:
     sg_names: '{{ sg_names|default([]) + [ item.name ] }}'
   loop: '{{ security_groups }}'
@@ -20,8 +20,8 @@
   os_security_group_rule:
     security_group: '{{ item.name }}'
     protocol: '{{ item.protocol }}'
-    protocol_range_min: '{{ item.port_range_min }}'
-    protocol_range_max: '{{ item.port_range_max }}'
+    port_range_min: '{{ item.port_range_min }}'
+    port_range_max: '{{ item.port_range_max }}'
     remote_ip_prefix: '{{ item.remote_ip_prefix }}'
     state: present
   loop: '{{ security_groups }}'

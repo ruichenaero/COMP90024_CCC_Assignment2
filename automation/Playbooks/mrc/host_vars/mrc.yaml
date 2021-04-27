@@ -30,10 +30,10 @@ security_groups:
 # Instance
 instances:
   - name: demo-1
-    volumes: ['demo-vol-1-1','demo-vol-1-2']
+    volumes: ['demo-vol-1-1', 'demo-vol-1-2']
   - name: demo-2
-    volumes: ['demo-vol-2-1','demo-vol-2-2']
+    volumes: ['demo-vol-2-1', 'demo-vol-2-2']
 
 instance_image: f8b79936-6616-4a22-b55d-0d0a1d27bceb
-instance_key_name: id_eresearch
-instance_flavor: uom.general.2c9g
+instance_key_name: id-eresearch
+instance_flavor: uom.general.2c8g

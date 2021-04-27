@@ -8,5 +8,5 @@
     wait: yes
     timeout: 600
     force: yes
-    availability_zone: '{{ availability_zone}}'
+    availability_zone: '{{ availability_zone }}'
   loop: '{{ volumes }}'
