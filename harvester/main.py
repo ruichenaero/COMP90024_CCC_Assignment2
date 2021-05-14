@@ -1,5 +1,6 @@
-from spider import twitterSpider
-from twitterAPI import twitterCollector
+from harvester.spider import twitterSpider
+from harvester.twitterAPI import twitterCollector
+
 
 def main():
     spider = twitterSpider()

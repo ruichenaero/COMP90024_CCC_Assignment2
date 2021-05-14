@@ -1,10 +1,13 @@
 FROM python:3
 
-WORKDIR /usr/src/app
+ENV http_proxy http://wwwproxy.unimelb.edu.au:8000
+ENV https_proxy http://wwwproxy.unimelb.edu.au:8000
+
+WORKDIR /usr/src/harvester
 
 COPY dependencies.txt ./
 RUN pip install --upgrade pip
-RUN pip install --no-cache-dir -r dependencies.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 

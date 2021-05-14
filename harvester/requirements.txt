@@ -1,0 +1,11 @@
+asgiref==3.3.4
+certifi==2020.12.5
+chardet==4.0.0
+CouchDB==1.2
+idna==2.10
+PySocks==1.7.1
+pytz==2021.1
+six==1.16.0
+tweepy==3.10.0
+TwitterAPI==2.7.3
+urllib3==1.26.4
