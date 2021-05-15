@@ -1,7 +1,7 @@
 import tweepy
 import json
 #import couchdb
-import time
+#import time
 
 # This application uses Twitter's Search API to do a single search for testing
 # on the intance
