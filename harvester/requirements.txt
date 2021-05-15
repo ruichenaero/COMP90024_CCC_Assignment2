@@ -9,3 +9,5 @@ six==1.16.0
 tweepy==3.10.0
 TwitterAPI==2.7.3
 urllib3==1.26.4
+requests-html==0.10.0
+lxml==4.6.3

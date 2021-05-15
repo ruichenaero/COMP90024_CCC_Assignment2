@@ -1,5 +1,5 @@
 import tweepy
-#import json
+import json
 #import couchdb
 import time
 
@@ -25,30 +25,31 @@ def limit_handled(cursor):
     while True:
         try:
             yield next(cursor)
+            return
         except tweepy.RateLimitError: #set the sleep time to 15min
             time.sleep(15 * 60)
             print("\n Reaches the rate limit - Sleep 15 min \n")
 
 
+result_dic = {}
 def search_location(query, geocode, max_count):
-    max_id = 0
     while True:
         try:
-            if max_id == 0:
-                #search_tweets = api.search(q=query, geocode=geocode, count=max_count)
-                search_tweets = limit_handled(tweepy.Cursor(api.search, q=query, geocode=geocode,
-                                                            count=max_count).items())
-            else:
-                search_tweets = limit_handled(tweepy.Cursor(api.search, q=query, geocode=geocode,
-                                                            count=max_count,max_id=max_id).items())
+            #search_tweets = api.search(q=query, geocode=geocode, count=max_count)
+            search_tweets = limit_handled(tweepy.Cursor(api.search, q=query,
+                                                        geocode=geocode, count=max_count).items())
 
             if not search_tweets:
                 print("\n no more new tweets \n")
                 break
-            max_id = search_tweets[-1].id - 1  #avoid redundency
 
             for tweet in search_tweets:
-                print(tweet.id)
+                result_dic[tweet.id] = tweet._json
+                #print(type(result_dic))
+
+            json_object = json.dumps(result_dic)
+            with open("output.json", "w") as outfile:
+                outfile.write(json_object)
 
         except tweepy.TweepError as error:
             print("ERROR:" + str(error)+"\n")
@@ -57,7 +58,9 @@ def search_location(query, geocode, max_count):
 
 
 query = ""
-max_count = 1   # max number of tweet per request
+max_count = 100   # max number of tweet per request is 100
 geocode = "-37.840935,144.946457,100km"
 
 search_location(query, geocode, max_count)
+
+
