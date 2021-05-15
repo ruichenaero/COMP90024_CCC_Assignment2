@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import SidePanel from "./components/SidePanel";
+import { Layout } from 'antd';
 
 export default function Map() {
     return (
-        //<SidePanel>
-      <div>
+      <Layout style={{ minHeight: '100vh' }}>
         <SidePanel/>
-      </div>
+      </Layout>
     );
 }

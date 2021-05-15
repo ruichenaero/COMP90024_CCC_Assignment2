@@ -1,12 +1,12 @@
 import React, { useState, useEffect} from "react";
+import { NavLink } from "react-router-dom";
 import '../App.css';
 import { Layout, Menu, Breadcrumb } from 'antd';
 import {
   DesktopOutlined,
   PieChartOutlined,
-  FileOutlined,
-  TeamOutlined,
-  UserOutlined,
+  ProjectOutlined,
+  HomeOutlined,
 } from '@ant-design/icons';
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -32,44 +32,22 @@ export default function SidePanel () {
     } 
 
     return (
-      <Layout style={{ minHeight: '100vh' }}>
+      
         <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
-          <div className="logo" />
-          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-            <Menu.Item key="1" icon={<PieChartOutlined />}>
-              Option 1
+          <div className="logo"></div>
+          <Menu theme="dark" mode="inline" >
+            <div style={{ height: 80 }}></div>
+            <Menu.Item key="1" icon={<HomeOutlined />}>
+                <NavLink to="/" >Visualisation</NavLink>
             </Menu.Item>
-            <Menu.Item key="2" icon={<DesktopOutlined />}>
-              Option 2
-            </Menu.Item>
-            <SubMenu key="sub1" icon={<UserOutlined />} title="User">
-              <Menu.Item key="3">Tom</Menu.Item>
-              <Menu.Item key="4">Bill</Menu.Item>
-              <Menu.Item key="5">Alex</Menu.Item>
+            <SubMenu key="sub1" icon={<ProjectOutlined />} title="Scenarios">
+              <Menu.Item key="2" icon={<PieChartOutlined />}><NavLink to="/Scenario1">Scenario 1</NavLink></Menu.Item>
+              <Menu.Item key="3"><NavLink to="/Scenario2">Scenario 2</NavLink></Menu.Item>
+              <Menu.Item key="4">Scenario 3</Menu.Item>
             </SubMenu>
-            <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
-              <Menu.Item key="6">Team 1</Menu.Item>
-              <Menu.Item key="8">Team 2</Menu.Item>
-            </SubMenu>
-            <Menu.Item key="9" icon={<FileOutlined />}>
-              Files
-            </Menu.Item>
           </Menu>
         </Sider>
-        <Layout className="site-layout">
-          <Header className="site-layout-background" style={{ padding: 0 }} />
-          <Content style={{ margin: '0 16px' }}>
-            <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>User</Breadcrumb.Item>
-              <Breadcrumb.Item>Bill</Breadcrumb.Item>
-            </Breadcrumb>
-            <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-              Bill is a cat.
-            </div>
-          </Content>
-          <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
-        </Layout>
-      </Layout>
+      
     );
   
 }

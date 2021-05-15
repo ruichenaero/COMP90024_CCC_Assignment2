@@ -6,6 +6,7 @@ import Scenario1 from "./scenarios/Scenario1";
 import Scenario2 from "./scenarios/Scenario2";
 //import logo from './logo.svg';
 import SidePanel from "./components/SidePanel";
+import { Layout } from 'antd';
 
 //import './App.css';
 
@@ -13,7 +14,7 @@ export default function App() {
   return (
     
     <Router>
-    
+      
       <Switch>
         <Route exact path="/"><Map/></Route>
         <Route path="/scenario1"><Scenario1/></Route>
