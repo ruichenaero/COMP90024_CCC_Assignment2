@@ -1,0 +1,12 @@
+# Common variables
+proxy_address: http://wwwproxy.unimelb.edu.au:8000
+remote_directory: /home/ubuntu/COMP90024
+
+# CouchDB
+couchdb_version: 3.1.1
+couchdb_config_path: /home/ubuntu/couchdb/etc
+couchdb_share: 4
+couchdb_replica: 3
+cluster_cookie: 'hello'
+cluster_communication_port_min: 9100
+cluster_communication_port_max: 9102

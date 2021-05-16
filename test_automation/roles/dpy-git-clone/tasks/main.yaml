@@ -1,0 +1,27 @@
+---
+# Get ssh key for github clone
+- name: add github ssh key
+  copy:
+    src: "{{current_directory}}/COMP90024_CCC_Assignment2/config/GitHubKey"
+    dest: /home/ubuntu/.ssh/GitHubKey
+    owner: ubuntu
+    group: ubuntu
+    mode: 0600
+# copy GitHub private key to server 
+
+- name: configure ssh key usage for github.com
+  template:
+    src: "{{current_directory}}/COMP90024_CCC_Assignment2/config/ssh_config"
+    dest: /home/ubuntu/.ssh/config
+    owner: ubuntu
+    group: ubuntu
+    mode: 0644
+# configure ssh to use ansible key for github.com
+
+# Clone github file via ssh
+- name: clone source code from git
+  git:
+    repo: ssh://git@github.com:ruichenaero/COMP90024_CCC_Assignment2.git
+    key_file: /home/ubuntu/.ssh/GitHubKey
+    dest: '{{ remote_directory }}'
+# git clone through ssh
