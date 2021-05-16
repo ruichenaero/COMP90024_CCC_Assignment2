@@ -1,12 +1,10 @@
 import couchdb
 import couchdb.design
 
-COUCH_SERVER = 'http://127.0.0.1:5984/'
-
 class TweetStore(object):
-    def __init__(self, dbname, url=COUCH_SERVER):
+    def __init__(self, url, username, password, domain, ports, dbname):
         try:
-            self.server = couchdb.Server(url=url)
+            self.server = couchdb.Server(url.format(username, password, domain, ports))
             self.db = self.server.create(dbname)
             self._create_views()
         except couchdb.http.PreconditionFailed:

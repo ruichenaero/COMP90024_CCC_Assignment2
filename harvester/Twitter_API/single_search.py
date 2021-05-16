@@ -1,6 +1,7 @@
 import tweepy
 import json
 from TweetStore import TweetStore
+from config import *
 #import couchdb
 #import time
 
@@ -12,8 +13,6 @@ consumer_secret = "aDaoN5IWq8NiLZ8GsqK8dzAkBy683yjJt4RcZZ2sVf67hH6f6F"
 access_token = "993804554880794624-K0gOvq6FYnycALj6I31cPeqjxxeL8VC"
 access_token_secret = "TC0xFxOzRGAJb6R9q6PaQOiDDUG9Csq14HBtyDGNdMlSw"
 
-COUCH_DATABASE = 'test_db'
-
 #Handel Twitter Authentication
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -21,7 +20,9 @@ auth.set_access_token(access_token, access_token_secret)
 # Construct the API instance
 api = tweepy.API(auth, wait_on_rate_limit=True)
 
-storage = TweetStore(COUCH_DATABASE)
+# url, username, password, domain, ports, dbname
+storage = TweetStore(url=COUCHDB_URL, username=COUCHDB_USERNAME, password=COUCHDB_PASSWORD,
+                     domain=COUCHDB_DOMAIN, ports=COUCHDB_PORTS, dbname=COUCHDB_TWEET_DB)
 result_dic = {}
 
 def search_location(query, geocode, max_count):
