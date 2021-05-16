@@ -30,8 +30,6 @@ def search_location(query, geocode, max_count):
 
         for tweet in search_tweets:
             result_dic[tweet.id] = tweet._json
-            #storage.save_tweet(tweet)
-            print(type(tweet._json))
             storage.save_tweet(tweet._json)
 
         json_object = json.dumps(result_dic, indent=4)

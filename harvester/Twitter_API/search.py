@@ -1,6 +1,6 @@
 import tweepy
 import json
-#import couchdb
+from TweetStore import TweetStore
 import time
 
 # This application uses Twitter's Search API to harvest data upto 7 days ago
@@ -19,6 +19,7 @@ auth.set_access_token(access_token, access_token_secret)
 # Construct the API instance
 api = tweepy.API(auth, wait_on_rate_limit=True)
 
+COUCH_DATABASE = 'tweetdb'
 
 # reference: API rate limit error handler from tweepy official documentation
 def limit_handled(cursor):
@@ -30,7 +31,7 @@ def limit_handled(cursor):
             time.sleep(15 * 60)
             print("\n Reaches the rate limit - Sleep 15 min \n")
 
-
+storage = TweetStore(COUCH_DATABASE)
 result_dic = {}
 def search_location(query, geocode, max_count):
     while True:
@@ -45,7 +46,8 @@ def search_location(query, geocode, max_count):
 
             for tweet in search_tweets:
                 result_dic[tweet.id] = tweet._json
-                #print(type(result_dic))
+                # store the tweet to the db
+                storage.save_tweet(tweet._json)
 
             json_object = json.dumps(result_dic)
             with open("output.json", "w") as outfile:
