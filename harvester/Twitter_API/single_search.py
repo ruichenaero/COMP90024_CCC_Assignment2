@@ -28,7 +28,7 @@ result_dic = {}
 def search_location(query, geocode, max_count):
     try:
         search_tweets = api.search(q=query, geocode=geocode, count=max_count)
-
+        count = 1
         for tweet in search_tweets:
             result_dic[tweet.id] = tweet._json
             storage.save_tweet(tweet._json)

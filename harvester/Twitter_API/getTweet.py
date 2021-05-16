@@ -9,5 +9,8 @@ storage = TweetStore(url=COUCHDB_URL, username=COUCHDB_USERNAME, password=COUCHD
 
 print('tweet count is %d\n' % storage.count_tweets())
 
-for doc in storage.get_tweets():
-	print('%s\n' % doc.value['text'])
+docs = storage.get_tweets()
+print(type(docs))
+
+#for doc in storage.get_tweets():
+#	print('%s\n' % doc.value['text'])

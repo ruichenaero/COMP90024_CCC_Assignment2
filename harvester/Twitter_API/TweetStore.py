@@ -22,7 +22,10 @@ class TweetStore(object):
 
     def save_tweet(self, tw):
         tw['_id'] = tw['id_str']
-        self.db.save(tw)
+        try:
+            self.db.save(tw)
+        except couchdb.http.ResourceConflict:
+            pass
 
     def count_tweets(self):
         for doc in self.db.view('twitter/count_tweets'):
