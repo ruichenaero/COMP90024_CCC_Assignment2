@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ./unimelb-comp90024-2021-grp-47-openrc.sh
+. unimelb-comp90024-2021-grp-47-openrc.sh
 
 # Configure basic instances/nodes
 ansible-playbook --ask-become-pass config_nectar.yaml 
