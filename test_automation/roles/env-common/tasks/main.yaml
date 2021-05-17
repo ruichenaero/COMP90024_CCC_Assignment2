@@ -3,7 +3,7 @@
 - name: Install pip
   become: yes
   apt:
-    name: ['python-pip']
+    name: ['python3-pip']
     state: latest
     update_cache: yes
   when: ansible_distribution == "Ubuntu"
