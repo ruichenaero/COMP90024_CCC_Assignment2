@@ -5,6 +5,7 @@ from django.utils import timezone
 from django.utils.dateparse import parse_datetime
 
 # Create your views here.
+'''
 @require_http_methods(['GET'])
 #@check_api_key
 def tweet_untrained_text_router(request, *args, **kwargs):
@@ -19,3 +20,7 @@ def tweet_untrained_text_router(request, *args, **kwargs):
     if request.method == 'GET':
         return tweet_untrained_text_get(request, resource)
     return HttpResponseNotAllowed()
+'''
+
+def tweet_count(request):
+    return
