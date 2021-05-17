@@ -1,6 +1,8 @@
 ---
 # Common variables
 availability_zone: melbourne-qh2-uom
+volume_device_comm: /dev/vdb 
+volume_mount_point_comm: /data
 current_directory: /home
 
 # Volume

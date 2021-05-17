@@ -64,3 +64,10 @@
   systemd:
     name: docker
     state: restarted
+  register: docker_restart_rst
+
+- name: Start docker service
+  service:
+    name: docker
+    state: started
+  when: docker_restart_rst.failed

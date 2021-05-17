@@ -9,4 +9,4 @@
     - role: dpy-environment
     - role: dpy-nginx
     - role: dpy-git-clone
-    # - role: dpy-volumes
+    - role: dpy-volumes
