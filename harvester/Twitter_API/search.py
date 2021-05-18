@@ -58,8 +58,9 @@ def search_location(query, geocode, max_count):
                 # combine new key with twitter data
                 result_dic.update(result)
 
+                #################### Please check here ##################
                 # store the tweet to the db
-                storage.save_tweet(tweet._json)
+                #storage.save_tweet(result_dic)
 
                 json_object = json.dumps(result_dic, indent=4)
                 with open("whole_search_output.json", "a") as outfile:
