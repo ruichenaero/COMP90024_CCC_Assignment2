@@ -6,7 +6,7 @@
 
 <br />
 
-#### Region factors:
+### Region factors:
 
 **Hospital:**
     
@@ -30,7 +30,7 @@
 
 <br />
 
-#### Topic factors:
+### Topic factors:
 
 **FOOD-Restaurant:**
     
