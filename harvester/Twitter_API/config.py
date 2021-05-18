@@ -5,5 +5,6 @@ COUCHDB_USERNAME = 'admin'
 COUCHDB_PASSWORD = '123'
 COUCHDB_PORTS = 5984
 COUCHDB_TWEET_DB = 'test_tweet'
+COUCHDB_REGION_TWEET_DB = 'region_tweet'
 COUCHDB_TRACK_DB = 'track'
 COUCHDB_TIME_DB = 'time_{}_{}_{}_{}_{}'

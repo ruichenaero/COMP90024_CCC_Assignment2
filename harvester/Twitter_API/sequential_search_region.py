@@ -24,7 +24,7 @@ api = tweepy.API(auth, wait_on_rate_limit=True)
 
 # ConchDB
 storage = TweetStore(url=COUCHDB_URL, username=COUCHDB_USERNAME, password=COUCHDB_PASSWORD,
-                     domain=COUCHDB_DOMAIN, ports=COUCHDB_PORTS, dbname=COUCHDB_TWEET_DB)
+                     domain=COUCHDB_DOMAIN, ports=COUCHDB_PORTS, dbname=COUCHDB_REGION_TWEET_DB)
 
 
 # reference: API rate limit error handler from tweepy official documentation
@@ -68,7 +68,7 @@ def search_location(query, max_count):
 
                     #################### Please check here ##################
                     # store the tweet to the db
-                    #storage.save_tweet(result_dic)
+                    storage.save_tweet(result_dic)
 
                     json_object = json.dumps(result_dic, indent=4)
                     with open("region_search_ouput.json", "a") as outfile:
