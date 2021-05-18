@@ -48,11 +48,11 @@ class TwitterStreamListener(StreamListener):
         print(status_code)
         if status_code == 420:
             # after reach limit, sleep 30 secs then restart
-            time.sleep(30)
-            print("\n Reaches the rate limit - Sleep 30 secs \n")
+            #time.sleep(30)
+            #print("\n Reaches the rate limit - Sleep 30 secs \n")
 
             # if exceed rate limit returns False and disconnects the stream
-            #return False
+            return False
 
 
 # create stream object
