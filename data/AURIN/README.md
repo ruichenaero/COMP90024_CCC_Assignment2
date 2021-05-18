@@ -36,7 +36,6 @@
     
   - City of Melbourne CLUE Cafes, Restaurants and Bistros Seats (Points) 2017
   - City of Melbourne CLUE Bar, Tavern and Pub Patrons Capacity (Point) 2017
-  - SA Attorney General - Liquor & Gaming Licences (Point) August 2019
   
 **SPORT-gym:**
     
