@@ -47,6 +47,7 @@ def search_location(query, max_count):
             print(f'Pick {region["name"]}')
             geocode = region["geo_code"]
             center_coordinate = region["center_coordinate"]
+            region_name = region["name"]
 
             search_tweets = limit_handled(tweepy.Cursor(api.search, q=query,
                                                         geocode=geocode, count=max_count).items())
@@ -63,6 +64,7 @@ def search_location(query, max_count):
                 result_dic["_id"] = result["id_str"]
                 # add center coordinate of search area
                 result_dic["center_coordinate"] = center_coordinate
+                result_dic["region"] = region_name
 
                 # combine new key with twitter data
                 result_dic.update(result)

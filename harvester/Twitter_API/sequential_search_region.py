@@ -43,6 +43,7 @@ def search_location(query, max_count):
     for region in melbourne_region.region_code:
         geocode = region["geo_code"]
         center_coordinate = region["center_coordinate"]
+        region_name = region["name"]
 
         while True:
             try:
@@ -62,6 +63,7 @@ def search_location(query, max_count):
                     result_dic["_id"] = result["id_str"]
                     # add center coordinate of search area
                     result_dic["center_coordinate"] = center_coordinate
+                    result_dic["region"] = region_name
 
                     # combine with twitter data
                     result_dic.update(result)
