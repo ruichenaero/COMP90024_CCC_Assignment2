@@ -89,7 +89,7 @@ def search_location(query, max_count):
 
                     #################### Please check here ##################
                     # store the tweet to the db
-                    #storage.save_tweet(result_dic)
+                    storage.save_tweet(result_dic)
 
                     # output data to json
                     json_object = json.dumps(result_dic, indent=4)
