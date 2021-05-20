@@ -50,3 +50,8 @@ class TweetStore(object):
             result[doc.key] = doc.value
         return result
 
+    def twitter_with_geo(self):
+        for doc in self.db.view('twitter/geo_count'):
+            return doc.value
+
+
