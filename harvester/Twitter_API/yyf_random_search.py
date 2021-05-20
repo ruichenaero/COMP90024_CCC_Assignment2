@@ -12,10 +12,10 @@ from config import *
 # This application uses Twitter's Search API to RANDOMLY search data
 # up to 7 days ago from 13 specified regions at Melbourne
 
-consumer_key = token_file.CR_API["consumer_key"]
-consumer_secret = token_file.CR_API["consumer_secret"]
-access_token = token_file.CR_API["access_token"]
-access_token_secret = token_file.CR_API["access_token_secret"]
+consumer_key = token_file.YYF_API["consumer_key"]
+consumer_secret = token_file.YYF_API["consumer_secret"]
+access_token = token_file.YYF_API["access_token"]
+access_token_secret = token_file.YYF_API["access_token_secret"]
 
 
 # Handel Twitter Authentication
@@ -42,9 +42,8 @@ def limit_handled(cursor):
 
 
 region_tweet_id = {}
-with open("tweet_id_check.json", "r") as file:
-    maxid_file = json.load(file)
-def search_location(query, max_count):
+def search_location(query, max_count, maxid_file):
+
     while True:
         try:
             # randomly pick a region from all 13 regions
@@ -56,17 +55,25 @@ def search_location(query, max_count):
             max_id = maxid_file[region_name]
 
             for i in itertools.count():
-                try:
-                    search_tweets = api.search(q=query, geocode=geocode, count=max_count,max_id=str(max_id-1))
+                if max_id == 0:
+                    try:
+                        print("1")
+                        search_tweets = api.search(q=query, geocode=geocode, count=max_count)
 
-                except tweepy.RateLimitError: # set the sleep time to 15min
-                    time.sleep(15 * 60)
-                    print("\n Reaches the rate limit - Sleep 15 min \n")
+                    except tweepy.RateLimitError: # set the sleep time to 15min
+                        time.sleep(15 * 60)
+                        print("\n Reaches the rate limit - Sleep 15 min \n")
+                else:
+                    try:
+                        search_tweets = api.search(q=query, geocode=geocode, count=max_count,max_id=str(max_id-1))
+
+                    except tweepy.RateLimitError: # set the sleep time to 15min
+                        time.sleep(15 * 60)
+                        print("\n Reaches the rate limit - Sleep 15 min \n")
 
                 if not search_tweets:
                     print(f"{region_name} has no tweets")
                     break
-
 
                 for tweet in search_tweets:
                     if i == 0:
@@ -114,6 +121,14 @@ def search_location(query, max_count):
 
 query = ""
 max_count = 100  # max number of tweet per request is 100
-search_location(query, max_count)
+
+# for each time running harvester, we start from the most recent tweets,
+# then go deeper
+with open("tweet_id_check.json", "r") as file:
+    maxid_file = json.load(file)
+for key in maxid_file:
+    maxid_file[key] = 0
+
+search_location(query, max_count, maxid_file)
 
 
