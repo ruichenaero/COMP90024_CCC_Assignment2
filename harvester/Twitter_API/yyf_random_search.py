@@ -107,7 +107,7 @@ def search_location(query, max_count, maxid_file):
                 maxid_file[region_name] = search_tweets[-1].id
                 max_id = maxid_file[region_name]
                 json_object1 = json.dumps(maxid_file, indent=4)
-                with open("tweet_id_check.json", "w") as outfile:
+                with open("yyf_id_check.json", "w") as outfile:
                     outfile.write(json_object1)
                 # for testing
                 json_object2 = json.dumps(region_tweet_id, indent=4)
@@ -124,7 +124,7 @@ max_count = 100  # max number of tweet per request is 100
 
 # for each time running harvester, we start from the most recent tweets,
 # then go deeper
-with open("tweet_id_check.json", "r") as file:
+with open("yyf_id_check.json", "r") as file:
     maxid_file = json.load(file)
 for key in maxid_file:
     maxid_file[key] = 0

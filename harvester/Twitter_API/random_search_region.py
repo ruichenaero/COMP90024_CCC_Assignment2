@@ -42,7 +42,7 @@ def limit_handled(cursor):
 
 
 region_tweet_id = {}
-with open("tweet_id_check.json", "r") as file:
+with open("id_check.json", "r") as file:
     maxid_file = json.load(file)
 def search_location(query, max_count):
     while True:
@@ -100,7 +100,7 @@ def search_location(query, max_count):
                 maxid_file[region_name] = search_tweets[-1].id
                 max_id = maxid_file[region_name]
                 json_object1 = json.dumps(maxid_file, indent=4)
-                with open("tweet_id_check.json", "w") as outfile:
+                with open("id_check.json", "w") as outfile:
                     outfile.write(json_object1)
                 # for testing
                 json_object2 = json.dumps(region_tweet_id, indent=4)
