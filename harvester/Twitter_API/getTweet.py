@@ -13,11 +13,7 @@ print('tweet count of test_tweet db is %d\n' % storage_statistic.count_tweets())
 
 print('tweet count of region_tweet db is %d\n' % storage_region.count_tweets())
 
-index = 'region_count'
-region_count_map = 'function (doc) {emit(doc.region, 1);}'
-region_count_reduce = 'function (keys, values, reduce) {return sum(values);}'
-storage_region.create_view(index, region_count_map, region_count_reduce)
-
+print(storage_region.get_region_count())
 
 '''
 twitter_dict = {"new_edits": False, "docs": []}

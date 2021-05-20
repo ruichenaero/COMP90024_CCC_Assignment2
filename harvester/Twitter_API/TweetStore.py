@@ -44,6 +44,9 @@ class TweetStore(object):
     def get_tweets(self):
         return self.db.view('twitter/get_tweets')
 
-    #def get_lang(self):
-    #   return self.db.view('twitter/lang', wrapper=None, group=True)
+    def get_region_count(self):
+        result = {}
+        for doc in self.db.view('twitter/region_count', reduce='true', group='true'):
+            result[doc.key] = doc.value
+        return result
 
