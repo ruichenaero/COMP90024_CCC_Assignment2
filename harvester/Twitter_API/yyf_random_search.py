@@ -75,9 +75,10 @@ def search_location(query, max_count, maxid_file):
                     print(f"{region_name} has no tweets")
                     break
 
+                if i == 0:
+                    print(f"{region_name} first harvest")
+
                 for tweet in search_tweets:
-                    if i == 0:
-                        print(f"{region_name} first harvest")
                     # for status checking
                     print(f"{tweet.created_at} , {tweet.id}")
 

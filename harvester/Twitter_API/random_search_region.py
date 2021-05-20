@@ -27,7 +27,7 @@ api = tweepy.API(auth, wait_on_rate_limit=True)
 
 # ConchDB
 storage = TweetStore(url=COUCHDB_URL, username=COUCHDB_USERNAME, password=COUCHDB_PASSWORD,
-                     domain=COUCHDB_DOMAIN, ports=COUCHDB_PORTS, dbname=COUCHDB_REGION_TWEET_DB)
+                    domain=COUCHDB_DOMAIN, ports=COUCHDB_PORTS, dbname=COUCHDB_REGION_TWEET_DB)
 
 
 # reference: API rate limit error handler from tweepy official documentation
@@ -67,10 +67,10 @@ def search_location(query, max_count):
                     print(f"{region_name} has no tweets")
                     break
 
+                if i == 0:
+                    print(f"{region_name} first harvest")
 
                 for tweet in search_tweets:
-                    if i == 0:
-                        print(f"{region_name} first harvest")
                     # for status checking
                     print(f"{tweet.created_at} , {tweet.id}")
 
@@ -89,7 +89,7 @@ def search_location(query, max_count):
 
                     #################### Please check here ##################
                     # store the tweet to the db
-                    storage.save_tweet(result_dic)
+                    #storage.save_tweet(result_dic)
 
                     # output data to json
                     json_object = json.dumps(result_dic, indent=4)
@@ -113,7 +113,7 @@ def search_location(query, max_count):
 
 
 query = ""
-max_count = 100  # max number of tweet per request is 100
+max_count = 100   # max number of tweet per request is 100
 search_location(query, max_count)
 
 
