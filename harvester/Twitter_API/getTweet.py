@@ -13,7 +13,7 @@ print('tweet count of test_tweet db is %d\n' % storage_statistic.count_tweets())
 
 print('tweet count of region_tweet db is %d\n' % storage_region.count_tweets())
 
-print(storage_region.get_region_count())
+print("The tweet count of each region", storage_region.get_region_count())
 
 '''
 twitter_dict = {"new_edits": False, "docs": []}
