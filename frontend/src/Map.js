@@ -8,9 +8,9 @@ mapboxgl.accessToken = 'pk.eyJ1IjoieWlmZXlhbmcxIiwiYSI6ImNrb251MG44ZzA0Njkyd3Bwe
 export default function Map() {
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const [lng, setLng] = useState(-70.9);
-  const [lat, setLat] = useState(42.35);
-  const [zoom, setZoom] = useState(9);
+  const [lng, setLng] = useState(145.3607);
+  const [lat, setLat] = useState(-37.8636);
+  const [zoom, setZoom] = useState(7.96);
 
   useEffect(() => {
     if (map.current) return; // initialize map only once
@@ -38,7 +38,10 @@ export default function Map() {
       <Layout style={{ minHeight: '100vh' }}>
         <SidePanel/>
         <Layout>
-        <div ref={mapContainer} className="map-container" />
+          <div className='sidebar'>
+            <div>Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}</div>
+          </div>
+          <div ref={mapContainer} className="map-container" />
         </Layout>
       </Layout>
     );
