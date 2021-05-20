@@ -1,0 +1,9 @@
+COUCHDB_URL = 'http://{}:{}@{}:{}/'
+COUCHDB_DOMAIN = '127.0.0.1'
+COUCHDB_DOMAINS = ['172.26.37.225', '172.26.38.1', '172.26.38.110']
+COUCHDB_USERNAME = 'admin'
+COUCHDB_PASSWORD = '123'
+COUCHDB_PORTS = 5984
+COUCHDB_TWEET_DB = 'origin_tweet'
+COUCHDB_TRACK_DB = 'track'
+COUCHDB_TIME_DB = 'time_{}_{}_{}_{}_{}'

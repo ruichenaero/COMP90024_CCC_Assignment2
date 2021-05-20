@@ -1,0 +1,12 @@
+---
+# Setup and deploy the environment
+- hosts: all
+  vars_files:
+    - host_vars/config_vars.yaml
+    - host_vars/server_vars.yaml
+  gather_facts: true
+  roles:
+    - role: dpy-environment
+    - role: dpy-nginx
+    - role: dpy-git-clone
+    - role: dpy-volumes

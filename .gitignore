@@ -1,3 +1,6 @@
 # Editor directories and files
+
 .idea
 .vscode
+
+/test_automation/unimelb-comp90024-2021-grp-47-openrc.sh

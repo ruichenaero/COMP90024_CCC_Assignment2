@@ -1,0 +1,58 @@
+---
+# Common variables
+availability_zone: melbourne-qh2-uom
+volume_device_comm: /dev/vdb 
+volume_mount_point_comm: /data
+current_directory: /home
+
+# Volume
+volumes:
+  - vol_name: data-vol
+    vol_size: 80
+  - vol_name: ins-vol
+    vol_size: 10
+  - vol_name: frontend-vol
+    vol_size: 20
+  - vol_name: backend-vol
+    vol_size: 25
+
+# Security group
+security_groups:
+  - name: ssh
+    description: "Security group for SSH access"
+    protocol: tcp
+    port_range_min: 22
+    port_range_max: 22
+    remote_ip_prefix: 0.0.0.0/0
+  - name: http
+    description: "Security group for HTTP"
+    protocol: tcp
+    port_range_min: 80
+    port_range_max: 80
+    remote_ip_prefix: 0.0.0.0/0
+  - name: optional-server-port
+    description: "Additional front-end server port"
+    protocol: tcp
+    port_range_min: 8001
+    port_range_max: 8001
+    remote_ip_prefix: 0.0.0.0/0
+
+# Instance
+instances:
+  - name: data-server-1
+    security_groups: ['ssh', 'http']
+    volumes: ['data-vol', 'ins-vol']
+  - name: data-server-2
+    security_groups: ['ssh', 'http']
+    volumes: ['data-vol', 'ins-vol']
+  - name: data-server-3
+    security_groups: ['ssh', 'http']
+    volumes: ['data-vol', 'ins-vol']
+  - name: master-server
+    security_groups: ['ssh', 'http', 'optional-server-port']
+    volumes: ['data-vol', 'backend-vol', 'frontend-vol']
+
+instance_network: qh2-uom-internal
+instance_flavor: uom.mse.2c9g
+instance_image: f8b79936-6616-4a22-b55d-0d0a1d27bceb # Ubuntu 20.04 (Focal)
+instance_key_name: NectarGroup # ssh private key
