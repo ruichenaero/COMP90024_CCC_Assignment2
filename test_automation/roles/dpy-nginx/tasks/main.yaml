@@ -8,7 +8,7 @@
 
 - name: Write Nginx configuration file
   template:
-    src: "{{ remote_directory }}/COMP90024_CCC_Assignment2/nginx/nginx.conf"
+    src: "nginx_conf.j2"
     dest: "{{ remote_directory }}/nginx/nginx.conf"
   register: nginx_conf_rst
 

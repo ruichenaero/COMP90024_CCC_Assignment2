@@ -1,0 +1,21 @@
+[vendor]
+name = The Apache Software Foundation
+
+[chttpd]
+bind_address = 0.0.0.0
+
+[couchdb]
+uuid = 
+os_process_timeout = 5000
+max_dbs_open = 500
+
+[cluster]
+q={{ couchdb_share }}
+n={{ couchdb_replica }}
+
+[admins]
+admin = password
+
+[log]
+writer = file
+file = /opt/couchdb/log/couch.log

@@ -4,7 +4,6 @@ import couchdb.design
 from backend.common.conchDBmap import *
 from backend.common.config import *
 
-
 class CouchDBHandler(object):
 
     server = None

@@ -27,4 +27,5 @@
   gather_facts: true
   roles:
     - role: launch-frontend
+    - role: launch-couchdb-master
     # - role: launch-backend
