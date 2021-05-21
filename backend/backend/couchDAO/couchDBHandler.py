@@ -1,34 +1,72 @@
 import couchdb
 import couchdb.design
 
+from backend.common.conchDBmap import *
+from backend.common.config import *
+
 
 class CouchDBHandler(object):
-    def __init__(self, url, username, password, domain, ports, dbname):
+
+    server = None
+    database = dict()
+    status = True
+
+    def __init__(self, url=COUCHDB_URL, username=COUCHDB_USERNAME, password=COUCHDB_PASSWORD, domain=COUCHDB_DOMAIN, ports=COUCHDB_PORTS):
+
+        self.domain = domain
+        self.ports = ports.__str__()
+
         try:
             self.server = couchdb.Server(url.format(username, password, domain, ports))
-            self.db = self.server.create(dbname)
-            self._ini_views()
-        except couchdb.http.PreconditionFailed:
-            self.db = self.server[dbname]
+        except Exception:
+            self.status = False
+            print('CouchDB Connected Failed: %s@%s:%s' % (username, domain, ports.__str__()))
 
-    def _ini_views(self):
-        count_map = 'function(doc) { emit(doc.id, 1); }'
-        count_reduce = 'function(keys, values) { return sum(values); }'
-        view = couchdb.design.ViewDefinition('twitter', 'count_tweets', count_map, reduce_fun=count_reduce)
-        view.sync(self.db)
+    def get_database(self, _database):
+        if not self.status:
+            return None
 
-        get_tweets = 'function(doc) { emit(("0000000000000000000"+doc.id).slice(-19), doc); }'
-        view = couchdb.design.ViewDefinition('twitter', 'get_tweets', get_tweets)
-        view.sync(self.db)
+        if _database in self.database:
+            return self.database[_database]
 
-        region_count_map = 'function (doc) {emit(doc.region, 1);}'
-        region_count_reduce = 'function (keys, values, reduce) {return sum(values);}'
-        view = couchdb.design.ViewDefinition('twitter', 'region_count', region_count_map, reduce_fun=region_count_reduce)
-        view.sync(self.db)
+        try:
+            self.database.update({
+                _database: self.server[_database]
+            })
+            # Save views into the db if they doesn't exist
+            try:
+                self.server[_database].save(STATISTIC)
+            except couchdb.http.ResourceConflict:
+                pass
+        except Exception:
+            self.database.update({
+                _database: self.server.create(_database)
+            })
+            self.database[_database].save(STATISTIC)
+            print('CouchDB Database %s Created Success: %s:%s' % (_database, self.domain, self.ports))
+        return self.database[_database]
 
-    def create_view(self, index: str, map_func: str, reduce_func: str):
-        view = couchdb.design.ViewDefinition('twitter',index, map_func, reduce_fun=reduce_func)
-        view.sync(self.db)
+class CouchDBBalancer(object):
+    """
+    Distribute the access to different couchdb nodes
+    """
+    servers = []
+    databases = []
+    domains = []
+    balance = 0
+
+    def __init__(self, domains=COUCHDB_DOMAINS):
+        self.domains = domains
+        for domain in domains:
+            self.servers.append(CouchDBHandler(domain=domain))
+
+    def connect_database(self, database):
+        for server in self.servers:
+            self.databases.append(server.get_database(database))
+
+    def tick(self):
+        self.balance += 1
+        self.balance %= len(self.databases)
 
     def save_tweet(self, tw):
         tw['_id'] = tw['id_str']
@@ -36,6 +74,32 @@ class CouchDBHandler(object):
             self.db.save(tw)
         except couchdb.http.ResourceConflict:
             pass
+
+    def get(self, id):
+        self.tick()
+        return self.databases[self.balance].get(id=id)
+
+    def find(self, mango):
+        self.tick()
+        return self.databases[self.balance].find(mango)
+
+    def get_current_database(self):
+        self.tick()
+        return self.databases[self.balance]
+
+    def iterview(self, view, batch, wrapper=None):
+        self.tick()
+        return self.databases[self.balance].iterview(view, batch, wrapper)
+
+    def compact(self):
+        self.tick()
+        return self.databases[self.balance].compact()
+
+
+'''
+    def create_view(self, index: str, map_func: str, reduce_func: str):
+        view = couchdb.design.ViewDefinition('twitter',index, map_func, reduce_fun=reduce_func)
+        view.sync(self.db)
 
     def count_tweets(self):
         for doc in self.db.view('twitter/count_tweets'):
@@ -53,5 +117,14 @@ class CouchDBHandler(object):
     def twitter_with_geo(self):
         for doc in self.db.view('twitter/geo_count'):
             return doc.value
+'''
 
+couch_db_banlancer = CouchDBBalancer()
+couch_db_banlancer.connect_database(COUCHDB_REGION_TWEET_DB)
+if __name__ == '__main__':
+    tweet_database = couch_db_banlancer.get_current_database()
+    coordinates_map = {}
+    for doc in tweet_database.view('statistic/coordinates_map'):
+        coordinates_map[str(doc.key)] = doc.value
+    #print(coordinates_map)
 

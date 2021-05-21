@@ -26,6 +26,9 @@ class TweetStore(object):
         view = couchdb.design.ViewDefinition('twitter', 'region_count', region_count_map, reduce_fun=region_count_reduce)
         view.sync(self.db)
 
+        index = "geo_count"
+        geo_mac = "function (doc) { if(doc.place != null) emit(doc._id, 1);}"
+
     def create_view(self, index: str, map_func: str, reduce_func: str):
         view = couchdb.design.ViewDefinition('twitter',index, map_func, reduce_fun=reduce_func)
         view.sync(self.db)
