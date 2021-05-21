@@ -12,6 +12,31 @@ export default function Map() {
   const [lat, setLat] = useState(-37.8636);
   const [zoom, setZoom] = useState(7.96);
 
+  const [data,setData]=useState([]);
+  
+  /*
+  const getData=()=>{
+    fetch('data.json'
+    ,{
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+    }
+    )
+      .then(function(response){
+        console.log(response)
+        return response.json();
+      })
+      .then(function(myJson) {
+        console.log(myJson);
+        setData(myJson)
+      });
+  }
+  useEffect(()=>{
+    getData()
+  },[]) */
+
   useEffect(() => {
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
@@ -31,7 +56,39 @@ export default function Map() {
     });
   });
 
-
+/*
+  map.on('load', function () {
+    map.addSource('hospitals', {
+      type: 'geojson',
+      data: {
+            type: 'FeatureCollection',
+            features: chargingStations.map(station => {
+              return {
+                type: 'Feature',
+                geometry: {
+                  type: 'Point',
+                  coordinates: [station.longitude, station.latitude],
+                },
+              };
+            }),
+          },
+      url: 'mapbox://mapbox.2opop9hr'
+      });
+      map.addLayer({
+      'id': 'museums',
+      'type': 'circle',
+      'source': 'museums',
+      'layout': {
+      // Make the layer visible by default.
+      'visibility': 'visible'
+      },
+      'paint': {
+      'circle-radius': 8,
+      'circle-color': 'rgba(55,148,179,1)'
+      },
+      'source-layer': 'museum-cusco'
+      });
+ }); */
 
 
     return (
