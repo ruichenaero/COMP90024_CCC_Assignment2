@@ -30,6 +30,12 @@ security_groups:
     port_range_min: 80
     port_range_max: 80
     remote_ip_prefix: 0.0.0.0/0
+  - name: react
+    description: "react default port"
+    protocol: tcp
+    port_range_min: 3000
+    port_range_max: 3000
+    remote_ip_prefix: 0.0.0.0/0
   - name: optional-server-port
     description: "Additional front-end server port"
     protocol: tcp
@@ -45,11 +51,11 @@ instances:
   - name: data-server-2
     security_groups: ['ssh', 'http']
     volumes: ['data-vol', 'ins-vol']
-  - name: data-server-3
-    security_groups: ['ssh', 'http']
-    volumes: ['data-vol', 'ins-vol']
+  # - name: data-server-3
+  #   security_groups: ['ssh', 'http']
+  #   volumes: ['data-vol', 'ins-vol']
   - name: master-server
-    security_groups: ['ssh', 'http', 'optional-server-port']
+    security_groups: ['ssh', 'http', 'optional-server-port', 'react']
     volumes: ['data-vol', 'backend-vol', 'frontend-vol']
 
 instance_network: qh2-uom-internal

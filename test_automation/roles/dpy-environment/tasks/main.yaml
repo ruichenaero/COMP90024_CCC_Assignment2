@@ -56,6 +56,14 @@
     install_recommends: no
     update_cache: yes
 
+- name: Config Docker Proxy
+  blockinfile:
+    path: /etc/systemd/system/docker.service.d/http-proxy.conf
+    create: yes
+    block: |
+      [Service]
+      Environment="HTTP_PROXY=http://wwwproxy.unimelb.edu.au:8000"
+
 # Restart/Start docker
 - name: Restart docker damon
   shell: "systemctl daemon-reload"
@@ -71,3 +79,9 @@
     name: docker
     state: started
   when: docker_restart_rst.failed
+
+# Install docker for python
+- name: Install docker-py
+  pip:
+    name: docker
+    state: latest

@@ -3,4 +3,5 @@
 .idea
 .vscode
 
+/frontend/node_modules/
 /test_automation/unimelb-comp90024-2021-grp-47-openrc.sh
