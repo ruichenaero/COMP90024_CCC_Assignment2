@@ -3,7 +3,7 @@
 availability_zone: melbourne-qh2-uom
 volume_device_comm: /dev/vdb 
 volume_mount_point_comm: /data
-current_directory: /home
+current_directory: /home/chenrui/Documents
 
 # Volume
 volumes:
