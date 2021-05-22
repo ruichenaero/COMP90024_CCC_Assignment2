@@ -3,5 +3,6 @@
 .idea
 .vscode
 
+/backend/backend/__pycache__/
 /frontend/node_modules/
 /test_automation/unimelb-comp90024-2021-grp-47-openrc.sh

@@ -5,7 +5,7 @@
   docker_image:
     name: nginx
     tag: latest
-  register: nginx_get_rst
+  register: nginx_pull_rst
 
 # Create nginx directory
 - name: Creates directory
