@@ -57,6 +57,7 @@
     update_cache: yes
 
 - name: Config Docker Proxy
+  become: yes
   blockinfile:
     path: /etc/systemd/system/docker.service.d/http-proxy.conf
     create: yes
