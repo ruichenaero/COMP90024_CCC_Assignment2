@@ -6,7 +6,7 @@
   gather_facts: true
   roles:
     - role: launch-couch
-    # - role: launch-frontend
+    # - role: launch-backend
 
 # - hosts: data-server-2
 #   vars_files:

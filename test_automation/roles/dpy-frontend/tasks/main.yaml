@@ -23,7 +23,7 @@
 - name: Copy front-end source code
   copy:
     src: "{{ remote_directory }}/COMP90024_CCC_Assignment2/frontend/build"
-    dest: /home/ubuntu/ccc_site
+    dest: "{{ remote_directory }}/comp90024"
     directory_mode: yes
     force: yes
     mode: '755'
