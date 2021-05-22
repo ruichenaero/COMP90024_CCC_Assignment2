@@ -1,5 +1,6 @@
 ---
 - name: Pull docker image
+  become: yes
   docker_image:
       name: couchdb
       tag: latest
@@ -16,12 +17,14 @@
     force: yes
 
 - name: Check if the docker is running
+  become: yes
   shell: "docker start couch"
   ignore_errors: true
   no_log: true
   register: docker_start
 
 - name: Start the CouchDB docker
+  become: yes
   shell: >
     docker run 
       --restart=always 

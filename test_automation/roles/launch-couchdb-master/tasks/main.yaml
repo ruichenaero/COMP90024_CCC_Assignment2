@@ -12,7 +12,8 @@
   when: item != ansible_hostname
 
 
-- shell: >
+- name: HTTP request
+  shell: >
     curl -X POST -H "Content-Type: application/json"
     http://{{ couchdb_user }}:{{ couchdb_passwd }}@localhost:5984/_cluster_setup
     -d '{"action": "add_node", "host": "{{ hostvars[item]['ansible_host'] }}",
