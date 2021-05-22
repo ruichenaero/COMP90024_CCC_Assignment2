@@ -7,6 +7,12 @@
     tag: latest
   register: nginx_get_rst
 
+# Create nginx directory
+- name: Creates directory
+  file:
+    path: "{{ remote_directory }}/nginx"
+    state: directory
+
 - name: Write Nginx configuration file
   template:
     src: "nginx_conf.j2"
