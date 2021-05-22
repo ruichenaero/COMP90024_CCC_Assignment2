@@ -1,4 +1,4 @@
 ---
 # Go to the backend docker file
 - name: Go to the folder and execute command
-  command: chdir="{{ remote_directory }}/COMP90024_CCC_Assignment2/backend" docker build -t backend
+  command: chdir="{{ remote_directory }}/COMP90024_CCC_Assignment2/backend" docker build -t backend:Django
