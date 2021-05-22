@@ -67,12 +67,10 @@
 
 # Restart/Start docker
 - name: Restart docker damon
-  shell: "systemctl daemon-reload"
+  shell: "sudo systemctl daemon-reload"
 
 - name: Restart Docker
-  systemd:
-    name: docker
-    state: restarted
+  shell: "sudo systemctl restart docker"
   register: docker_restart_rst
 
 - name: Start docker service
@@ -93,14 +91,17 @@
     name: apt-transport-https
 
 - name: Add Yarn apt key
+  become: yes
   apt_key:
     url: https://dl.yarnpkg.com/debian/pubkey.gpg
 
 - name: Add Yarn repository
+  become: yes
   apt_repository:
     repo: "deb https://dl.yarnpkg.com/debian/ stable main"
     filename: yarn
 
 - name: Install Yarn
+  become: yes
   apt:
     name: yarn
