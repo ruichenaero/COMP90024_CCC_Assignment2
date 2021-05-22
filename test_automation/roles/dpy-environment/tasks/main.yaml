@@ -67,10 +67,12 @@
 
 # Restart/Start docker
 - name: Restart docker damon
-  shell: "sudo systemctl daemon-reload"
+  become: yes
+  shell: "systemctl daemon-reload"
 
 - name: Restart Docker
-  shell: "sudo systemctl restart docker"
+  become: yes
+  shell: "systemctl restart docker"
   register: docker_restart_rst
 
 - name: Start docker service
