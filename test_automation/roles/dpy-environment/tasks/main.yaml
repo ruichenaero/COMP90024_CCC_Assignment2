@@ -28,7 +28,7 @@
 - name: install dependencies
   become: yes
   apt:
-    name: ['vim','unzip','git','xfsprogs','python3-pip','apt-transport-https','ca-certificates','curl','python-setuptools','software-properties-common']
+    name: ['vim','unzip','npm','git','xfsprogs','python3-pip','apt-transport-https','ca-certificates','curl','python-setuptools','software-properties-common']
     state: latest
     install_recommends: no
     update_cache: yes
