@@ -2,6 +2,8 @@ import React, { Component,useRef, useEffect, useState } from 'react';
 import SidePanel from "./components/SidePanel";
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import { Layout } from 'antd';
+import Hospital_Statistics from './data/Hospital_Statistics.json';
+import axios from "axios";
 
 mapboxgl.accessToken = 'pk.eyJ1IjoieWlmZXlhbmcxIiwiYSI6ImNrb251MG44ZzA0Njkyd3BweWFyMWJvcjYifQ.oEO3lpWd3GLwRu13euHIvA';
 
@@ -12,11 +14,14 @@ export default function Map() {
   const [lat, setLat] = useState(-37.8636);
   const [zoom, setZoom] = useState(7.96);
 
-  const [data,setData]=useState([]);
+  //const [aurinData,setAurinData]=useState([]);
+  //const [isLoaded, setIsLoaded] = useState(false);
+  //const [isAdded, setIsAdded] = useState(false);
+  const aurinData = Hospital_Statistics.features;
   
   /*
   const getData=()=>{
-    fetch('data.json'
+    fetch('/Hospital_Statistics.json'
     ,{
       headers : { 
         'Content-Type': 'application/json',
@@ -29,13 +34,13 @@ export default function Map() {
         return response.json();
       })
       .then(function(myJson) {
-        console.log(myJson);
-        setData(myJson)
+        //console.log(myJson);
+        setAurinData(myJson.features)
+        console.log(myJson.features);
       });
   }
-  useEffect(()=>{
-    getData()
-  },[]) */
+  */
+  
 
   useEffect(() => {
     if (map.current) return; // initialize map only once
@@ -55,41 +60,65 @@ export default function Map() {
     setZoom(map.current.getZoom().toFixed(2));
     });
   });
-
+  
+  /*
+  useEffect(()=>{
+      getData();
+      setIsLoaded(true);
+      
+  }, [setAurinData]);*/
 /*
-  map.on('load', function () {
-    map.addSource('hospitals', {
+  useEffect(()=>{
+  axios.get('/Hospital_Statistics.json')
+      .then(res => {
+        setIsLoaded(true);
+        setAurinData(res.data.features);
+        console.log(aurinData);
+      }, (error) => {
+        setIsLoaded(true);
+        //setError(error);
+    });
+   }, [setAurinData]);*/
+  
+  useEffect(()=>{
+    
+  console.log(aurinData);
+  
+   map.current.on('load', () => {
+    map.current.addSource('hospital_location', {
       type: 'geojson',
       data: {
-            type: 'FeatureCollection',
-            features: chargingStations.map(station => {
+        type: 'FeatureCollection',
+        features: aurinData.map(hospital => {
               return {
                 type: 'Feature',
                 geometry: {
                   type: 'Point',
-                  coordinates: [station.longitude, station.latitude],
+                  coordinates: hospital.geometry.coordinates,
                 },
               };
             }),
           },
-      url: 'mapbox://mapbox.2opop9hr'
       });
-      map.addLayer({
-      'id': 'museums',
+      
+      map.current.addLayer({
+      'id': 'hospitals_loc',
       'type': 'circle',
-      'source': 'museums',
+      'source': 'hospital_location',
       'layout': {
       // Make the layer visible by default.
       'visibility': 'visible'
       },
       'paint': {
       'circle-radius': 8,
-      'circle-color': 'rgba(55,148,179,1)'
+      'circle-color': 'rgba(55,148,179,1)',
       },
-      'source-layer': 'museum-cusco'
+      //'source-layer': 'museum-cusco'
+      //rgba(55,148,179,1)
       });
- }); */
+ }); 
 
+}, []);
 
     return (
       <Layout style={{ minHeight: '100vh' }}>
