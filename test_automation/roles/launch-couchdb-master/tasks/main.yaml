@@ -26,3 +26,20 @@
     curl -X POST -H "Content-Type: application/json"
     http://{{ couchdb_user }}:{{ couchdb_user }}@localhost:5984/_cluster_setup
     -d '{"action": "finish_cluster"}'
+
+
+- name: Config conf.py for python couchdb api
+  copy:
+    dest: "{{ remote_directory }}/COMP90024_CCC_Assignment2/backend/common/config.py"
+    content: |
+      COUCHDB_URL = 'http://{{ couchdb_user }}:{{ couchdb_user }}@localhost:5984/'
+      COUCHDB_DOMAIN = '127.0.0.1'
+      COUCHDB_DOMAINS = ['127.0.0.1']
+      COUCHDB_USERNAME = 'admin'
+      COUCHDB_PASSWORD = '123'
+      COUCHDB_PORTS = 5984
+      COUCHDB_TWEET_DB = 'test_tweet'
+      #COUCHDB_TWEET_DB = 'test_tweet'
+      COUCHDB_REGION_TWEET_DB = 'region_tweet'
+      COUCHDB_TRACK_DB = 'track'
+      COUCHDB_TIME_DB = 'time_{}_{}_{}_{}_{}'
