@@ -6,9 +6,7 @@ upstream couchdb {
 }
 
 upstream backend {
-    {% if 'master-server' in group_names %}
-        server {{ groups['master-server'].0 }}:8001 fail_timeout=60s;
-    {% endif %}
+    server {{ groups['master-server'].0 }}:8001 fail_timeout=60s;
 }
 
 server {

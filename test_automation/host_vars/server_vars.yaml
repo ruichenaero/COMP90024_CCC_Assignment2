@@ -4,7 +4,7 @@ remote_directory: /home/ubuntu/COMP90024
 
 # CouchDB
 couchdb_version: 3.1.1
-couchdb_config_path: /home/ubuntu/couchdb/etc
+couchdb_config_path: "{{ remote_directory }}COMP90024_CCC_Assignment2/couchdb/etc"
 couchdb_user: admin
 couchdb_password: admin
 couchdb_secret: a192aeb9904e6590849337933b000c99
