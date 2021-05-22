@@ -1,6 +1,7 @@
 ---
 # Get nginx image from docker
 - name: Get docker image
+  become: yes
   docker_image:
     name: nginx
     tag: latest
@@ -14,6 +15,7 @@
 
 # Remove previous docker, if have
 - name: Remove exisiting Nginx docker
+  become: yes
   docker_container:
     name: nginx
     state: absent
@@ -21,6 +23,7 @@
 
 # Start Nginx docker
 - name: Start the Nginx docker
+  become: yes
   shell: >
     docker run
     --restart=always
