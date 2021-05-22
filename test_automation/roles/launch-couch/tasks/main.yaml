@@ -30,18 +30,18 @@
   become: yes
   shell: >
     docker run
-      --restart=always 
-      -p 5984:5984 
-      -p 5986:5986 
-      -p 4369:4369 
-      -p 9100-9150:9100-9150 
-      -e COUCHDB_USER="{{ couchdb_user }}" 
-      -e COUCHDB_PASSWORD="{{ couchdb_password }}"
-      -v "{{ remote_directory }}/COMP90024_CCC_Assignment2/couchDB/vm.args":/opt/couchdb/etc/vm.args 
-      -v "{{ remote_directory }}/COMP90024_CCC_Assignment2/couchDB/local.ini":/opt/couchdb/etc/local.ini 
-      -v /data/couchdb:/opt/couchdb/data 
-      --name couch-nod
-      -d couchdb:latest
+    --restart=always 
+    -p 5984:5984 
+    -p 5986:5986 
+    -p 4369:4369 
+    -p 9100-9150:9100-9150 
+    -e COUCHDB_USER="{{ couchdb_user }}" 
+    -e COUCHDB_PASSWORD="{{ couchdb_password }}"
+    -v "{{ remote_directory }}/COMP90024_CCC_Assignment2/couchDB/vm.args":/opt/couchdb/etc/vm.args 
+    -v "{{ remote_directory }}/COMP90024_CCC_Assignment2/couchDB/local.ini":/opt/couchdb/etc/local.ini 
+    -v /data/couchdb:/opt/couchdb/data 
+    --name couch-node
+    -d couchdb:latest
   when: docker_start.rc != 0 
 
 - pause:
