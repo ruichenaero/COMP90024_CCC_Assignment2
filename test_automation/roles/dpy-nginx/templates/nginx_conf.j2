@@ -1,7 +1,7 @@
 upstream couchdb {
     ip_hash;
     {% for host in groups['all']  %}
-        server {{ hostvars[host]['inventory_hostname'] }}:5984;
+        server {{ hostvars[host]['inventory_hostname'] hostvars[host] }}:5984;
     {% endfor %}
 }
 
