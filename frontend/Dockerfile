@@ -13,7 +13,7 @@ ADD . /home/ubuntu/frontend
 RUN yarn
 RUN yarn prod
 
-FROM nginx:alpine
+FROM nginx:latest
 
 ENV http_proxy http://wwwproxy.unimelb.edu.au:8000
 ENV https_proxy http://wwwproxy.unimelb.edu.au:8000
