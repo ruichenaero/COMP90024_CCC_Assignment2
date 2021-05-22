@@ -6,8 +6,8 @@ upstream couchdb {
 }
 
 upstream backend {
-    {% if {{ hostvars['master-server']['inventory_hostname'] }} in groups['all'] %}
-        server {{ hostvars['master-server']['inventory_hostname'] }}:8080 fail_timeout=60s;
+    {% if 'master-server' in group_names %}
+        server {{ groups['master-server'][0] }}:8001 fail_timeout=60s;
     {% endif %}
 }
 
