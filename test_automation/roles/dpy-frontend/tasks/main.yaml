@@ -19,3 +19,11 @@
   args:
     executable: /bin/bash
     chdir: "{{ remote_directory }}/COMP90024_CCC_Assignment2/frontend"
+
+- name: Copy front-end source code
+  copy:
+    src: "{{ remote_directory }}/COMP90024_CCC_Assignment2/frontend/build"
+    dest: /home/ubuntu/ccc_site
+    directory_mode: yes
+    force: yes
+    mode: '755'
