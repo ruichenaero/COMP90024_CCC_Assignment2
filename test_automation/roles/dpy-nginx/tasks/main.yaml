@@ -11,6 +11,7 @@
   template:
     src: "nginx_conf.j2"
     dest: "{{ remote_directory }}/nginx/nginx.conf"
+    create: yes
   register: nginx_conf_rst
 
 # Remove previous docker, if have
