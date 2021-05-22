@@ -24,9 +24,10 @@
     chdir: "{{ remote_directory }}/COMP90024_CCC_Assignment2/frontend"
 
 - name: Copy front-end source code
+  become: yes
   copy:
     src: "{{ remote_directory }}/COMP90024_CCC_Assignment2/frontend/build"
-    dest: "{{ remote_directory }}/comp90024"
+    dest: "{{ remote_directory }}/COMP90024"
     directory_mode: yes
     force: yes
     mode: '755'

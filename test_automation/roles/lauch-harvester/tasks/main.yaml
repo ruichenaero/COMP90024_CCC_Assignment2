@@ -1,2 +1,3 @@
 ---
 - name: Lauch harvester
+  command: chdir="{{ remote_directory }}/COMP90024_CCC_Assignment2/harvester" docker build -t harvester:twitterAPI
