@@ -1,13 +1,13 @@
 upstream couchdb {
     ip_hash;
     {% for host in groups['all']  %}
-        server {{ hostvars[host] }}:5984;
+        server {{ hostvars[host]['inventory_hostname'] }}:5984;
     {% endfor %}
 }
 
 upstream backend {
     {% if 'master-server' in groups['all'] %}
-        server {{ hostvars['master-server'] }}:8080 fail_timeout=60s;
+        server {{ hostvars['master-server']['inventory_hostname'] }}:8080 fail_timeout=60s;
     {% endif %}
 }
 

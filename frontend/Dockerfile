@@ -23,4 +23,4 @@ ENV HTTPS_PROXY http://wwwproxy.unimelb.edu.au:8000
 COPY /nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /home/ubuntu/frontend/build /usr/share/nginx/html
 
-EXPOSE 8080
+EXPOSE 80 8080
