@@ -8,12 +8,14 @@
   when: volume_device_comm is defined
 
 - name: Create mount point directory if does not exist
+  become: yes
   file:
     path: "{{ volume_mount_point_comm }}"
     state: directory
     mode: "777"
 
 - name: Mount device
+  become: yes
   mount:
     path: "{{ volume_mount_point_comm }}"
     src: "{{ volume_device_comm }}"

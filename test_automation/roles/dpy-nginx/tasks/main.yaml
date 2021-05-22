@@ -1,10 +1,17 @@
 ---
 # Get nginx image from docker
 - name: Get docker image
+  become: yes
   docker_image:
     name: nginx
     tag: latest
   register: nginx_get_rst
+
+# Create nginx directory
+- name: Creates directory
+  file:
+    path: "{{ remote_directory }}/nginx"
+    state: directory
 
 - name: Write Nginx configuration file
   template:
@@ -14,6 +21,7 @@
 
 # Remove previous docker, if have
 - name: Remove exisiting Nginx docker
+  become: yes
   docker_container:
     name: nginx
     state: absent
@@ -21,17 +29,18 @@
 
 # Start Nginx docker
 - name: Start the Nginx docker
+  become: yes
   shell: >
     docker run
     --restart=always
     -p 8001:8001
     -p 80:80
     -v "{{ remote_directory }}/nginx/nginx.conf":/etc/nginx/conf.d/default.conf
-    -v "{{ remote_directory }}/COMP90024_CCC_Assignment2/nginx/build:/var/www/comp90024
+    -v "{{ remote_directory }}/COMP90024_CCC_Assignment2/nginx/build":/var/www/comp90024
     --name nginx
     -d nginx:latest
-  when: nginx_pull_rst.changed or nginx_conf_rst.changed
+  when: nginx_get_rst.changed or nginx_conf_rst.changed
 
 - pause:
     seconds: 10
-  when: nginx_pull_rst.changed or nginx_conf_rst.changed
+  when: nginx_get_rst.changed or nginx_conf_rst.changed

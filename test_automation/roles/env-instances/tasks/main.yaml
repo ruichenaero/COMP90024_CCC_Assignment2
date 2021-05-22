@@ -34,7 +34,7 @@
 # Create ansible inventory file
 - name: Create inventory file
   copy:
-    content: "[all:vars]\nansible_user=ubuntu\n"
+    content: "[all:vars]\nansible_user=ubuntu\nansible_python_interpreter=/usr/bin/python3\n"
     dest: "{{current_directory}}/COMP90024_CCC_Assignment2/test_automation/inventory/hosts.ini"
 
 - name: set ip addresses to inventory file

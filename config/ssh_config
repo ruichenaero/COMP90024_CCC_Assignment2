@@ -1,6 +1,6 @@
 Host github.com
   Hostname ssh.github.com
-  IdentityFile ~/.ssh/GitHub
+  IdentityFile ~/.ssh/GitHubKey
   Port 443
   User git
   StrictHostKeyChecking no

@@ -7,19 +7,12 @@
   roles:
     - role: launch-couch
 
-- hosts: data-server-2
-  vars_files:
-    - host_vars/server_vars.yaml
-  gather_facts: true
-  roles:
-    - role: launch-couch
-
-# - hosts: data-server-3
+# - hosts: data-server-2
 #   vars_files:
 #     - host_vars/server_vars.yaml
 #   gather_facts: true
 #   roles:
-#     - role:
+#     - role: launch-couch
 
 - hosts: master-server
   vars_files:
@@ -27,5 +20,6 @@
   gather_facts: true
   roles:
     - role: launch-frontend
+    - role: launch-couch
     - role: launch-couchdb-master
     # - role: launch-backend

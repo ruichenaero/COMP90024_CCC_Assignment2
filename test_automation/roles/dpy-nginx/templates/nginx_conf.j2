@@ -1,14 +1,40 @@
 upstream couchdb {
     ip_hash;
     {% for host in groups['all']  %}
-        server {{ hostvars[host]['ansible_host'] }}:5984;
+        server {{ hostvars[host]['inventory_hostname'] }}:5984;
     {% endfor %}
 }
 
 upstream backend {
-    {% if 'master-server' in groups['all'] %}
-        server {{ hostvars['master-server']['ansible_host'] }}:8080 fail_timeout=60s;
+    {% if {{ hostvars['master-server']['inventory_hostname'] }} in groups['all'] %}
+        server {{ hostvars['master-server']['inventory_hostname'] }}:8080 fail_timeout=60s;
     {% endif %}
+}
+
+server {
+    listen       80;
+    server_name  localhost;
+
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+        try_files $uri /index.html;
+    }
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+}
+
+server {
+    listen 80;
+    root /var/www/comp90024;
+    index index.html;
+  
+    location / {
+      try_files $uri /index.html =404;
+    }
 }
 
 server {
@@ -48,15 +74,5 @@ server {
     location /backend {
         rewrite /backend/(.*) /$1 break;
         proxy_pass http://backend;
-    }
-}
-
-server {
-    listen 80;
-    root /var/www/comp90024;
-    index index.html;
-  
-    location / {
-      try_files $uri /index.html =404;
     }
 }
