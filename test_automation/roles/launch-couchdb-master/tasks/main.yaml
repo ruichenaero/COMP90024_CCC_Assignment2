@@ -35,7 +35,7 @@
       COUCHDB_URL = 'http://{{ couchdb_user }}:{{ couchdb_user }}@localhost:5984/'
       COUCHDB_DOMAIN = '127.0.0.1'
       COUCHDB_DOMAINS = ['127.0.0.1']
-      COUCHDB_USERNAME = 'admin'
+      COUCHDB_USERNAME = {{ couchdb_user }}
       COUCHDB_PASSWORD = '123'
       COUCHDB_PORTS = 5984
       COUCHDB_TWEET_DB = 'test_tweet'
