@@ -1,12 +1,14 @@
 ---
 # Install Node JS and npm packages
 - name: Install Node.js
+  become: yes
   apt:
     name: ['build-essential', 'nodejs']
     state: latest
     update_cache: yes
 
 - name: Install npm packages
+  become: yes
   shell: >
     npm install
   args:
@@ -14,6 +16,7 @@
     chdir: "{{ remote_directory }}/COMP90024_CCC_Assignment2/frontend"
 
 - name: Build static site
+  become: yes
   shell: >
     node --max_old_space_size=15000 /usr/bin/npm run build
   args:
