@@ -88,6 +88,13 @@
     name: docker
     state: latest
 
+- name: Install docker-compose
+  become: yes
+  pip:
+    name: ['docker-compose']
+    version: 1.29.2
+    state: present 
+
 # Install yarn
 - name: Ensure apt-transport-https is installed
   apt:
