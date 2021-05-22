@@ -1,17 +1,20 @@
 ---
+# Configure couchdb
 - name: Pull docker image
   become: yes
   docker_image:
       name: couchdb
       tag: latest
+      source: pull
 
-- name: Write CouchDB config File
+- name: Write CouchDB config .ini file
   template:
     src: local_ini.j2
     dest: "{{ remote_directory }}/COMP90024_CCC_Assignment2/couchDB/local.ini"
     force: yes
 
-- template:
+- name: Write CouchDB config .args file
+  template:
     src: vm_args.j2
     dest: "{{ remote_directory }}/COMP90024_CCC_Assignment2/couchDB/vm.args"
     force: yes
@@ -26,18 +29,18 @@
 - name: Start the CouchDB docker
   become: yes
   shell: >
-    docker run 
+    docker run
       --restart=always 
       -p 5984:5984 
       -p 5986:5986 
       -p 4369:4369 
       -p 9100-9150:9100-9150 
-      -e COUCHDB_USER= "{{ couchdb_user }}" 
-      -e COUCHDB_PASSWORD= "{{ couchdb_password }}"
+      -e COUCHDB_USER="{{ couchdb_user }}" 
+      -e COUCHDB_PASSWORD="{{ couchdb_password }}"
       -v "{{ remote_directory }}/COMP90024_CCC_Assignment2/couchDB/vm.args":/opt/couchdb/etc/vm.args 
       -v "{{ remote_directory }}/COMP90024_CCC_Assignment2/couchDB/local.ini":/opt/couchdb/etc/local.ini 
       -v /data/couchdb:/opt/couchdb/data 
-      --name couch-node 
+      --name couch-nod
       -d couchdb:latest
   when: docker_start.rc != 0 
 
