@@ -33,7 +33,6 @@
   shell: >
     docker run
     --restart=always
-    -p 8001:8001
     -p 80:80
     -v "{{ remote_directory }}/nginx/nginx.conf":/etc/nginx/conf.d/default.conf
     -v "{{ remote_directory }}/comp90024/build":/var/www/comp90024
