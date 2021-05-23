@@ -4,7 +4,7 @@
     curl 
     -X POST 
     -H "Content-Type: application/json" http://{{ couchdb_user }}:{{ couchdb_password }}@127.0.0.1:5984/_cluster_setup
-    -d '{"action": "enable_cluster", "bind_address": "0.0.0.0", "username": "{{ couchdb_user }}", "password":"{{ couchdb_password }}", "port": 5984, "node_count": "{{ groups['all'] | length }}", "remote_node": "{{ hostvars[item]['ansible_host'] }}", "remote_current_user": "{{ couchdb_user }}", "remote_current_password": "{{ couchdb_password }}" }'
+    -d '{"action": "enable_cluster", "bind_address": "0.0.0.0", "username": "{{ couchdb_user }}", "password":"{{ couchdb_password }}", "port": 5984, "node_count": "{{ groups['all'] | length }}", "remote_node": "{{ hostvars[item]['inventory_hostname'] }}", "remote_current_user": "{{ couchdb_user }}", "remote_current_password": "{{ couchdb_password }}" }'
   loop: "{{ groups['all'] }}"
   when: item != ansible_hostname
 
@@ -13,7 +13,7 @@
     curl 
     -X POST 
     -H "Content-Type: application/json" http://{{ couchdb_user }}:{{ couchdb_password }}@localhost:5984/_cluster_setup
-    -d '{"action": "add_node", "host": "{{ hostvars[item]['ansible_host'] }}", "port": 5984, "username": "{{ couchdb_user }}", "password":"{{ couchdb_password }}"}'
+    -d '{"action": "add_node", "host": "{{ hostvars[item]['inventory_hostname'] }}", "port": 5984, "username": "{{ couchdb_user }}", "password":"{{ couchdb_password }}"}'
   loop: "{{ groups['all'] }}"
   when: item != ansible_hostname
 
