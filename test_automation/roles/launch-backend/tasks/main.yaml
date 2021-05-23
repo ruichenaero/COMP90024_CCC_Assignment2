@@ -1,13 +1,19 @@
 ---
-# Go to the backend docker file
-# - name: Lauch Django backend
-#   command: chdir="{{ remote_directory }}/COMP90024_CCC_Assignment2/backend" docker build -t backend:Django .
-
-
-- name: Lauch Django backend
+# Build docker image from dockerfile
+- name: Build docker image
   become: yes
   shell: >
     docker build
     -t backend:Django
     -f "{{ remote_directory }}/COMP90024_CCC_Assignment2/backend/Dockerfile"
     .
+
+# Launch docker backend
+- name: Lauch Docker container
+  become: yes
+  shell: >
+    docker run
+    --restart=always
+    -p 8001:8001
+    --name backend
+    -d backend:Django

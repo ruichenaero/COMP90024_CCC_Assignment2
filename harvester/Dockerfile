@@ -13,6 +13,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN sudo chmod 777 run.sh
+RUN chmod 777 run.sh
 
-CMD sudo ./run.sh
+CMD ./run.sh
