@@ -54,12 +54,14 @@
     -H "Content-Type: application/json" http://{{ couchdb_user }}:{{ couchdb_password }}@{{groups['master-server'].0}}:5984/_cluster_setup
     -d '{"action": "enable_cluster", "bind_address":"0.0.0.0", "username": "{{ couchdb_user }}", "password":"{{ couchdb_password }}", "node_count":"{{ groups['all'] | length }}"}'
 
-# - name: HTTP request add node
-#   shell: >
-#     curl 
-#     -X POST 
-#     -H "Content-Type: application/json" http://{{ couchdb_user }}:{{ couchdb_password }}@{{groups['master-server'].0}}:5984/_cluster_setup
-#     -d '{"action": "add_node", "host": "{{ hostvars[item]['inventory_hostname'] }}", "port": 5984, "username": "{{ couchdb_user }}", "password":"{{ couchdb_password }}"}'
+- name: HTTP request add node
+  shell: >
+    curl 
+    -X POST 
+    -H "Content-Type: application/json" http://{{ couchdb_user }}:{{ couchdb_password }}@{{groups['master-server'].0}}:5984/_cluster_setup
+    -d '{"action": "add_node", "host": "{{ hostvars[item]['inventory_hostname'] }}", "port": 5984, "username": "{{ couchdb_user }}", "password":"{{ couchdb_password }}"}'
+  loop: "{{ groups['all'] }}"
+  when: item != ansible_hostname
 
 # Configure python config for couchdb in backend
 - name: Configure conf.py for python couchdb api
