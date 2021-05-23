@@ -1,4 +1,8 @@
 ---
+- name: cd directory
+  shell: >
+    cd "{{ remote_directory }}/COMP90024_CCC_Assignment2/backend"
+    
 # Build docker image from dockerfile
 - name: Build docker image
   become: yes
@@ -7,6 +11,9 @@
     -t backend:Django
     -f "{{ remote_directory }}/COMP90024_CCC_Assignment2/backend/Dockerfile"
     .
+
+# - name: djdjjd
+#   command: chdir="{{ remote_directory }}/COMP90024_CCC_Assignment2/backend" docker build -t backend:Djanngo
 
 # Launch docker backend
 - name: Lauch Docker container

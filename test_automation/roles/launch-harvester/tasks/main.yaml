@@ -1,4 +1,8 @@
 ---
+- name: cd directory
+  shell: >
+    cd "{{ remote_directory }}/COMP90024_CCC_Assignment2/backend"
+
 # Build docker image from dockerfile
 - name: Build docker image
   become: yes
