@@ -1,16 +1,16 @@
 ---
-- name: cd directory
-  shell: >
-    cd "{{ remote_directory }}/COMP90024_CCC_Assignment2/harvester"
-
-# Build docker image from dockerfile
-- name: Build docker image
+- name: docker image
   become: yes
-  shell: >
-    docker build
-    -t harvester:twitterAPI
-    -f "{{ remote_directory }}/COMP90024_CCC_Assignment2/harvester/Dockerfile"
-    .
+  command: chdir="{{ remote_directory }}/COMP90024_CCC_Assignment2/harvester" docker build -t harvester:twitterAPI
+
+# # Build docker image from dockerfile
+# - name: Build docker image
+#   become: yes
+#   shell: >
+#     docker build
+#     -t harvester:twitterAPI
+#     -f "{{ remote_directory }}/COMP90024_CCC_Assignment2/harvester/Dockerfile"
+#     .
 
 # Lauch harvester docker
 - name: Lauch Docker container
