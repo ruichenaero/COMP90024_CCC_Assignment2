@@ -1,7 +1,7 @@
 ---
 - name: docker image
   become: yes
-  command: chdir="{{ remote_directory }}/COMP90024_CCC_Assignment2/harvester" docker build -t harvester:twitterAPI
+  command: chdir="{{ remote_directory }}/COMP90024_CCC_Assignment2/harvester" docker build -t harvester:twitterAPI .
 
 # # Build docker image from dockerfile
 # - name: Build docker image
