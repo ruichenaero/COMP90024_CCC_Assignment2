@@ -57,7 +57,7 @@
 # Configure python config for couchdb in backend
 - name: Configure conf.py for python couchdb api
   copy:
-    dest: "{{ remote_directory }}/COMP90024_CCC_Assignment2/backend/common/config.py"
+    dest: "{{ remote_directory }}/COMP90024_CCC_Assignment2/backend/backend/common/config.py"
     content: |
       COUCHDB_URL = 'http://{}:{}@{}:{}/'
       COUCHDB_DOMAIN = "{{groups['master-server'].0}}"

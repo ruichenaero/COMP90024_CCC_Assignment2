@@ -24,4 +24,5 @@
     repo: ssh://git@github.com/ruichenaero/COMP90024_CCC_Assignment2.git
     key_file: /home/ubuntu/.ssh/GitHubKey
     dest: '{{ remote_directory }}/COMP90024_CCC_Assignment2'
+    force: yes
 # git clone through ssh
