@@ -1,4 +1,5 @@
 ---
+# Set couchdb
 - name: Load Couchdb Image
   become: yes
   docker_image:
@@ -33,4 +34,4 @@
   shell: 'curl -XPOST "http://{{ couchdb_user }}:{{ couchdb_password }}@{{ master_node_ip }}:{{ couchdb_port }}/_cluster_setup" --header "Content-Type: application/json"  --data "{\"action\": \"add_node\", \"host\":\"{{ item }}\", \"port\": \"{{ couchdb_port }}\", \"username\": \"{{ couchdb_user }}\", \"password\":\"{{ couchdb_password }}\"}"'
   args:
     warn: yes
-  loop: '{{ groups["Play"] }}'
+  loop: '{{ groups["all"] }}'

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import axios from "axios";
 import SidePanel from "../components/SidePanel";
 import { Layout, Breadcrumb } from 'antd';
@@ -30,7 +30,7 @@ export default function Scenario1() {
 
       }, (error) => {
           setIsLoaded(true);
-          setError(error);
+          // setError(error);
         });
     }, [setPortfolios]);
 

@@ -2,6 +2,7 @@ import tweepy
 import json
 from TweetStore import TweetStore
 import time
+import token_file
 from config import *
 
 
@@ -9,10 +10,10 @@ from config import *
 # up to 7 days ago from the whole area of Melbourne
 
 
-consumer_key = "XLpXawfnonn8n1LEBJgtmqUaE"
-consumer_secret = "aDaoN5IWq8NiLZ8GsqK8dzAkBy683yjJt4RcZZ2sVf67hH6f6F"
-access_token = "993804554880794624-K0gOvq6FYnycALj6I31cPeqjxxeL8VC"
-access_token_secret = "TC0xFxOzRGAJb6R9q6PaQOiDDUG9Csq14HBtyDGNdMlSw"
+consumer_key = token_file.CR_API["consumer_key"]
+consumer_secret = token_file.CR_API["consumer_secret"]
+access_token = token_file.CR_API["access_token"]
+access_token_secret = token_file.CR_API["access_token_secret"]
 
 
 # Handel Twitter Authentication
