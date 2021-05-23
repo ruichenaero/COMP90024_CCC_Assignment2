@@ -51,7 +51,7 @@
   shell: >
     curl 
     -X POST 
-    -H "Content-Type: application/json" http://{{ couchdb_user }}:{{ couchdb_password }}@localhost:5984/_cluster_setup
+    -H "Content-Type: application/json" http://{{ couchdb_user }}:{{ couchdb_password }}@{{groups['master-server'].0}}:5984/_cluster_setup
     -d '{"action": "enable_cluster", "bind_address":"0.0.0.0", "username": "{{ couchdb_user }}", "password":"{{ couchdb_password }}", "node_count":"{{ groups['all'] | length }}"}'
 
 # Configure python config for couchdb in backend
