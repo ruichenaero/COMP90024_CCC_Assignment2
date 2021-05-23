@@ -52,5 +52,5 @@
     curl -X POST -H "Content-Type: application/json"
     http://{{ couchdb_user }}:{{ couchdb_passwd }}@localhost:5984/_cluster_setup
     -d '{"action": "enable_cluster", "bind_address":"0.0.0.0",
-    "username": "{{ couchdb_user }}", "password":"{{ couchdb_passwd }}",
+    "username": "{{ couchdb_user }}", "password":"{{ couchdb_password }}",
     "node_count":"{{ groups['all'] | length }}"}'
