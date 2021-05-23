@@ -1,7 +1,7 @@
 ---
 - name: docker image
   become: yes
-  command: chdir="{{ remote_directory }}/COMP90024_CCC_Assignment2/backend" docker build -t backend:Djanngo .
+  command: chdir="{{ remote_directory }}/COMP90024_CCC_Assignment2/backend" docker build -t backend:Django .
 
 # # Build docker image from dockerfile
 # - name: Build docker image
