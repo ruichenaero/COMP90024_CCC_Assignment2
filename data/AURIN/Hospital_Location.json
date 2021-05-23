@@ -1,1 +1,2620 @@
-{"type":"FeatureCollection","bbox":[144.335728,-38.430328,145.828249,-37.195065],"crs":{"type":"name","properties":{"name":"EPSG:4283"}},"features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[144.393267,-38.182406]},"properties":{"id":927,"hospital_name":"The Geelong Clinic","suburb":"St Albans Park","ogc_fid":5,"long":144.393267,"lat":-38.182406},"id":"my_hospital_beds.5"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.972151,-37.834246]},"properties":{"id":8,"hospital_name":"Albert Road Clinic","suburb":"Melbourne","ogc_fid":13,"long":144.972151,"lat":-37.834246},"id":"my_hospital_beds.13"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.716143,-37.195065]},"properties":{"id":12,"hospital_name":"Alexandra District Hospital","suburb":"Alexandra","ogc_fid":17,"long":145.716143,"lat":-37.195065},"id":"my_hospital_beds.17"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.314166,-37.898663]},"properties":{"id":22,"hospital_name":"Angliss Hospital","suburb":"Upper Ferntree Gully","ogc_fid":27,"long":145.314166,"lat":-37.898663},"id":"my_hospital_beds.27"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.0568,-37.96046]},"properties":{"id":187,"hospital_name":"Chesterville Day Hospital","suburb":"Cheltenham","ogc_fid":35,"long":145.0568,"lat":-37.96046},"id":"my_hospital_beds.35"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.060236,-37.756355]},"properties":{"id":34,"hospital_name":"Austin Hospital [Heidelberg]","suburb":"Heidelberg","ogc_fid":40,"long":145.060236,"lat":-37.756355},"id":"my_hospital_beds.40"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.998213,-37.856118]},"properties":{"id":35,"hospital_name":"Avenue Plastic Surgery","suburb":"Windsor","ogc_fid":41,"long":144.998213,"lat":-37.856118},"id":"my_hospital_beds.41"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.049136,-38.225484]},"properties":{"id":69,"hospital_name":"Beleura Private Hospital","suburb":"Mornington","ogc_fid":75,"long":145.049136,"lat":-38.225484},"id":"my_hospital_beds.75"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.156018,-37.833073]},"properties":{"id":70,"hospital_name":"Bellbird Private Hospital","suburb":"Blackburn South","ogc_fid":76,"long":145.156018,"lat":-37.833073},"id":"my_hospital_beds.76"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.346487,-38.033667]},"properties":{"id":78,"hospital_name":"Berwick Eye and Surgicentre","suburb":"Berwick","ogc_fid":84,"long":145.346487,"lat":-38.033667},"id":"my_hospital_beds.84"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.119094,-37.813682]},"properties":{"id":105,"hospital_name":"Box Hill Hospital","suburb":"Box Hill","ogc_fid":111,"long":145.119094,"lat":-37.813682},"id":"my_hospital_beds.111"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.913106,-37.684321]},"properties":{"id":115,"hospital_name":"Broadmeadows Health Service","suburb":"Broadmeadows","ogc_fid":121,"long":144.913106,"lat":-37.684321},"id":"my_hospital_beds.121"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.055569,-37.701124]},"properties":{"id":122,"hospital_name":"Bundoora Extended Care Centre","suburb":"Bundoora","ogc_fid":129,"long":145.055569,"lat":-37.701124},"id":"my_hospital_beds.129"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.991572,-37.91165]},"properties":{"id":130,"hospital_name":"Cabrini Brighton","suburb":"Brighton","ogc_fid":138,"long":144.991572,"lat":-37.91165},"id":"my_hospital_beds.138"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.009328,-37.88543]},"properties":{"id":131,"hospital_name":"Cabrini Health Elsternwick Rehabilitation - Glenhuntly Rd","suburb":"Elsternwick","ogc_fid":139,"long":145.009328,"lat":-37.88543},"id":"my_hospital_beds.139"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.01039,-37.884778]},"properties":{"id":132,"hospital_name":"Cabrini Health Elsternwick Rehabilitation - Hopetoun","suburb":"Elsternwick","ogc_fid":140,"long":145.01039,"lat":-37.884778},"id":"my_hospital_beds.140"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.0335,-37.861641]},"properties":{"id":133,"hospital_name":"Cabrini Malvern","suburb":"Malvern","ogc_fid":141,"long":145.0335,"lat":-37.861641},"id":"my_hospital_beds.141"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.009017,-37.854034000000006]},"properties":{"id":134,"hospital_name":"Cabrini Prahran","suburb":"Prahran","ogc_fid":142,"long":145.009017,"lat":-37.854034},"id":"my_hospital_beds.142"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.013415,-37.896962]},"properties":{"id":141,"hospital_name":"Calvary Health Care Bethlehem","suburb":"Caulfield","ogc_fid":149,"long":145.013415,"lat":-37.896962},"id":"my_hospital_beds.149"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.970625,-37.809419]},"properties":{"id":165,"hospital_name":"Careplans Assessment Victoria","suburb":null,"ogc_fid":174,"long":144.970625,"lat":-37.809419},"id":"my_hospital_beds.174"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.015557,-37.804706]},"properties":{"id":166,"hospital_name":"Caritas Christi Hospice [Kew]","suburb":"Kew","ogc_fid":175,"long":145.015557,"lat":-37.804706},"id":"my_hospital_beds.175"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.347181,-38.045325]},"properties":{"id":168,"hospital_name":"Casey Hospital","suburb":"Berwick","ogc_fid":177,"long":145.347181,"lat":-38.045325},"id":"my_hospital_beds.177"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.016892,-37.882707]},"properties":{"id":174,"hospital_name":"Caulfield Hospital","suburb":"Caulfield","ogc_fid":183,"long":145.016892,"lat":-37.882707},"id":"my_hospital_beds.183"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.072574,-37.990835]},"properties":{"id":208,"hospital_name":"Como Private Hospital","suburb":"Parkdale","ogc_fid":216,"long":145.072574,"lat":-37.990835},"id":"my_hospital_beds.216"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.21715,-37.977201]},"properties":{"id":224,"hospital_name":"Corymbia House","suburb":"Dandenong","ogc_fid":229,"long":145.21715,"lat":-37.977201},"id":"my_hospital_beds.229"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.048305,-37.808694]},"properties":{"id":225,"hospital_name":"Cotham Private Hospital","suburb":"Kew","ogc_fid":230,"long":145.048305,"lat":-37.808694},"id":"my_hospital_beds.230"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.91928,-37.596015]},"properties":{"id":229,"hospital_name":"Craigieburn Health Service","suburb":"Craigieburn","ogc_fid":234,"long":144.91928,"lat":-37.596015},"id":"my_hospital_beds.234"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.280832,-38.113312]},"properties":{"id":230,"hospital_name":"Cranbourne Integrated Care Centre","suburb":"Cranbourne","ogc_fid":235,"long":145.280832,"lat":-38.113312},"id":"my_hospital_beds.235"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.742309,-37.781307]},"properties":{"id":246,"hospital_name":"Dame Phyllis Frost Centre - Marmak unit","suburb":"Deer Park","ogc_fid":252,"long":144.742309,"lat":-37.781307},"id":"my_hospital_beds.252"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.218529,-37.976459]},"properties":{"id":247,"hospital_name":"Dandenong Campus","suburb":"Dandenong","ogc_fid":253,"long":145.218529,"lat":-37.976459},"id":"my_hospital_beds.253"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.964529,-37.799299]},"properties":{"id":259,"hospital_name":"Dental Health Services Victoria","suburb":"Carlton","ogc_fid":265,"long":144.964529,"lat":-37.799299},"id":"my_hospital_beds.265"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.433264,-37.678267]},"properties":{"id":265,"hospital_name":"Djerriwarrh Health Service [Bacchus Marsh]","suburb":"Bacchus Marsh","ogc_fid":271,"long":144.433264,"lat":-37.678267},"id":"my_hospital_beds.271"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.171655,-37.789836]},"properties":{"id":268,"hospital_name":"Donvale Rehabilitation Hospital","suburb":"Donvale","ogc_fid":274,"long":145.171655,"lat":-37.789836},"id":"my_hospital_beds.274"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.947436,-37.723402]},"properties":{"id":271,"hospital_name":"Dorset Rehabilitation Centre","suburb":"Pascoe Vale","ogc_fid":276,"long":144.947436,"lat":-37.723402},"id":"my_hospital_beds.276"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.987547,-37.815662]},"properties":{"id":295,"hospital_name":"Epworth Cliveden","suburb":"East Melbourne","ogc_fid":300,"long":144.987547,"lat":-37.815662},"id":"my_hospital_beds.300"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.119368,-37.814678]},"properties":{"id":296,"hospital_name":"Epworth Eastern","suburb":"Box Hill","ogc_fid":301,"long":145.119368,"lat":-37.814678},"id":"my_hospital_beds.301"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.984107,-37.810694]},"properties":{"id":297,"hospital_name":"Epworth Freemasons [Clarendon Street]","suburb":"East Melbourne","ogc_fid":302,"long":144.984107,"lat":-37.810694},"id":"my_hospital_beds.302"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.98212,-37.809284]},"properties":{"id":298,"hospital_name":"Epworth Freemasons [Victoria Parade]","suburb":"East Melbourne","ogc_fid":303,"long":144.98212,"lat":-37.809284},"id":"my_hospital_beds.303"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.023405,-37.821229]},"properties":{"id":299,"hospital_name":"Epworth Hawthorn","suburb":"Hawthorn","ogc_fid":304,"long":145.023405,"lat":-37.821229},"id":"my_hospital_beds.304"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.002815,-37.913689]},"properties":{"id":300,"hospital_name":"Epworth Rehabilitation Brighton","suburb":"Brighton","ogc_fid":305,"long":145.002815,"lat":-37.913689},"id":"my_hospital_beds.305"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.054689,-37.846223]},"properties":{"id":301,"hospital_name":"Epworth Rehabilitation Camberwell","suburb":"Camberwell","ogc_fid":307,"long":145.054689,"lat":-37.846223},"id":"my_hospital_beds.307"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.993503,-37.817419]},"properties":{"id":302,"hospital_name":"Epworth Rehabilitation Richmond","suburb":"Richmond","ogc_fid":308,"long":144.993503,"lat":-37.817419},"id":"my_hospital_beds.308"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.993029,-37.817433]},"properties":{"id":303,"hospital_name":"Epworth Richmond","suburb":"Richmond","ogc_fid":309,"long":144.993029,"lat":-37.817433},"id":"my_hospital_beds.309"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.955135,-37.798758]},"properties":{"id":322,"hospital_name":"Frances Perry House","suburb":"Parkville","ogc_fid":328,"long":144.955135,"lat":-37.798758},"id":"my_hospital_beds.328"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.128428,-38.150791]},"properties":{"id":323,"hospital_name":"Frankston Hospital","suburb":"Frankston","ogc_fid":329,"long":145.128428,"lat":-38.150791},"id":"my_hospital_beds.329"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.364964,-38.151533]},"properties":{"id":330,"hospital_name":"Geelong Hospital","suburb":"Geelong","ogc_fid":336,"long":144.364964,"lat":-38.151533},"id":"my_hospital_beds.336"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.364085,-38.150951]},"properties":{"id":331,"hospital_name":"Geelong Private Hospital","suburb":"Geelong","ogc_fid":337,"long":144.364085,"lat":-38.150951},"id":"my_hospital_beds.337"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.828249,-38.430328]},"properties":{"id":338,"hospital_name":"Gippsland Southern Health Service - Korumburra","suburb":"Korumburra","ogc_fid":344,"long":145.828249,"lat":-38.430328},"id":"my_hospital_beds.344"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.019265,-37.900377]},"properties":{"id":341,"hospital_name":"Glen Eira Day Surgery","suburb":"Caulfield South","ogc_fid":347,"long":145.019265,"lat":-37.900377},"id":"my_hospital_beds.347"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.031544,-37.81945900000001]},"properties":{"id":344,"hospital_name":"Glenferrie Private Hospital","suburb":"Hawthorn","ogc_fid":350,"long":145.031544,"lat":-37.819459},"id":"my_hospital_beds.350"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.14976900000002,-38.173447]},"properties":{"id":351,"hospital_name":"Golf Links Road Rehabilitation Centre","suburb":"Frankston","ogc_fid":358,"long":145.149769,"lat":-38.173447},"id":"my_hospital_beds.358"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.529032,-37.646879]},"properties":{"id":387,"hospital_name":"Healesville and District Hospital","suburb":"Healesville","ogc_fid":393,"long":145.529032,"lat":-37.646879},"id":"my_hospital_beds.393"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.081172,-37.947818]},"properties":{"id":388,"hospital_name":"Healthscope Independence Services","suburb":"Moorabbin","ogc_fid":394,"long":145.081172,"lat":-37.947818},"id":"my_hospital_beds.394"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.04749,-37.755973]},"properties":{"id":392,"hospital_name":"Heidelberg Repatriation Hospital [Heidelberg West]","suburb":"Heidelberg West","ogc_fid":398,"long":145.04749,"lat":-37.755973},"id":"my_hospital_beds.398"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.828494,-37.869448]},"properties":{"id":402,"hospital_name":"Hobsons Bay Endoscopy Centre Altona","suburb":"Altona","ogc_fid":408,"long":144.828494,"lat":-37.869448},"id":"my_hospital_beds.408"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.758677,-37.693365]},"properties":{"id":403,"hospital_name":"Hobsons Bay Endoscopy Centre Sydenham","suburb":"Sydenham","ogc_fid":409,"long":144.758677,"lat":-37.693365},"id":"my_hospital_beds.409"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.686494,-37.890649]},"properties":{"id":404,"hospital_name":"Hobsons Bay Endoscopy Centre Werribee","suburb":"Werribee","ogc_fid":410,"long":144.686494,"lat":-37.890649},"id":"my_hospital_beds.410"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.958398,-37.754369]},"properties":{"id":433,"hospital_name":"John Fawkner Private Hospital","suburb":"Coburg","ogc_fid":439,"long":144.958398,"lat":-37.754369},"id":"my_hospital_beds.439"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.978596,-37.816762]},"properties":{"id":436,"hospital_name":"Jolimont Endoscopy","suburb":"East Melbourne","ogc_fid":442,"long":144.978596,"lat":-37.816762},"id":"my_hospital_beds.442"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.078969,-37.955018]},"properties":{"id":468,"hospital_name":"Kingston Centre [Cheltenham]","suburb":"Cheltenham","ogc_fid":474,"long":145.078969,"lat":-37.955018},"id":"my_hospital_beds.474"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.228035,-37.849645]},"properties":{"id":471,"hospital_name":"Knox Private Hospital","suburb":"Wantirna","ogc_fid":477,"long":145.228035,"lat":-37.849645},"id":"my_hospital_beds.477"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.484433,-38.200653]},"properties":{"id":474,"hospital_name":"Kooweerup Regional Health Service","suburb":"Koo Wee Rup","ogc_fid":480,"long":145.484433,"lat":-38.200653},"id":"my_hospital_beds.480"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.469742,-37.254431]},"properties":{"id":481,"hospital_name":"Kyneton District Health Service","suburb":"Kyneton","ogc_fid":487,"long":144.469742,"lat":-37.254431},"id":"my_hospital_beds.487"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.003259,-37.942699]},"properties":{"id":499,"hospital_name":"Linacre Private Hospital","suburb":"Hampton","ogc_fid":505,"long":145.003259,"lat":-37.942699},"id":"my_hospital_beds.505"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.115662,-37.773471]},"properties":{"id":531,"hospital_name":"Manningham Day Procedure Centre","suburb":"Templestowe Lower","ogc_fid":537,"long":145.115662,"lat":-37.773471},"id":"my_hospital_beds.537"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.254535,-37.806884]},"properties":{"id":538,"hospital_name":"Maroondah Hospital [East Ringwood]","suburb":"Ringwood East","ogc_fid":545,"long":145.254535,"lat":-37.806884},"id":"my_hospital_beds.545"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.003096,-37.869799]},"properties":{"id":544,"hospital_name":"Masada Private Hospital","suburb":"St Kilda","ogc_fid":551,"long":145.003096,"lat":-37.869799},"id":"my_hospital_beds.551"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.018774,-37.869064]},"properties":{"id":565,"hospital_name":"Melbourne MediBrain & MediSleep Centre","suburb":"Caulfield North","ogc_fid":572,"long":145.018774,"lat":-37.869064},"id":"my_hospital_beds.572"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.971391,-37.814488]},"properties":{"id":566,"hospital_name":"Melbourne Oral & Facial Surgery","suburb":"Melbourne","ogc_fid":573,"long":144.971391,"lat":-37.814488},"id":"my_hospital_beds.573"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.957025,-37.798272]},"properties":{"id":567,"hospital_name":"Melbourne Private Hospital","suburb":"Parkville","ogc_fid":574,"long":144.957025,"lat":-37.798272},"id":"my_hospital_beds.574"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.558284,-37.686449]},"properties":{"id":568,"hospital_name":"Melton Health","suburb":"Melton West","ogc_fid":575,"long":144.558284,"lat":-37.686449},"id":"my_hospital_beds.575"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.061729,-37.816688000000006]},"properties":{"id":573,"hospital_name":"Mercy Health - O''Connell Family Centre","suburb":"Canterbury","ogc_fid":580,"long":145.061729,"lat":-37.816688},"id":"my_hospital_beds.580"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.061008,-37.75607500000001]},"properties":{"id":574,"hospital_name":"Mercy Hospital for Women","suburb":"Heidelberg","ogc_fid":581,"long":145.061008,"lat":-37.756075},"id":"my_hospital_beds.581"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.194808,-37.810436]},"properties":{"id":589,"hospital_name":"Mitcham Private Hospital","suburb":"Mitcham","ogc_fid":596,"long":145.194808,"lat":-37.810436},"id":"my_hospital_beds.596"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.123128,-37.921176]},"properties":{"id":595,"hospital_name":"Monash Medical Centre [Clayton]","suburb":"Clayton","ogc_fid":603,"long":145.123128,"lat":-37.921176},"id":"my_hospital_beds.603"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.063197,-37.920697]},"properties":{"id":596,"hospital_name":"Monash Medical Centre [Moorabbin]","suburb":"East Bentleigh","ogc_fid":604,"long":145.063197,"lat":-37.920697},"id":"my_hospital_beds.604"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.087358,-38.168269]},"properties":{"id":614,"hospital_name":"Mount Eliza Aged Care & Rehabilitation Service","suburb":"Mount Eliza","ogc_fid":622,"long":145.087358,"lat":-38.168269},"id":"my_hospital_beds.622"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.031344,-37.763424]},"properties":{"id":668,"hospital_name":"North Eastern Rehabilitation Centre","suburb":"Ivanhoe","ogc_fid":675,"long":145.031344,"lat":-37.763424},"id":"my_hospital_beds.675"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.061631,-37.691208]},"properties":{"id":679,"hospital_name":"Northpark Private Hospital","suburb":"Bundoora","ogc_fid":687,"long":145.061631,"lat":-37.691208},"id":"my_hospital_beds.687"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.886617,-37.791926]},"properties":{"id":699,"hospital_name":"Orygen Inpatient Unit","suburb":"Footscray","ogc_fid":706,"long":144.886617,"lat":-37.791926},"id":"my_hospital_beds.706"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.169552,-38.157557]},"properties":{"id":714,"hospital_name":"Peninsula Private Hospital Victoria","suburb":"Frankston","ogc_fid":720,"long":145.169552,"lat":-38.157557},"id":"my_hospital_beds.720"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.977372,-37.811589]},"properties":{"id":719,"hospital_name":"Peter MacCallum Cancer Institute","suburb":"East Melbourne","ogc_fid":726,"long":144.977372,"lat":-37.811589},"id":"my_hospital_beds.726"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.178285,-37.972053]},"properties":{"id":746,"hospital_name":"Queen Elizabeth Centre [Noble Park]","suburb":"Noble Park","ogc_fid":752,"long":145.178285,"lat":-37.972053},"id":"my_hospital_beds.752"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.243629,-37.811523]},"properties":{"id":761,"hospital_name":"Ringwood Private Hospital","suburb":"Ringwood","ogc_fid":767,"long":145.243629,"lat":-37.811523},"id":"my_hospital_beds.767"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.884899,-38.362168]},"properties":{"id":774,"hospital_name":"Rosebud Hospital","suburb":"Rosebud","ogc_fid":778,"long":144.884899,"lat":-38.362168},"id":"my_hospital_beds.778"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.89722000000003,-38.366789]},"properties":{"id":775,"hospital_name":"Rosebud Rehabilitation Unit","suburb":"Rosebud","ogc_fid":779,"long":144.89722,"lat":-38.366789},"id":"my_hospital_beds.779"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.883554,-38.361748]},"properties":{"id":776,"hospital_name":"Rosebud SurgiCentre","suburb":"Rosebud West","ogc_fid":780,"long":144.883554,"lat":-38.361748},"id":"my_hospital_beds.780"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.950859,-37.794997]},"properties":{"id":781,"hospital_name":"Royal Children''s Hospital [Parkville]","suburb":"Parkville","ogc_fid":785,"long":144.950859,"lat":-37.794997},"id":"my_hospital_beds.785"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.935236,-37.782172]},"properties":{"id":782,"hospital_name":"Royal Children''s Hospital [Travancore Psych]","suburb":"Flemington","ogc_fid":786,"long":144.935236,"lat":-37.782172},"id":"my_hospital_beds.786"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.956864,-37.799259]},"properties":{"id":786,"hospital_name":"Royal Melbourne Hospital [Parkville]","suburb":"Parkville","ogc_fid":790,"long":144.956864,"lat":-37.799259},"id":"my_hospital_beds.790"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.94804900000003,-37.778813]},"properties":{"id":787,"hospital_name":"Royal Melbourne Hospital- Royal Park Campus","suburb":"Parkville","ogc_fid":791,"long":144.948049,"lat":-37.778813},"id":"my_hospital_beds.791"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.023715,-37.789522]},"properties":{"id":794,"hospital_name":"Royal Talbot Rehabilitation Centre [Kew]","suburb":"Kew","ogc_fid":798,"long":145.023715,"lat":-37.789522},"id":"my_hospital_beds.798"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.954825,-37.798772]},"properties":{"id":795,"hospital_name":"Royal Women''s Hospital [Parkville]","suburb":"Parkville","ogc_fid":799,"long":144.954825,"lat":-37.798772},"id":"my_hospital_beds.799"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.018157,-37.961049]},"properties":{"id":803,"hospital_name":"Sandringham Hospital","suburb":"Sandringham","ogc_fid":807,"long":145.018157,"lat":-37.961049},"id":"my_hospital_beds.807"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.191922,-37.966243]},"properties":{"id":821,"hospital_name":"South Eastern Private","suburb":"Noble Park","ogc_fid":824,"long":145.191922,"lat":-37.966243},"id":"my_hospital_beds.824"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.052585,-37.809085]},"properties":{"id":844,"hospital_name":"St George''s Health Service- Aged Care","suburb":"Kew","ogc_fid":846,"long":145.052585,"lat":-37.809085},"id":"my_hospital_beds.846"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.344974,-38.034499]},"properties":{"id":849,"hospital_name":"St John of God Berwick Hospital","suburb":"Berwick","ogc_fid":851,"long":145.344974,"lat":-38.034499},"id":"my_hospital_beds.851"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.155926,-38.153035]},"properties":{"id":852,"hospital_name":"St John of God Frankston Rehabilitation Hospital","suburb":"Frankston","ogc_fid":854,"long":145.155926,"lat":-38.153035},"id":"my_hospital_beds.854"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.357679,-38.151567]},"properties":{"id":853,"hospital_name":"St John of God Geelong Hospital","suburb":"Geelong","ogc_fid":855,"long":144.357679,"lat":-38.151567},"id":"my_hospital_beds.855"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.213143,-37.970226]},"properties":{"id":857,"hospital_name":"St John of God Pinelodge Clinic","suburb":"Dandenong","ogc_fid":858,"long":145.213143,"lat":-37.970226},"id":"my_hospital_beds.858"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.975231,-37.806545]},"properties":{"id":869,"hospital_name":"St Vincent''s Hospital [Fitzroy]","suburb":"Fitzroy","ogc_fid":870,"long":144.975231,"lat":-37.806545},"id":"my_hospital_beds.870"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.984164,-37.811733]},"properties":{"id":872,"hospital_name":"St Vincent''s Private Hospital East Melbourne","suburb":"East Melbourne","ogc_fid":873,"long":144.984164,"lat":-37.811733},"id":"my_hospital_beds.873"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.976029,-37.807993]},"properties":{"id":873,"hospital_name":"St Vincent''s Private Hospital Fitzroy","suburb":"Fitzroy","ogc_fid":874,"long":144.976029,"lat":-37.807993},"id":"my_hospital_beds.874"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.023694,-37.806567]},"properties":{"id":874,"hospital_name":"St Vincent''s Private Hospital Kew","suburb":"Kew","ogc_fid":875,"long":145.023694,"lat":-37.806567},"id":"my_hospital_beds.875"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.732674,-37.576998]},"properties":{"id":886,"hospital_name":"Sunbury Day Hospital","suburb":"Sunbury","ogc_fid":887,"long":144.732674,"lat":-37.576998},"id":"my_hospital_beds.887"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.816477,-37.759179]},"properties":{"id":890,"hospital_name":"Sunshine Hospital","suburb":"St Albans","ogc_fid":891,"long":144.816477,"lat":-37.759179},"id":"my_hospital_beds.891"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.96356,-37.76018]},"properties":{"id":902,"hospital_name":"Sydney Road Clinic","suburb":"Brunswick","ogc_fid":903,"long":144.96356,"lat":-37.76018},"id":"my_hospital_beds.903"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.981937,-37.846087]},"properties":{"id":919,"hospital_name":"The Alfred","suburb":"Prahran","ogc_fid":920,"long":144.981937,"lat":-37.846087},"id":"my_hospital_beds.920"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.998513,-37.854809]},"properties":{"id":920,"hospital_name":"The Avenue Hospital","suburb":"Windsor","ogc_fid":921,"long":144.998513,"lat":-37.854809},"id":"my_hospital_beds.921"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.040939,-38.223524]},"properties":{"id":921,"hospital_name":"The Bays Hospital","suburb":"Mornington","ogc_fid":922,"long":145.040939,"lat":-38.223524},"id":"my_hospital_beds.922"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.957915,-37.301794]},"properties":{"id":931,"hospital_name":"The Kilmore & District Hospital","suburb":"Kilmore","ogc_fid":931,"long":144.957915,"lat":-37.301794},"id":"my_hospital_beds.931"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.335728,-38.118795]},"properties":{"id":932,"hospital_name":"The McKellar Centre","suburb":"North Geelong","ogc_fid":932,"long":144.335728,"lat":-38.118795},"id":"my_hospital_beds.932"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.998739,-37.814361]},"properties":{"id":933,"hospital_name":"The Melbourne Clinic","suburb":"Richmond","ogc_fid":933,"long":144.998739,"lat":-37.814361},"id":"my_hospital_beds.933"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.041697,-38.230174]},"properties":{"id":935,"hospital_name":"The Mornington Centre","suburb":"Mornington","ogc_fid":935,"long":145.041697,"lat":-38.230174},"id":"my_hospital_beds.935"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.014381,-37.653417]},"properties":{"id":936,"hospital_name":"The Northern Hospital [Epping]","suburb":"Epping","ogc_fid":936,"long":145.014381,"lat":-37.653417},"id":"my_hospital_beds.936"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.164542,-37.852712]},"properties":{"id":938,"hospital_name":"The Peter James Centre [East Burwood]","suburb":"Forest Hill","ogc_fid":938,"long":145.164542,"lat":-37.852712},"id":"my_hospital_beds.938"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.976245,-37.808978]},"properties":{"id":941,"hospital_name":"The Royal Victorian Eye & Ear Hospital","suburb":"East Melbourne","ogc_fid":941,"long":144.976245,"lat":-37.808978},"id":"my_hospital_beds.941"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.213122,-37.938409]},"properties":{"id":949,"hospital_name":"The Valley Private Hospital","suburb":"Mulgrave","ogc_fid":949,"long":145.213122,"lat":-37.938409},"id":"my_hospital_beds.949"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.997225,-37.847714]},"properties":{"id":950,"hospital_name":"The Victoria Clinic","suburb":"Prahran","ogc_fid":950,"long":144.997225,"lat":-37.847714},"id":"my_hospital_beds.950"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.161425,-37.898227]},"properties":{"id":951,"hospital_name":"The Victorian Rehabilitation Centre","suburb":"Glen Waverley","ogc_fid":951,"long":145.161425,"lat":-37.898227},"id":"my_hospital_beds.951"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.351204,-37.756319]},"properties":{"id":1068,"hospital_name":"Yarra Ranges Health","suburb":"Lilydale","ogc_fid":1068,"long":145.351204,"lat":-37.756319},"id":"my_hospital_beds.1068"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.887421,-37.797407]},"properties":{"id":978,"hospital_name":"Tweddle Child & Family Health Centre [Footscray]","suburb":"Footscray","ogc_fid":978,"long":144.887421,"lat":-37.797407},"id":"my_hospital_beds.978"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.97476,-37.808521]},"properties":{"id":985,"hospital_name":"Victoria Parade Surgery Centre","suburb":"East Melboune","ogc_fid":985,"long":144.97476,"lat":-37.808521},"id":"my_hospital_beds.985"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.012975,-37.78931]},"properties":{"id":986,"hospital_name":"Victorian Institute of Forensic Mental Health","suburb":"Fairfield","ogc_fid":986,"long":145.012975,"lat":-37.78931},"id":"my_hospital_beds.986"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.950757,-37.812763]},"properties":{"id":987,"hospital_name":"Victorian Institute of Forensic Mental Health Prison Health Service","suburb":"Melbourne","ogc_fid":987,"long":144.950757,"lat":-37.812763},"id":"my_hospital_beds.987"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.0556,-37.83252]},"properties":{"id":988,"hospital_name":"Vision Day Surgery Camberwell","suburb":"Camberwell","ogc_fid":988,"long":145.0556,"lat":-37.83252},"id":"my_hospital_beds.988"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.119433,-37.817591]},"properties":{"id":990,"hospital_name":"Vision Day Surgery Eastern","suburb":"Box Hill","ogc_fid":990,"long":145.119433,"lat":-37.817591},"id":"my_hospital_beds.990"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.895155,-37.800508]},"properties":{"id":991,"hospital_name":"Vision Day Surgery Footscray","suburb":"Footscray","ogc_fid":991,"long":144.895155,"lat":-37.800508},"id":"my_hospital_beds.991"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.980304,-37.850605]},"properties":{"id":994,"hospital_name":"Vision Eye Institute","suburb":"Melbourne","ogc_fid":994,"long":144.980304,"lat":-37.850605},"id":"my_hospital_beds.994"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.225902,-37.848525]},"properties":{"id":1006,"hospital_name":"Wantirna Health","suburb":"Wantirna","ogc_fid":1006,"long":145.225902,"lat":-37.848525},"id":"my_hospital_beds.1006"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.060728,-37.754419]},"properties":{"id":1013,"hospital_name":"Warringal Private Hospital","suburb":"Heidelberg","ogc_fid":1013,"long":145.060728,"lat":-37.754419},"id":"my_hospital_beds.1013"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.145798,-37.884632]},"properties":{"id":1016,"hospital_name":"Waverley Private Hospital","suburb":"Mount Waverley","ogc_fid":1016,"long":145.145798,"lat":-37.884632},"id":"my_hospital_beds.1016"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.698621,-37.886587]},"properties":{"id":1022,"hospital_name":"Werribee Mercy Hospital","suburb":"Werribee","ogc_fid":1022,"long":144.698621,"lat":-37.886587},"id":"my_hospital_beds.1022"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.887191,-37.792298]},"properties":{"id":1035,"hospital_name":"Western Hospital [Footscray]","suburb":"Footscray","ogc_fid":1035,"long":144.887191,"lat":-37.792298},"id":"my_hospital_beds.1035"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.885932,-37.793045]},"properties":{"id":1036,"hospital_name":"Western Private Hospital","suburb":"Footscray","ogc_fid":1036,"long":144.885932,"lat":-37.793045},"id":"my_hospital_beds.1036"},{"type":"Feature","geometry":{"type":"Point","coordinates":[144.89233900000002,-37.863576]},"properties":{"id":1044,"hospital_name":"Williamstown Hospital","suburb":"Williamstown","ogc_fid":1044,"long":144.892339,"lat":-37.863576},"id":"my_hospital_beds.1044"},{"type":"Feature","geometry":{"type":"Point","coordinates":[145.430724,-37.213634]},"properties":{"id":1072,"hospital_name":"Yea & District Memorial Hospital","suburb":"Yea","ogc_fid":1072,"long":145.430724,"lat":-37.213634},"id":"my_hospital_beds.1072"}]}
+{
+    "type": "FeatureCollection",
+    "bbox": [
+        144.335728,
+        -38.430328,
+        145.828249,
+        -37.195065
+    ],
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "EPSG:4283"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.393267,
+                    -38.182406
+                ]
+            },
+            "properties": {
+                "id": 927,
+                "hospital_name": "The Geelong Clinic",
+                "suburb": "St Albans Park",
+                "ogc_fid": 5,
+                "long": 144.393267,
+                "lat": -38.182406
+            },
+            "id": "my_hospital_beds.5"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.972151,
+                    -37.834246
+                ]
+            },
+            "properties": {
+                "id": 8,
+                "hospital_name": "Albert Road Clinic",
+                "suburb": "Melbourne",
+                "ogc_fid": 13,
+                "long": 144.972151,
+                "lat": -37.834246
+            },
+            "id": "my_hospital_beds.13"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.716143,
+                    -37.195065
+                ]
+            },
+            "properties": {
+                "id": 12,
+                "hospital_name": "Alexandra District Hospital",
+                "suburb": "Alexandra",
+                "ogc_fid": 17,
+                "long": 145.716143,
+                "lat": -37.195065
+            },
+            "id": "my_hospital_beds.17"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.314166,
+                    -37.898663
+                ]
+            },
+            "properties": {
+                "id": 22,
+                "hospital_name": "Angliss Hospital",
+                "suburb": "Upper Ferntree Gully",
+                "ogc_fid": 27,
+                "long": 145.314166,
+                "lat": -37.898663
+            },
+            "id": "my_hospital_beds.27"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.0568,
+                    -37.96046
+                ]
+            },
+            "properties": {
+                "id": 187,
+                "hospital_name": "Chesterville Day Hospital",
+                "suburb": "Cheltenham",
+                "ogc_fid": 35,
+                "long": 145.0568,
+                "lat": -37.96046
+            },
+            "id": "my_hospital_beds.35"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.060236,
+                    -37.756355
+                ]
+            },
+            "properties": {
+                "id": 34,
+                "hospital_name": "Austin Hospital [Heidelberg]",
+                "suburb": "Heidelberg",
+                "ogc_fid": 40,
+                "long": 145.060236,
+                "lat": -37.756355
+            },
+            "id": "my_hospital_beds.40"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.998213,
+                    -37.856118
+                ]
+            },
+            "properties": {
+                "id": 35,
+                "hospital_name": "Avenue Plastic Surgery",
+                "suburb": "Windsor",
+                "ogc_fid": 41,
+                "long": 144.998213,
+                "lat": -37.856118
+            },
+            "id": "my_hospital_beds.41"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.049136,
+                    -38.225484
+                ]
+            },
+            "properties": {
+                "id": 69,
+                "hospital_name": "Beleura Private Hospital",
+                "suburb": "Mornington",
+                "ogc_fid": 75,
+                "long": 145.049136,
+                "lat": -38.225484
+            },
+            "id": "my_hospital_beds.75"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.156018,
+                    -37.833073
+                ]
+            },
+            "properties": {
+                "id": 70,
+                "hospital_name": "Bellbird Private Hospital",
+                "suburb": "Blackburn South",
+                "ogc_fid": 76,
+                "long": 145.156018,
+                "lat": -37.833073
+            },
+            "id": "my_hospital_beds.76"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.346487,
+                    -38.033667
+                ]
+            },
+            "properties": {
+                "id": 78,
+                "hospital_name": "Berwick Eye and Surgicentre",
+                "suburb": "Berwick",
+                "ogc_fid": 84,
+                "long": 145.346487,
+                "lat": -38.033667
+            },
+            "id": "my_hospital_beds.84"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.119094,
+                    -37.813682
+                ]
+            },
+            "properties": {
+                "id": 105,
+                "hospital_name": "Box Hill Hospital",
+                "suburb": "Box Hill",
+                "ogc_fid": 111,
+                "long": 145.119094,
+                "lat": -37.813682
+            },
+            "id": "my_hospital_beds.111"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.913106,
+                    -37.684321
+                ]
+            },
+            "properties": {
+                "id": 115,
+                "hospital_name": "Broadmeadows Health Service",
+                "suburb": "Broadmeadows",
+                "ogc_fid": 121,
+                "long": 144.913106,
+                "lat": -37.684321
+            },
+            "id": "my_hospital_beds.121"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.055569,
+                    -37.701124
+                ]
+            },
+            "properties": {
+                "id": 122,
+                "hospital_name": "Bundoora Extended Care Centre",
+                "suburb": "Bundoora",
+                "ogc_fid": 129,
+                "long": 145.055569,
+                "lat": -37.701124
+            },
+            "id": "my_hospital_beds.129"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.991572,
+                    -37.91165
+                ]
+            },
+            "properties": {
+                "id": 130,
+                "hospital_name": "Cabrini Brighton",
+                "suburb": "Brighton",
+                "ogc_fid": 138,
+                "long": 144.991572,
+                "lat": -37.91165
+            },
+            "id": "my_hospital_beds.138"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.009328,
+                    -37.88543
+                ]
+            },
+            "properties": {
+                "id": 131,
+                "hospital_name": "Cabrini Health Elsternwick Rehabilitation - Glenhuntly Rd",
+                "suburb": "Elsternwick",
+                "ogc_fid": 139,
+                "long": 145.009328,
+                "lat": -37.88543
+            },
+            "id": "my_hospital_beds.139"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.01039,
+                    -37.884778
+                ]
+            },
+            "properties": {
+                "id": 132,
+                "hospital_name": "Cabrini Health Elsternwick Rehabilitation - Hopetoun",
+                "suburb": "Elsternwick",
+                "ogc_fid": 140,
+                "long": 145.01039,
+                "lat": -37.884778
+            },
+            "id": "my_hospital_beds.140"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.0335,
+                    -37.861641
+                ]
+            },
+            "properties": {
+                "id": 133,
+                "hospital_name": "Cabrini Malvern",
+                "suburb": "Malvern",
+                "ogc_fid": 141,
+                "long": 145.0335,
+                "lat": -37.861641
+            },
+            "id": "my_hospital_beds.141"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.009017,
+                    -37.854034000000006
+                ]
+            },
+            "properties": {
+                "id": 134,
+                "hospital_name": "Cabrini Prahran",
+                "suburb": "Prahran",
+                "ogc_fid": 142,
+                "long": 145.009017,
+                "lat": -37.854034
+            },
+            "id": "my_hospital_beds.142"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.013415,
+                    -37.896962
+                ]
+            },
+            "properties": {
+                "id": 141,
+                "hospital_name": "Calvary Health Care Bethlehem",
+                "suburb": "Caulfield",
+                "ogc_fid": 149,
+                "long": 145.013415,
+                "lat": -37.896962
+            },
+            "id": "my_hospital_beds.149"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.970625,
+                    -37.809419
+                ]
+            },
+            "properties": {
+                "id": 165,
+                "hospital_name": "Careplans Assessment Victoria",
+                "suburb": null,
+                "ogc_fid": 174,
+                "long": 144.970625,
+                "lat": -37.809419
+            },
+            "id": "my_hospital_beds.174"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.015557,
+                    -37.804706
+                ]
+            },
+            "properties": {
+                "id": 166,
+                "hospital_name": "Caritas Christi Hospice [Kew]",
+                "suburb": "Kew",
+                "ogc_fid": 175,
+                "long": 145.015557,
+                "lat": -37.804706
+            },
+            "id": "my_hospital_beds.175"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.347181,
+                    -38.045325
+                ]
+            },
+            "properties": {
+                "id": 168,
+                "hospital_name": "Casey Hospital",
+                "suburb": "Berwick",
+                "ogc_fid": 177,
+                "long": 145.347181,
+                "lat": -38.045325
+            },
+            "id": "my_hospital_beds.177"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.016892,
+                    -37.882707
+                ]
+            },
+            "properties": {
+                "id": 174,
+                "hospital_name": "Caulfield Hospital",
+                "suburb": "Caulfield",
+                "ogc_fid": 183,
+                "long": 145.016892,
+                "lat": -37.882707
+            },
+            "id": "my_hospital_beds.183"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.072574,
+                    -37.990835
+                ]
+            },
+            "properties": {
+                "id": 208,
+                "hospital_name": "Como Private Hospital",
+                "suburb": "Parkdale",
+                "ogc_fid": 216,
+                "long": 145.072574,
+                "lat": -37.990835
+            },
+            "id": "my_hospital_beds.216"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.21715,
+                    -37.977201
+                ]
+            },
+            "properties": {
+                "id": 224,
+                "hospital_name": "Corymbia House",
+                "suburb": "Dandenong",
+                "ogc_fid": 229,
+                "long": 145.21715,
+                "lat": -37.977201
+            },
+            "id": "my_hospital_beds.229"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.048305,
+                    -37.808694
+                ]
+            },
+            "properties": {
+                "id": 225,
+                "hospital_name": "Cotham Private Hospital",
+                "suburb": "Kew",
+                "ogc_fid": 230,
+                "long": 145.048305,
+                "lat": -37.808694
+            },
+            "id": "my_hospital_beds.230"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.91928,
+                    -37.596015
+                ]
+            },
+            "properties": {
+                "id": 229,
+                "hospital_name": "Craigieburn Health Service",
+                "suburb": "Craigieburn",
+                "ogc_fid": 234,
+                "long": 144.91928,
+                "lat": -37.596015
+            },
+            "id": "my_hospital_beds.234"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.280832,
+                    -38.113312
+                ]
+            },
+            "properties": {
+                "id": 230,
+                "hospital_name": "Cranbourne Integrated Care Centre",
+                "suburb": "Cranbourne",
+                "ogc_fid": 235,
+                "long": 145.280832,
+                "lat": -38.113312
+            },
+            "id": "my_hospital_beds.235"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.742309,
+                    -37.781307
+                ]
+            },
+            "properties": {
+                "id": 246,
+                "hospital_name": "Dame Phyllis Frost Centre - Marmak unit",
+                "suburb": "Deer Park",
+                "ogc_fid": 252,
+                "long": 144.742309,
+                "lat": -37.781307
+            },
+            "id": "my_hospital_beds.252"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.218529,
+                    -37.976459
+                ]
+            },
+            "properties": {
+                "id": 247,
+                "hospital_name": "Dandenong Campus",
+                "suburb": "Dandenong",
+                "ogc_fid": 253,
+                "long": 145.218529,
+                "lat": -37.976459
+            },
+            "id": "my_hospital_beds.253"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.964529,
+                    -37.799299
+                ]
+            },
+            "properties": {
+                "id": 259,
+                "hospital_name": "Dental Health Services Victoria",
+                "suburb": "Carlton",
+                "ogc_fid": 265,
+                "long": 144.964529,
+                "lat": -37.799299
+            },
+            "id": "my_hospital_beds.265"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.433264,
+                    -37.678267
+                ]
+            },
+            "properties": {
+                "id": 265,
+                "hospital_name": "Djerriwarrh Health Service [Bacchus Marsh]",
+                "suburb": "Bacchus Marsh",
+                "ogc_fid": 271,
+                "long": 144.433264,
+                "lat": -37.678267
+            },
+            "id": "my_hospital_beds.271"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.171655,
+                    -37.789836
+                ]
+            },
+            "properties": {
+                "id": 268,
+                "hospital_name": "Donvale Rehabilitation Hospital",
+                "suburb": "Donvale",
+                "ogc_fid": 274,
+                "long": 145.171655,
+                "lat": -37.789836
+            },
+            "id": "my_hospital_beds.274"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.947436,
+                    -37.723402
+                ]
+            },
+            "properties": {
+                "id": 271,
+                "hospital_name": "Dorset Rehabilitation Centre",
+                "suburb": "Pascoe Vale",
+                "ogc_fid": 276,
+                "long": 144.947436,
+                "lat": -37.723402
+            },
+            "id": "my_hospital_beds.276"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.987547,
+                    -37.815662
+                ]
+            },
+            "properties": {
+                "id": 295,
+                "hospital_name": "Epworth Cliveden",
+                "suburb": "East Melbourne",
+                "ogc_fid": 300,
+                "long": 144.987547,
+                "lat": -37.815662
+            },
+            "id": "my_hospital_beds.300"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.119368,
+                    -37.814678
+                ]
+            },
+            "properties": {
+                "id": 296,
+                "hospital_name": "Epworth Eastern",
+                "suburb": "Box Hill",
+                "ogc_fid": 301,
+                "long": 145.119368,
+                "lat": -37.814678
+            },
+            "id": "my_hospital_beds.301"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.984107,
+                    -37.810694
+                ]
+            },
+            "properties": {
+                "id": 297,
+                "hospital_name": "Epworth Freemasons [Clarendon Street]",
+                "suburb": "East Melbourne",
+                "ogc_fid": 302,
+                "long": 144.984107,
+                "lat": -37.810694
+            },
+            "id": "my_hospital_beds.302"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.98212,
+                    -37.809284
+                ]
+            },
+            "properties": {
+                "id": 298,
+                "hospital_name": "Epworth Freemasons [Victoria Parade]",
+                "suburb": "East Melbourne",
+                "ogc_fid": 303,
+                "long": 144.98212,
+                "lat": -37.809284
+            },
+            "id": "my_hospital_beds.303"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.023405,
+                    -37.821229
+                ]
+            },
+            "properties": {
+                "id": 299,
+                "hospital_name": "Epworth Hawthorn",
+                "suburb": "Hawthorn",
+                "ogc_fid": 304,
+                "long": 145.023405,
+                "lat": -37.821229
+            },
+            "id": "my_hospital_beds.304"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.002815,
+                    -37.913689
+                ]
+            },
+            "properties": {
+                "id": 300,
+                "hospital_name": "Epworth Rehabilitation Brighton",
+                "suburb": "Brighton",
+                "ogc_fid": 305,
+                "long": 145.002815,
+                "lat": -37.913689
+            },
+            "id": "my_hospital_beds.305"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.054689,
+                    -37.846223
+                ]
+            },
+            "properties": {
+                "id": 301,
+                "hospital_name": "Epworth Rehabilitation Camberwell",
+                "suburb": "Camberwell",
+                "ogc_fid": 307,
+                "long": 145.054689,
+                "lat": -37.846223
+            },
+            "id": "my_hospital_beds.307"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.993503,
+                    -37.817419
+                ]
+            },
+            "properties": {
+                "id": 302,
+                "hospital_name": "Epworth Rehabilitation Richmond",
+                "suburb": "Richmond",
+                "ogc_fid": 308,
+                "long": 144.993503,
+                "lat": -37.817419
+            },
+            "id": "my_hospital_beds.308"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.993029,
+                    -37.817433
+                ]
+            },
+            "properties": {
+                "id": 303,
+                "hospital_name": "Epworth Richmond",
+                "suburb": "Richmond",
+                "ogc_fid": 309,
+                "long": 144.993029,
+                "lat": -37.817433
+            },
+            "id": "my_hospital_beds.309"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.955135,
+                    -37.798758
+                ]
+            },
+            "properties": {
+                "id": 322,
+                "hospital_name": "Frances Perry House",
+                "suburb": "Parkville",
+                "ogc_fid": 328,
+                "long": 144.955135,
+                "lat": -37.798758
+            },
+            "id": "my_hospital_beds.328"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.128428,
+                    -38.150791
+                ]
+            },
+            "properties": {
+                "id": 323,
+                "hospital_name": "Frankston Hospital",
+                "suburb": "Frankston",
+                "ogc_fid": 329,
+                "long": 145.128428,
+                "lat": -38.150791
+            },
+            "id": "my_hospital_beds.329"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.364964,
+                    -38.151533
+                ]
+            },
+            "properties": {
+                "id": 330,
+                "hospital_name": "Geelong Hospital",
+                "suburb": "Geelong",
+                "ogc_fid": 336,
+                "long": 144.364964,
+                "lat": -38.151533
+            },
+            "id": "my_hospital_beds.336"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.364085,
+                    -38.150951
+                ]
+            },
+            "properties": {
+                "id": 331,
+                "hospital_name": "Geelong Private Hospital",
+                "suburb": "Geelong",
+                "ogc_fid": 337,
+                "long": 144.364085,
+                "lat": -38.150951
+            },
+            "id": "my_hospital_beds.337"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.828249,
+                    -38.430328
+                ]
+            },
+            "properties": {
+                "id": 338,
+                "hospital_name": "Gippsland Southern Health Service - Korumburra",
+                "suburb": "Korumburra",
+                "ogc_fid": 344,
+                "long": 145.828249,
+                "lat": -38.430328
+            },
+            "id": "my_hospital_beds.344"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.019265,
+                    -37.900377
+                ]
+            },
+            "properties": {
+                "id": 341,
+                "hospital_name": "Glen Eira Day Surgery",
+                "suburb": "Caulfield South",
+                "ogc_fid": 347,
+                "long": 145.019265,
+                "lat": -37.900377
+            },
+            "id": "my_hospital_beds.347"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.031544,
+                    -37.81945900000001
+                ]
+            },
+            "properties": {
+                "id": 344,
+                "hospital_name": "Glenferrie Private Hospital",
+                "suburb": "Hawthorn",
+                "ogc_fid": 350,
+                "long": 145.031544,
+                "lat": -37.819459
+            },
+            "id": "my_hospital_beds.350"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.14976900000002,
+                    -38.173447
+                ]
+            },
+            "properties": {
+                "id": 351,
+                "hospital_name": "Golf Links Road Rehabilitation Centre",
+                "suburb": "Frankston",
+                "ogc_fid": 358,
+                "long": 145.149769,
+                "lat": -38.173447
+            },
+            "id": "my_hospital_beds.358"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.529032,
+                    -37.646879
+                ]
+            },
+            "properties": {
+                "id": 387,
+                "hospital_name": "Healesville and District Hospital",
+                "suburb": "Healesville",
+                "ogc_fid": 393,
+                "long": 145.529032,
+                "lat": -37.646879
+            },
+            "id": "my_hospital_beds.393"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.081172,
+                    -37.947818
+                ]
+            },
+            "properties": {
+                "id": 388,
+                "hospital_name": "Healthscope Independence Services",
+                "suburb": "Moorabbin",
+                "ogc_fid": 394,
+                "long": 145.081172,
+                "lat": -37.947818
+            },
+            "id": "my_hospital_beds.394"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.04749,
+                    -37.755973
+                ]
+            },
+            "properties": {
+                "id": 392,
+                "hospital_name": "Heidelberg Repatriation Hospital [Heidelberg West]",
+                "suburb": "Heidelberg West",
+                "ogc_fid": 398,
+                "long": 145.04749,
+                "lat": -37.755973
+            },
+            "id": "my_hospital_beds.398"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.828494,
+                    -37.869448
+                ]
+            },
+            "properties": {
+                "id": 402,
+                "hospital_name": "Hobsons Bay Endoscopy Centre Altona",
+                "suburb": "Altona",
+                "ogc_fid": 408,
+                "long": 144.828494,
+                "lat": -37.869448
+            },
+            "id": "my_hospital_beds.408"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.758677,
+                    -37.693365
+                ]
+            },
+            "properties": {
+                "id": 403,
+                "hospital_name": "Hobsons Bay Endoscopy Centre Sydenham",
+                "suburb": "Sydenham",
+                "ogc_fid": 409,
+                "long": 144.758677,
+                "lat": -37.693365
+            },
+            "id": "my_hospital_beds.409"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.686494,
+                    -37.890649
+                ]
+            },
+            "properties": {
+                "id": 404,
+                "hospital_name": "Hobsons Bay Endoscopy Centre Werribee",
+                "suburb": "Werribee",
+                "ogc_fid": 410,
+                "long": 144.686494,
+                "lat": -37.890649
+            },
+            "id": "my_hospital_beds.410"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.958398,
+                    -37.754369
+                ]
+            },
+            "properties": {
+                "id": 433,
+                "hospital_name": "John Fawkner Private Hospital",
+                "suburb": "Coburg",
+                "ogc_fid": 439,
+                "long": 144.958398,
+                "lat": -37.754369
+            },
+            "id": "my_hospital_beds.439"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.978596,
+                    -37.816762
+                ]
+            },
+            "properties": {
+                "id": 436,
+                "hospital_name": "Jolimont Endoscopy",
+                "suburb": "East Melbourne",
+                "ogc_fid": 442,
+                "long": 144.978596,
+                "lat": -37.816762
+            },
+            "id": "my_hospital_beds.442"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.078969,
+                    -37.955018
+                ]
+            },
+            "properties": {
+                "id": 468,
+                "hospital_name": "Kingston Centre [Cheltenham]",
+                "suburb": "Cheltenham",
+                "ogc_fid": 474,
+                "long": 145.078969,
+                "lat": -37.955018
+            },
+            "id": "my_hospital_beds.474"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.228035,
+                    -37.849645
+                ]
+            },
+            "properties": {
+                "id": 471,
+                "hospital_name": "Knox Private Hospital",
+                "suburb": "Wantirna",
+                "ogc_fid": 477,
+                "long": 145.228035,
+                "lat": -37.849645
+            },
+            "id": "my_hospital_beds.477"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.484433,
+                    -38.200653
+                ]
+            },
+            "properties": {
+                "id": 474,
+                "hospital_name": "Kooweerup Regional Health Service",
+                "suburb": "Koo Wee Rup",
+                "ogc_fid": 480,
+                "long": 145.484433,
+                "lat": -38.200653
+            },
+            "id": "my_hospital_beds.480"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.469742,
+                    -37.254431
+                ]
+            },
+            "properties": {
+                "id": 481,
+                "hospital_name": "Kyneton District Health Service",
+                "suburb": "Kyneton",
+                "ogc_fid": 487,
+                "long": 144.469742,
+                "lat": -37.254431
+            },
+            "id": "my_hospital_beds.487"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.003259,
+                    -37.942699
+                ]
+            },
+            "properties": {
+                "id": 499,
+                "hospital_name": "Linacre Private Hospital",
+                "suburb": "Hampton",
+                "ogc_fid": 505,
+                "long": 145.003259,
+                "lat": -37.942699
+            },
+            "id": "my_hospital_beds.505"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.115662,
+                    -37.773471
+                ]
+            },
+            "properties": {
+                "id": 531,
+                "hospital_name": "Manningham Day Procedure Centre",
+                "suburb": "Templestowe Lower",
+                "ogc_fid": 537,
+                "long": 145.115662,
+                "lat": -37.773471
+            },
+            "id": "my_hospital_beds.537"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.254535,
+                    -37.806884
+                ]
+            },
+            "properties": {
+                "id": 538,
+                "hospital_name": "Maroondah Hospital [East Ringwood]",
+                "suburb": "Ringwood East",
+                "ogc_fid": 545,
+                "long": 145.254535,
+                "lat": -37.806884
+            },
+            "id": "my_hospital_beds.545"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.003096,
+                    -37.869799
+                ]
+            },
+            "properties": {
+                "id": 544,
+                "hospital_name": "Masada Private Hospital",
+                "suburb": "St Kilda",
+                "ogc_fid": 551,
+                "long": 145.003096,
+                "lat": -37.869799
+            },
+            "id": "my_hospital_beds.551"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.018774,
+                    -37.869064
+                ]
+            },
+            "properties": {
+                "id": 565,
+                "hospital_name": "Melbourne MediBrain & MediSleep Centre",
+                "suburb": "Caulfield North",
+                "ogc_fid": 572,
+                "long": 145.018774,
+                "lat": -37.869064
+            },
+            "id": "my_hospital_beds.572"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.971391,
+                    -37.814488
+                ]
+            },
+            "properties": {
+                "id": 566,
+                "hospital_name": "Melbourne Oral & Facial Surgery",
+                "suburb": "Melbourne",
+                "ogc_fid": 573,
+                "long": 144.971391,
+                "lat": -37.814488
+            },
+            "id": "my_hospital_beds.573"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.957025,
+                    -37.798272
+                ]
+            },
+            "properties": {
+                "id": 567,
+                "hospital_name": "Melbourne Private Hospital",
+                "suburb": "Parkville",
+                "ogc_fid": 574,
+                "long": 144.957025,
+                "lat": -37.798272
+            },
+            "id": "my_hospital_beds.574"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.558284,
+                    -37.686449
+                ]
+            },
+            "properties": {
+                "id": 568,
+                "hospital_name": "Melton Health",
+                "suburb": "Melton West",
+                "ogc_fid": 575,
+                "long": 144.558284,
+                "lat": -37.686449
+            },
+            "id": "my_hospital_beds.575"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.061729,
+                    -37.816688000000006
+                ]
+            },
+            "properties": {
+                "id": 573,
+                "hospital_name": "Mercy Health - O''Connell Family Centre",
+                "suburb": "Canterbury",
+                "ogc_fid": 580,
+                "long": 145.061729,
+                "lat": -37.816688
+            },
+            "id": "my_hospital_beds.580"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.061008,
+                    -37.75607500000001
+                ]
+            },
+            "properties": {
+                "id": 574,
+                "hospital_name": "Mercy Hospital for Women",
+                "suburb": "Heidelberg",
+                "ogc_fid": 581,
+                "long": 145.061008,
+                "lat": -37.756075
+            },
+            "id": "my_hospital_beds.581"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.194808,
+                    -37.810436
+                ]
+            },
+            "properties": {
+                "id": 589,
+                "hospital_name": "Mitcham Private Hospital",
+                "suburb": "Mitcham",
+                "ogc_fid": 596,
+                "long": 145.194808,
+                "lat": -37.810436
+            },
+            "id": "my_hospital_beds.596"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.123128,
+                    -37.921176
+                ]
+            },
+            "properties": {
+                "id": 595,
+                "hospital_name": "Monash Medical Centre [Clayton]",
+                "suburb": "Clayton",
+                "ogc_fid": 603,
+                "long": 145.123128,
+                "lat": -37.921176
+            },
+            "id": "my_hospital_beds.603"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.063197,
+                    -37.920697
+                ]
+            },
+            "properties": {
+                "id": 596,
+                "hospital_name": "Monash Medical Centre [Moorabbin]",
+                "suburb": "East Bentleigh",
+                "ogc_fid": 604,
+                "long": 145.063197,
+                "lat": -37.920697
+            },
+            "id": "my_hospital_beds.604"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.087358,
+                    -38.168269
+                ]
+            },
+            "properties": {
+                "id": 614,
+                "hospital_name": "Mount Eliza Aged Care & Rehabilitation Service",
+                "suburb": "Mount Eliza",
+                "ogc_fid": 622,
+                "long": 145.087358,
+                "lat": -38.168269
+            },
+            "id": "my_hospital_beds.622"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.031344,
+                    -37.763424
+                ]
+            },
+            "properties": {
+                "id": 668,
+                "hospital_name": "North Eastern Rehabilitation Centre",
+                "suburb": "Ivanhoe",
+                "ogc_fid": 675,
+                "long": 145.031344,
+                "lat": -37.763424
+            },
+            "id": "my_hospital_beds.675"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.061631,
+                    -37.691208
+                ]
+            },
+            "properties": {
+                "id": 679,
+                "hospital_name": "Northpark Private Hospital",
+                "suburb": "Bundoora",
+                "ogc_fid": 687,
+                "long": 145.061631,
+                "lat": -37.691208
+            },
+            "id": "my_hospital_beds.687"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.886617,
+                    -37.791926
+                ]
+            },
+            "properties": {
+                "id": 699,
+                "hospital_name": "Orygen Inpatient Unit",
+                "suburb": "Footscray",
+                "ogc_fid": 706,
+                "long": 144.886617,
+                "lat": -37.791926
+            },
+            "id": "my_hospital_beds.706"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.169552,
+                    -38.157557
+                ]
+            },
+            "properties": {
+                "id": 714,
+                "hospital_name": "Peninsula Private Hospital Victoria",
+                "suburb": "Frankston",
+                "ogc_fid": 720,
+                "long": 145.169552,
+                "lat": -38.157557
+            },
+            "id": "my_hospital_beds.720"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.977372,
+                    -37.811589
+                ]
+            },
+            "properties": {
+                "id": 719,
+                "hospital_name": "Peter MacCallum Cancer Institute",
+                "suburb": "East Melbourne",
+                "ogc_fid": 726,
+                "long": 144.977372,
+                "lat": -37.811589
+            },
+            "id": "my_hospital_beds.726"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.178285,
+                    -37.972053
+                ]
+            },
+            "properties": {
+                "id": 746,
+                "hospital_name": "Queen Elizabeth Centre [Noble Park]",
+                "suburb": "Noble Park",
+                "ogc_fid": 752,
+                "long": 145.178285,
+                "lat": -37.972053
+            },
+            "id": "my_hospital_beds.752"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.243629,
+                    -37.811523
+                ]
+            },
+            "properties": {
+                "id": 761,
+                "hospital_name": "Ringwood Private Hospital",
+                "suburb": "Ringwood",
+                "ogc_fid": 767,
+                "long": 145.243629,
+                "lat": -37.811523
+            },
+            "id": "my_hospital_beds.767"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.884899,
+                    -38.362168
+                ]
+            },
+            "properties": {
+                "id": 774,
+                "hospital_name": "Rosebud Hospital",
+                "suburb": "Rosebud",
+                "ogc_fid": 778,
+                "long": 144.884899,
+                "lat": -38.362168
+            },
+            "id": "my_hospital_beds.778"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.89722000000003,
+                    -38.366789
+                ]
+            },
+            "properties": {
+                "id": 775,
+                "hospital_name": "Rosebud Rehabilitation Unit",
+                "suburb": "Rosebud",
+                "ogc_fid": 779,
+                "long": 144.89722,
+                "lat": -38.366789
+            },
+            "id": "my_hospital_beds.779"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.883554,
+                    -38.361748
+                ]
+            },
+            "properties": {
+                "id": 776,
+                "hospital_name": "Rosebud SurgiCentre",
+                "suburb": "Rosebud West",
+                "ogc_fid": 780,
+                "long": 144.883554,
+                "lat": -38.361748
+            },
+            "id": "my_hospital_beds.780"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.950859,
+                    -37.794997
+                ]
+            },
+            "properties": {
+                "id": 781,
+                "hospital_name": "Royal Children''s Hospital [Parkville]",
+                "suburb": "Parkville",
+                "ogc_fid": 785,
+                "long": 144.950859,
+                "lat": -37.794997
+            },
+            "id": "my_hospital_beds.785"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.935236,
+                    -37.782172
+                ]
+            },
+            "properties": {
+                "id": 782,
+                "hospital_name": "Royal Children''s Hospital [Travancore Psych]",
+                "suburb": "Flemington",
+                "ogc_fid": 786,
+                "long": 144.935236,
+                "lat": -37.782172
+            },
+            "id": "my_hospital_beds.786"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.956864,
+                    -37.799259
+                ]
+            },
+            "properties": {
+                "id": 786,
+                "hospital_name": "Royal Melbourne Hospital [Parkville]",
+                "suburb": "Parkville",
+                "ogc_fid": 790,
+                "long": 144.956864,
+                "lat": -37.799259
+            },
+            "id": "my_hospital_beds.790"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.94804900000003,
+                    -37.778813
+                ]
+            },
+            "properties": {
+                "id": 787,
+                "hospital_name": "Royal Melbourne Hospital- Royal Park Campus",
+                "suburb": "Parkville",
+                "ogc_fid": 791,
+                "long": 144.948049,
+                "lat": -37.778813
+            },
+            "id": "my_hospital_beds.791"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.023715,
+                    -37.789522
+                ]
+            },
+            "properties": {
+                "id": 794,
+                "hospital_name": "Royal Talbot Rehabilitation Centre [Kew]",
+                "suburb": "Kew",
+                "ogc_fid": 798,
+                "long": 145.023715,
+                "lat": -37.789522
+            },
+            "id": "my_hospital_beds.798"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.954825,
+                    -37.798772
+                ]
+            },
+            "properties": {
+                "id": 795,
+                "hospital_name": "Royal Women''s Hospital [Parkville]",
+                "suburb": "Parkville",
+                "ogc_fid": 799,
+                "long": 144.954825,
+                "lat": -37.798772
+            },
+            "id": "my_hospital_beds.799"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.018157,
+                    -37.961049
+                ]
+            },
+            "properties": {
+                "id": 803,
+                "hospital_name": "Sandringham Hospital",
+                "suburb": "Sandringham",
+                "ogc_fid": 807,
+                "long": 145.018157,
+                "lat": -37.961049
+            },
+            "id": "my_hospital_beds.807"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.191922,
+                    -37.966243
+                ]
+            },
+            "properties": {
+                "id": 821,
+                "hospital_name": "South Eastern Private",
+                "suburb": "Noble Park",
+                "ogc_fid": 824,
+                "long": 145.191922,
+                "lat": -37.966243
+            },
+            "id": "my_hospital_beds.824"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.052585,
+                    -37.809085
+                ]
+            },
+            "properties": {
+                "id": 844,
+                "hospital_name": "St George''s Health Service- Aged Care",
+                "suburb": "Kew",
+                "ogc_fid": 846,
+                "long": 145.052585,
+                "lat": -37.809085
+            },
+            "id": "my_hospital_beds.846"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.344974,
+                    -38.034499
+                ]
+            },
+            "properties": {
+                "id": 849,
+                "hospital_name": "St John of God Berwick Hospital",
+                "suburb": "Berwick",
+                "ogc_fid": 851,
+                "long": 145.344974,
+                "lat": -38.034499
+            },
+            "id": "my_hospital_beds.851"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.155926,
+                    -38.153035
+                ]
+            },
+            "properties": {
+                "id": 852,
+                "hospital_name": "St John of God Frankston Rehabilitation Hospital",
+                "suburb": "Frankston",
+                "ogc_fid": 854,
+                "long": 145.155926,
+                "lat": -38.153035
+            },
+            "id": "my_hospital_beds.854"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.357679,
+                    -38.151567
+                ]
+            },
+            "properties": {
+                "id": 853,
+                "hospital_name": "St John of God Geelong Hospital",
+                "suburb": "Geelong",
+                "ogc_fid": 855,
+                "long": 144.357679,
+                "lat": -38.151567
+            },
+            "id": "my_hospital_beds.855"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.213143,
+                    -37.970226
+                ]
+            },
+            "properties": {
+                "id": 857,
+                "hospital_name": "St John of God Pinelodge Clinic",
+                "suburb": "Dandenong",
+                "ogc_fid": 858,
+                "long": 145.213143,
+                "lat": -37.970226
+            },
+            "id": "my_hospital_beds.858"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.975231,
+                    -37.806545
+                ]
+            },
+            "properties": {
+                "id": 869,
+                "hospital_name": "St Vincent''s Hospital [Fitzroy]",
+                "suburb": "Fitzroy",
+                "ogc_fid": 870,
+                "long": 144.975231,
+                "lat": -37.806545
+            },
+            "id": "my_hospital_beds.870"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.984164,
+                    -37.811733
+                ]
+            },
+            "properties": {
+                "id": 872,
+                "hospital_name": "St Vincent''s Private Hospital East Melbourne",
+                "suburb": "East Melbourne",
+                "ogc_fid": 873,
+                "long": 144.984164,
+                "lat": -37.811733
+            },
+            "id": "my_hospital_beds.873"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.976029,
+                    -37.807993
+                ]
+            },
+            "properties": {
+                "id": 873,
+                "hospital_name": "St Vincent''s Private Hospital Fitzroy",
+                "suburb": "Fitzroy",
+                "ogc_fid": 874,
+                "long": 144.976029,
+                "lat": -37.807993
+            },
+            "id": "my_hospital_beds.874"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.023694,
+                    -37.806567
+                ]
+            },
+            "properties": {
+                "id": 874,
+                "hospital_name": "St Vincent''s Private Hospital Kew",
+                "suburb": "Kew",
+                "ogc_fid": 875,
+                "long": 145.023694,
+                "lat": -37.806567
+            },
+            "id": "my_hospital_beds.875"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.732674,
+                    -37.576998
+                ]
+            },
+            "properties": {
+                "id": 886,
+                "hospital_name": "Sunbury Day Hospital",
+                "suburb": "Sunbury",
+                "ogc_fid": 887,
+                "long": 144.732674,
+                "lat": -37.576998
+            },
+            "id": "my_hospital_beds.887"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.816477,
+                    -37.759179
+                ]
+            },
+            "properties": {
+                "id": 890,
+                "hospital_name": "Sunshine Hospital",
+                "suburb": "St Albans",
+                "ogc_fid": 891,
+                "long": 144.816477,
+                "lat": -37.759179
+            },
+            "id": "my_hospital_beds.891"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.96356,
+                    -37.76018
+                ]
+            },
+            "properties": {
+                "id": 902,
+                "hospital_name": "Sydney Road Clinic",
+                "suburb": "Brunswick",
+                "ogc_fid": 903,
+                "long": 144.96356,
+                "lat": -37.76018
+            },
+            "id": "my_hospital_beds.903"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.981937,
+                    -37.846087
+                ]
+            },
+            "properties": {
+                "id": 919,
+                "hospital_name": "The Alfred",
+                "suburb": "Prahran",
+                "ogc_fid": 920,
+                "long": 144.981937,
+                "lat": -37.846087
+            },
+            "id": "my_hospital_beds.920"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.998513,
+                    -37.854809
+                ]
+            },
+            "properties": {
+                "id": 920,
+                "hospital_name": "The Avenue Hospital",
+                "suburb": "Windsor",
+                "ogc_fid": 921,
+                "long": 144.998513,
+                "lat": -37.854809
+            },
+            "id": "my_hospital_beds.921"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.040939,
+                    -38.223524
+                ]
+            },
+            "properties": {
+                "id": 921,
+                "hospital_name": "The Bays Hospital",
+                "suburb": "Mornington",
+                "ogc_fid": 922,
+                "long": 145.040939,
+                "lat": -38.223524
+            },
+            "id": "my_hospital_beds.922"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.957915,
+                    -37.301794
+                ]
+            },
+            "properties": {
+                "id": 931,
+                "hospital_name": "The Kilmore & District Hospital",
+                "suburb": "Kilmore",
+                "ogc_fid": 931,
+                "long": 144.957915,
+                "lat": -37.301794
+            },
+            "id": "my_hospital_beds.931"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.335728,
+                    -38.118795
+                ]
+            },
+            "properties": {
+                "id": 932,
+                "hospital_name": "The McKellar Centre",
+                "suburb": "North Geelong",
+                "ogc_fid": 932,
+                "long": 144.335728,
+                "lat": -38.118795
+            },
+            "id": "my_hospital_beds.932"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.998739,
+                    -37.814361
+                ]
+            },
+            "properties": {
+                "id": 933,
+                "hospital_name": "The Melbourne Clinic",
+                "suburb": "Richmond",
+                "ogc_fid": 933,
+                "long": 144.998739,
+                "lat": -37.814361
+            },
+            "id": "my_hospital_beds.933"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.041697,
+                    -38.230174
+                ]
+            },
+            "properties": {
+                "id": 935,
+                "hospital_name": "The Mornington Centre",
+                "suburb": "Mornington",
+                "ogc_fid": 935,
+                "long": 145.041697,
+                "lat": -38.230174
+            },
+            "id": "my_hospital_beds.935"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.014381,
+                    -37.653417
+                ]
+            },
+            "properties": {
+                "id": 936,
+                "hospital_name": "The Northern Hospital [Epping]",
+                "suburb": "Epping",
+                "ogc_fid": 936,
+                "long": 145.014381,
+                "lat": -37.653417
+            },
+            "id": "my_hospital_beds.936"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.164542,
+                    -37.852712
+                ]
+            },
+            "properties": {
+                "id": 938,
+                "hospital_name": "The Peter James Centre [East Burwood]",
+                "suburb": "Forest Hill",
+                "ogc_fid": 938,
+                "long": 145.164542,
+                "lat": -37.852712
+            },
+            "id": "my_hospital_beds.938"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.976245,
+                    -37.808978
+                ]
+            },
+            "properties": {
+                "id": 941,
+                "hospital_name": "The Royal Victorian Eye & Ear Hospital",
+                "suburb": "East Melbourne",
+                "ogc_fid": 941,
+                "long": 144.976245,
+                "lat": -37.808978
+            },
+            "id": "my_hospital_beds.941"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.213122,
+                    -37.938409
+                ]
+            },
+            "properties": {
+                "id": 949,
+                "hospital_name": "The Valley Private Hospital",
+                "suburb": "Mulgrave",
+                "ogc_fid": 949,
+                "long": 145.213122,
+                "lat": -37.938409
+            },
+            "id": "my_hospital_beds.949"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.997225,
+                    -37.847714
+                ]
+            },
+            "properties": {
+                "id": 950,
+                "hospital_name": "The Victoria Clinic",
+                "suburb": "Prahran",
+                "ogc_fid": 950,
+                "long": 144.997225,
+                "lat": -37.847714
+            },
+            "id": "my_hospital_beds.950"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.161425,
+                    -37.898227
+                ]
+            },
+            "properties": {
+                "id": 951,
+                "hospital_name": "The Victorian Rehabilitation Centre",
+                "suburb": "Glen Waverley",
+                "ogc_fid": 951,
+                "long": 145.161425,
+                "lat": -37.898227
+            },
+            "id": "my_hospital_beds.951"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.351204,
+                    -37.756319
+                ]
+            },
+            "properties": {
+                "id": 1068,
+                "hospital_name": "Yarra Ranges Health",
+                "suburb": "Lilydale",
+                "ogc_fid": 1068,
+                "long": 145.351204,
+                "lat": -37.756319
+            },
+            "id": "my_hospital_beds.1068"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.887421,
+                    -37.797407
+                ]
+            },
+            "properties": {
+                "id": 978,
+                "hospital_name": "Tweddle Child & Family Health Centre [Footscray]",
+                "suburb": "Footscray",
+                "ogc_fid": 978,
+                "long": 144.887421,
+                "lat": -37.797407
+            },
+            "id": "my_hospital_beds.978"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.97476,
+                    -37.808521
+                ]
+            },
+            "properties": {
+                "id": 985,
+                "hospital_name": "Victoria Parade Surgery Centre",
+                "suburb": "East Melboune",
+                "ogc_fid": 985,
+                "long": 144.97476,
+                "lat": -37.808521
+            },
+            "id": "my_hospital_beds.985"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.012975,
+                    -37.78931
+                ]
+            },
+            "properties": {
+                "id": 986,
+                "hospital_name": "Victorian Institute of Forensic Mental Health",
+                "suburb": "Fairfield",
+                "ogc_fid": 986,
+                "long": 145.012975,
+                "lat": -37.78931
+            },
+            "id": "my_hospital_beds.986"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.950757,
+                    -37.812763
+                ]
+            },
+            "properties": {
+                "id": 987,
+                "hospital_name": "Victorian Institute of Forensic Mental Health Prison Health Service",
+                "suburb": "Melbourne",
+                "ogc_fid": 987,
+                "long": 144.950757,
+                "lat": -37.812763
+            },
+            "id": "my_hospital_beds.987"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.0556,
+                    -37.83252
+                ]
+            },
+            "properties": {
+                "id": 988,
+                "hospital_name": "Vision Day Surgery Camberwell",
+                "suburb": "Camberwell",
+                "ogc_fid": 988,
+                "long": 145.0556,
+                "lat": -37.83252
+            },
+            "id": "my_hospital_beds.988"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.119433,
+                    -37.817591
+                ]
+            },
+            "properties": {
+                "id": 990,
+                "hospital_name": "Vision Day Surgery Eastern",
+                "suburb": "Box Hill",
+                "ogc_fid": 990,
+                "long": 145.119433,
+                "lat": -37.817591
+            },
+            "id": "my_hospital_beds.990"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.895155,
+                    -37.800508
+                ]
+            },
+            "properties": {
+                "id": 991,
+                "hospital_name": "Vision Day Surgery Footscray",
+                "suburb": "Footscray",
+                "ogc_fid": 991,
+                "long": 144.895155,
+                "lat": -37.800508
+            },
+            "id": "my_hospital_beds.991"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.980304,
+                    -37.850605
+                ]
+            },
+            "properties": {
+                "id": 994,
+                "hospital_name": "Vision Eye Institute",
+                "suburb": "Melbourne",
+                "ogc_fid": 994,
+                "long": 144.980304,
+                "lat": -37.850605
+            },
+            "id": "my_hospital_beds.994"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.225902,
+                    -37.848525
+                ]
+            },
+            "properties": {
+                "id": 1006,
+                "hospital_name": "Wantirna Health",
+                "suburb": "Wantirna",
+                "ogc_fid": 1006,
+                "long": 145.225902,
+                "lat": -37.848525
+            },
+            "id": "my_hospital_beds.1006"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.060728,
+                    -37.754419
+                ]
+            },
+            "properties": {
+                "id": 1013,
+                "hospital_name": "Warringal Private Hospital",
+                "suburb": "Heidelberg",
+                "ogc_fid": 1013,
+                "long": 145.060728,
+                "lat": -37.754419
+            },
+            "id": "my_hospital_beds.1013"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.145798,
+                    -37.884632
+                ]
+            },
+            "properties": {
+                "id": 1016,
+                "hospital_name": "Waverley Private Hospital",
+                "suburb": "Mount Waverley",
+                "ogc_fid": 1016,
+                "long": 145.145798,
+                "lat": -37.884632
+            },
+            "id": "my_hospital_beds.1016"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.698621,
+                    -37.886587
+                ]
+            },
+            "properties": {
+                "id": 1022,
+                "hospital_name": "Werribee Mercy Hospital",
+                "suburb": "Werribee",
+                "ogc_fid": 1022,
+                "long": 144.698621,
+                "lat": -37.886587
+            },
+            "id": "my_hospital_beds.1022"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.887191,
+                    -37.792298
+                ]
+            },
+            "properties": {
+                "id": 1035,
+                "hospital_name": "Western Hospital [Footscray]",
+                "suburb": "Footscray",
+                "ogc_fid": 1035,
+                "long": 144.887191,
+                "lat": -37.792298
+            },
+            "id": "my_hospital_beds.1035"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.885932,
+                    -37.793045
+                ]
+            },
+            "properties": {
+                "id": 1036,
+                "hospital_name": "Western Private Hospital",
+                "suburb": "Footscray",
+                "ogc_fid": 1036,
+                "long": 144.885932,
+                "lat": -37.793045
+            },
+            "id": "my_hospital_beds.1036"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.89233900000002,
+                    -37.863576
+                ]
+            },
+            "properties": {
+                "id": 1044,
+                "hospital_name": "Williamstown Hospital",
+                "suburb": "Williamstown",
+                "ogc_fid": 1044,
+                "long": 144.892339,
+                "lat": -37.863576
+            },
+            "id": "my_hospital_beds.1044"
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.430724,
+                    -37.213634
+                ]
+            },
+            "properties": {
+                "id": 1072,
+                "hospital_name": "Yea & District Memorial Hospital",
+                "suburb": "Yea",
+                "ogc_fid": 1072,
+                "long": 145.430724,
+                "lat": -37.213634
+            },
+            "id": "my_hospital_beds.1072"
+        }
+    ]
+}
