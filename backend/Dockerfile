@@ -15,4 +15,4 @@ COPY . .
 
 EXPOSE 8001
 
-CMD ./run.sh
+CMD sudo ./run.sh
