@@ -5,6 +5,7 @@
 
 
 - name: Lauch Django backend
+  become: yes
   shell: >
     docker build
     -t backend:Django
