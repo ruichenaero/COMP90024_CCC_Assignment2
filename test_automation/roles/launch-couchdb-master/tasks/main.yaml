@@ -33,7 +33,7 @@
 #   copy:
 #     dest: "{{ remote_directory }}/COMP90024_CCC_Assignment2/backend/common/config.py"
 #     content: |
-#       COUCHDB_URL = 'http://{{ couchdb_user }}:{{ couchdb_user }}@localhost:5984/'
+#       COUCHDB_URL = 'http://{}:{}@{}:{}/'
 #       COUCHDB_DOMAIN = '127.0.0.1'
 #       COUCHDB_DOMAINS = ['127.0.0.1']
 #       COUCHDB_USERNAME = "{{ couchdb_user }}"
@@ -41,5 +41,3 @@
 #       COUCHDB_PORTS = "{{ couchdb_port }}"
 #       COUCHDB_TWEET_DB = 'test_tweet'
 #       COUCHDB_REGION_TWEET_DB = 'region_tweet'
-#       COUCHDB_TRACK_DB = 'track'
-#       COUCHDB_TIME_DB = 'time_{}_{}_{}_{}_{}'
