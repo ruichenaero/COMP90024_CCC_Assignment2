@@ -3,9 +3,9 @@
 - name: Pull docker image
   become: yes
   docker_image:
-      name: couchdb
-      tag: latest
-      source: pull
+    name: couchdb
+    tag: latest
+    source: pull
 
 - name: Write CouchDB config .ini file
   template:
@@ -42,15 +42,42 @@
     -v /data/couchdb:/opt/couchdb/data 
     --name couch-node
     -d couchdb:latest
-  when: docker_start.rc != 0 
+  when: docker_start.rc != 0
 
 - pause:
     seconds: 10
 
 - name: Enable cluster on each node
   shell: >
-    curl -X POST -H "Content-Type: application/json"
-    http://{{ couchdb_user }}:{{ couchdb_passwd }}@localhost:5984/_cluster_setup
-    -d '{"action": "enable_cluster", "bind_address":"0.0.0.0",
-    "username": "{{ couchdb_user }}", "password":"{{ couchdb_password }}",
-    "node_count":"{{ groups['all'] | length }}"}'
+    curl 
+    -X POST 
+    -H "Content-Type: application/json" http://{{ couchdb_user }}:{{ couchdb_password }}@localhost:5984/_cluster_setup
+    -d '{"action": "enable_cluster", "bind_address":"0.0.0.0", "username": "{{ couchdb_user }}", "password":"{{ couchdb_password }}", "node_count":"{{ groups['all'] | length }}"}'
+
+# Configure python config for couchdb in backend
+- name: Configure conf.py for python couchdb api
+  copy:
+    dest: "{{ remote_directory }}/COMP90024_CCC_Assignment2/backend/common/config.py"
+    content: |
+      COUCHDB_URL = 'http://{}:{}@{}:{}/'
+      COUCHDB_DOMAIN = "{{groups['master-server'].0}}"
+      COUCHDB_DOMAINS = "{{groups['all']}}"
+      COUCHDB_USERNAME = "{{ couchdb_user }}"
+      COUCHDB_PASSWORD = "{{ couchdb_password }}"
+      COUCHDB_PORTS = "{{ couchdb_port }}"
+      COUCHDB_TWEET_DB = 'test_tweet'
+      COUCHDB_REGION_TWEET_DB = 'region_tweet'
+
+# Configure python config for couchdb in harvester
+- name: Configure conf.py for python couchdb api
+  copy:
+    dest: "{{ remote_directory }}/COMP90024_CCC_Assignment2/harvester/Twitter_API/config.py"
+    content: |
+      COUCHDB_URL = 'http://{}:{}@{}:{}/'
+      COUCHDB_DOMAIN = "{{groups['master-server'].0}}"
+      COUCHDB_DOMAINS = "{{groups['all']}}"
+      COUCHDB_USERNAME = "{{ couchdb_user }}"
+      COUCHDB_PASSWORD = "{{ couchdb_password }}"
+      COUCHDB_PORTS = "{{ couchdb_port }}"
+      COUCHDB_TWEET_DB = 'test_tweet'
+      COUCHDB_REGION_TWEET_DB = 'region_tweet'

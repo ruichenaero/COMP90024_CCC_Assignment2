@@ -6,7 +6,7 @@
   gather_facts: true
   roles:
     - role: launch-couch
-    # - role: launch-backend
+    # - role: launch-harvester
 
 # - hosts: data-server-2
 #   vars_files:
@@ -23,4 +23,4 @@
     - role: launch-nginx
     - role: launch-couch
     - role: launch-couchdb-master
-    # - role: launch-backend
+    - role: launch-backend
