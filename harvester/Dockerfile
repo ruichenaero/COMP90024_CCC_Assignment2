@@ -13,6 +13,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN chmod 777 run.sh
+RUN cd Twitter_API
 
-CMD ["python", "Twitter_API/random_search_region.py"]
+CMD ["python", "random_search_region.py"]
