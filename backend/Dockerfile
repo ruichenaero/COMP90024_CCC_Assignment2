@@ -7,7 +7,7 @@ ENV HTTPS_PROXY http://wwwproxy.unimelb.edu.au:8000
 
 WORKDIR /home/ubuntu/COMP90024_CCC_ASSIGNMENT2/backend
 
-COPY dependencies.txt ./
+COPY requirements.txt ./
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
