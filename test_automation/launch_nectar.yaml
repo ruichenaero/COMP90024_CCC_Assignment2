@@ -1,6 +1,6 @@
 ---
 # Lauch couchdb for all nodes
-- host: all
+- hosts: all
   vars_files:
     - host_vars/server_vars.yaml
   gather_facts: true
