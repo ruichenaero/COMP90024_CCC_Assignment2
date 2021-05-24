@@ -46,17 +46,23 @@ security_groups:
     port_range_min: 5984
     port_range_max: 5984
     remote_ip_prefix: 0.0.0.0/0
-  - name: react
-    description: "react default port"
+  - name: couchdb-addition
+    description: "Security group for couchdb addition port"
     protocol: tcp
-    port_range_min: 3000
-    port_range_max: 3000
+    port_range_min: 5986
+    port_range_max: 5986
     remote_ip_prefix: 0.0.0.0/0
-  - name: frontend-port
-    description: "Additional backend server port"
+  - name: couchdb-range
+    description: "Security group for couchdb range port"
     protocol: tcp
-    port_range_min: 8080
-    port_range_max: 8080
+    port_range_min: 9100
+    port_range_max: 9150
+    remote_ip_prefix: 0.0.0.0/0
+  - name: couchdb-more
+    description: "Security group for couchdb more port"
+    protocol: tcp
+    port_range_min: 4369
+    port_range_max: 4369
     remote_ip_prefix: 0.0.0.0/0
   - name: server-port
     description: "Additional backend server port"
@@ -68,13 +74,13 @@ security_groups:
 # Instance
 instances:
   - name: data-server-1
-    security_groups: ['ssh', 'http', couchdb]
+    security_groups: ['ssh', 'http', 'couchdb', 'couchdb-more', 'couchdb-addition', 'couchdb-range']
     volumes: ['data-vol-1', 'ins-vol-1']
   # - name: data-server-2
-  #   security_groups: ['ssh', 'http']
+  #   security_groups: ['ssh', 'http', 'couchdb', 'couchdb-more', 'couchdb-addition', 'couchdb-range']
   #   volumes: ['data-vol-2', 'ins-vol-2']
   - name: master-server
-    security_groups: ['ssh', 'http', 'server-port', 'react', couchdb, frontend-port]
+    security_groups: ['ssh', 'http', 'server-port', 'couchdb', 'couchdb-more', 'couchdb-addition', 'couchdb-range']
     volumes: ['data-vol-4', 'backend-vol', 'frontend-vol']
 
 instance_network: qh2-uom-internal

@@ -94,24 +94,3 @@
     name: ['docker-compose']
     version: 1.29.2
     state: present 
-
-# Install yarn
-- name: Ensure apt-transport-https is installed
-  apt:
-    name: apt-transport-https
-
-- name: Add Yarn apt key
-  become: yes
-  apt_key:
-    url: https://dl.yarnpkg.com/debian/pubkey.gpg
-
-- name: Add Yarn repository
-  become: yes
-  apt_repository:
-    repo: "deb https://dl.yarnpkg.com/debian/ stable main"
-    filename: yarn
-
-- name: Install Yarn
-  become: yes
-  apt:
-    name: yarn
