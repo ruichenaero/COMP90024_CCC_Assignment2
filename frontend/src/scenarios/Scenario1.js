@@ -8,9 +8,10 @@ const { Header, Content, Footer, Sider } = Layout;
 
 export default function Scenario1() {
 
-  const [portfolios, setPortfolios] = useState([]);
+  const [count, setCountState] = useState({name:''});
   const [isLoaded, setIsLoaded] = useState(false);
-
+  const [error, setError] = useState(null);
+  /*
   const [account, setAccountState] = useState({
     username:'',
     name: '',
@@ -19,20 +20,20 @@ export default function Scenario1() {
     photoUrl: '',
     likeEmail: '',
     commentEmail: '',
-  });
+  });*/
 
   useEffect(() => {
     
-    axios.get(`http://127.0.0.1:8000/api/region_tweet_count/food`)
+    axios.get(`http://127.0.0.1:8000/api/region_topic_count/food/`)
       .then(res => { 
         setIsLoaded(true); 
-        setPortfolios(res.data.portfolios);
+        setCountState(res.data.name);
 
       }, (error) => {
           setIsLoaded(true);
-          // setError(error);
+          setError(error);
         });
-    }, [setPortfolios]);
+    }, [setCountState]);
 
     /*
     axios.get(`http://localhost:8000/account/${window.location.pathname.split('/')[2]}`)
@@ -53,6 +54,11 @@ export default function Scenario1() {
     });
    }, [setAccountState]); */
 
+   if (error) {
+    return <div>Error: {error.message}</div>;
+  } else if (!isLoaded) {
+    return <div>Loading...</div>;
+  } else {
 
     return (
       
@@ -65,7 +71,7 @@ export default function Scenario1() {
             <Breadcrumb style={{ margin: '16px 0' }}>
             </Breadcrumb>
             <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-              Bill is a cat.
+              {count.name}
             </div>
           </Content>
           
@@ -74,4 +80,5 @@ export default function Scenario1() {
       
       //</Layout>
     );
+  }
 }
