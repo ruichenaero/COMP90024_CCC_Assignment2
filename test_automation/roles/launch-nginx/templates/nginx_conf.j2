@@ -26,6 +26,7 @@ server {
     }
 
     location /api/ {
+        echo "hahah"
         proxy_pass http://localhost:8001;
     }
 
