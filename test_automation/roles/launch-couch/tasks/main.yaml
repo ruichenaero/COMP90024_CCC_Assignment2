@@ -62,7 +62,7 @@
     content: |
       COUCHDB_URL = 'http://{}:{}@{}:{}/'
       COUCHDB_DOMAIN = "{{groups['master-server'].0}}"
-      COUCHDB_DOMAINS = "{{groups['master-server']}}"
+      COUCHDB_DOMAINS = "{{groups['all']}}"
       COUCHDB_USERNAME = "{{ couchdb_user }}"
       COUCHDB_PASSWORD = "{{ couchdb_password }}"
       COUCHDB_PORTS = "{{ couchdb_port }}"
