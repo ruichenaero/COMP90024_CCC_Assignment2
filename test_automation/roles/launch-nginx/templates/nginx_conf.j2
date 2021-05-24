@@ -5,9 +5,9 @@ upstream couchdb {
     {% endfor %}
 }
 
-upstream backend {
-    server {{ groups['master-server'].0 }}:8001 fail_timeout=60s;
-}
+# upstream backend {
+#     server {{ groups['master-server'].0 }}:8001 fail_timeout=60s;
+# }
 
 server {
     listen 80;
