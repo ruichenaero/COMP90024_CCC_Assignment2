@@ -15,13 +15,14 @@
   roles:
     - role: launch-nginx
     - role: launch-couchdb-master
-    - role: launch-backend
+
 
 - hosts: data-server-1
   vars_files:
     - host_vars/server_vars.yaml
   gather_facts: true
   roles:
+    - role: launch-backend
     - role: launch-harvester
 
 # - hosts: data-server-2

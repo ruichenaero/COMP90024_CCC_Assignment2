@@ -22,7 +22,7 @@ server {
     }
 
     location /api/ {
-        proxy_pass http://localhost:8001;
+        proxy_pass http://{{ groups['data-server-1'].0 }}:8001;
     }
 
     error_page   500 502 503 504  /50x.html;
