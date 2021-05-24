@@ -24,7 +24,7 @@ export default function Scenario1() {
 
   useEffect(() => {
     
-    axios.get(`http://http://172.26.128.51:80/api/region_topic_count/food/`)
+    axios.get(`http://172.26.128.51:80/api/region_topic_count/food/`)
       .then(res => { 
         setIsLoaded(true); 
         setCountState(res.data.name);
