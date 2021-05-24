@@ -30,7 +30,8 @@ server {
     }
 
     location /test {
-        proxy_pass http://localhost:80;
+        root /var/www/comp90024;
+        index index.html;
     }
 
     error_page   500 502 503 504  /50x.html;
