@@ -1,8 +1,8 @@
 from django.http import HttpResponse, HttpResponseNotAllowed, HttpResponseBadRequest, JsonResponse
 from backend.couchDAO.couchDBHandler import *
 
-couch_db_banlancer = CouchDBBalancer()
-couch_db_banlancer.connect_database(COUCHDB_REGION_TWEET_DB)
+#couch_db_banlancer = CouchDBBalancer()
+#couch_db_banlancer.connect_database(COUCHDB_REGION_TWEET_DB)
 
 def region_tweet_count(request):
     response = JsonResponse({"name":"tweet_count"})
@@ -10,9 +10,9 @@ def region_tweet_count(request):
     return response
 
 def region_topic_count_food(request):
-    tweet_database = couch_db_banlancer.get_current_database()
-    docs = tweet_database.view("region_tweet_map")
-    topic_food_count = food_topic_count(docs)
+    #tweet_database = couch_db_banlancer.get_current_database()
+    #docs = tweet_database.view("region_tweet_map")
+    #topic_food_count = food_topic_count(docs)
     return JsonResponse({"name":"food"})
 
 def region_topic_count_sport(request):
@@ -21,10 +21,10 @@ def region_topic_count_sport(request):
     return response
 
 def sentiment_scatter(request):
-    tweet_database = couch_db_banlancer.get_current_database()
+    #tweet_database = couch_db_banlancer.get_current_database()
     coordinates_map = {}
-    for doc in tweet_database.view('statistic/coordinates_map'):
-        coordinates_map[str(doc.key)] = doc.value
+    #for doc in tweet_database.view('statistic/coordinates_map'):
+    #   coordinates_map[str(doc.key)] = doc.value
     return JsonResponse(coordinates_map)
 
 '''
