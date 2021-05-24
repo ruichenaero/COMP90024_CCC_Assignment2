@@ -15,6 +15,4 @@ COPY . .
 
 EXPOSE 8001
 
-RUN chmod 777 run.sh
-
-CMD ./run.sh
+CMD ["python3", "manage.py", "runserver", "127.0.0.1:8001"]

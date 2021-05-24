@@ -21,7 +21,7 @@
 
 - name: Check if the docker is running
   become: yes
-  shell: "docker start couch"
+  shell: "docker start couch-node"
   ignore_errors: true
   no_log: true
   register: docker_start
@@ -54,8 +54,9 @@
     -H "Content-Type: application/json" http://{{ couchdb_user }}:{{ couchdb_password }}@localhost:5984/_cluster_setup
     -d '{"action": "enable_cluster", "bind_address":"0.0.0.0", "username": "{{ couchdb_user }}", "password":"{{ couchdb_password }}", "node_count":"{{ groups['all'] | length }}"}'
 
+
 # Configure python config for couchdb in backend
-- name: Configure conf.py for python couchdb api
+- name: Configure conf.py for python couchdb api in backend
   copy:
     dest: "{{ remote_directory }}/COMP90024_CCC_Assignment2/backend/backend/common/config.py"
     content: |
@@ -69,7 +70,7 @@
       COUCHDB_REGION_TWEET_DB = 'region_tweet'
 
 # Configure python config for couchdb in harvester
-- name: Configure conf.py for python couchdb api
+- name: Configure conf.py for python couchdb api in backend
   copy:
     dest: "{{ remote_directory }}/COMP90024_CCC_Assignment2/harvester/Twitter_API/config.py"
     content: |

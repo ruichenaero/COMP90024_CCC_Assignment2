@@ -3,14 +3,12 @@
   become: yes
   command: chdir="{{ remote_directory }}/COMP90024_CCC_Assignment2/harvester" docker build -t harvester:twitterAPI .
 
-# # Build docker image from dockerfile
-# - name: Build docker image
-#   become: yes
-#   shell: >
-#     docker build
-#     -t harvester:twitterAPI
-#     -f "{{ remote_directory }}/COMP90024_CCC_Assignment2/harvester/Dockerfile"
-#     .
+# Remove previous docker, if have
+- name: Remove exisiting harvester docker
+  become: yes
+  docker_container:
+    name: harvester
+    state: absent
 
 # Lauch harvester docker
 - name: Lauch Docker container

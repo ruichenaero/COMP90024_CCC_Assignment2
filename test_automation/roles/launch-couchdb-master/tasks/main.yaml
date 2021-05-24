@@ -1,5 +1,6 @@
 ---
-- name: Add other nodes to cluster
+# Setup couchdb cluster
+- name: Setup couchdb cluster
   shell: >
     curl 
     -X POST 
@@ -8,7 +9,7 @@
   loop: "{{ groups['all'] }}"
   when: item != ansible_hostname
 
-- name: HTTP request
+- name: Add other nodes to cluster
   shell: >
     curl 
     -X POST 

@@ -13,6 +13,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN chmod 777 run.sh
+WORKDIR /home/ubuntu/COMP90024/COMP90024_CCC_Assignment2/harvester/Twitter_API
 
-CMD ./run.sh
+CMD ["python", "random_search_region.py"]

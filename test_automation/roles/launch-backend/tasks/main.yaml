@@ -3,16 +3,12 @@
   become: yes
   command: chdir="{{ remote_directory }}/COMP90024_CCC_Assignment2/backend" docker build -t backend:Django .
 
-# # Build docker image from dockerfile
-# - name: Build docker image
-#   become: yes
-#   shell: >
-#     docker build
-#     -t backend:Django
-#     -f "{{ remote_directory }}/COMP90024_CCC_Assignment2/backend/Dockerfile"
-#     .
-
-
+# Remove previous docker, if have
+- name: Remove exisiting backend docker
+  become: yes
+  docker_container:
+    name: backend
+    state: absent
 
 # Launch docker backend
 - name: Lauch Docker container
