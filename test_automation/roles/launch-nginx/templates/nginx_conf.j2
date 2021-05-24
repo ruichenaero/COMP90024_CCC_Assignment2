@@ -26,8 +26,11 @@ server {
     }
 
     location /api/ {
-        echo "hahah"
         proxy_pass http://localhost:8001;
+    }
+
+    location /test {
+        proxy_pass http://localhost:80;
     }
 
     error_page   500 502 503 504  /50x.html;
