@@ -10,9 +10,9 @@ storage_region = TweetStore(url=COUCHDB_URL, username=COUCHDB_USERNAME, password
                      domain=COUCHDB_DOMAIN, ports=COUCHDB_PORTS, dbname=COUCHDB_REGION_TWEET_DB)
 
 index = "geo_count"
-geo_mac = "function (doc) { if(doc.place != null) emit(doc._id, 1);}"
+geo_map = "function (doc) { if(doc.place != null) emit(doc._id, 1);}"
 geo_reduce = 'function (keys, values, reduce) {return sum(values);}'
-storage_region.create_view(index, geo_mac, reduce_func=geo_reduce)
+storage_region.create_view(index, geo_map, reduce_func=geo_reduce)
 
 
 print('tweet count of region_tweet db is %d\n' % storage_region.count_tweets())
@@ -28,5 +28,6 @@ for doc in storage_region.get_tweets():
     # print the source text of each twitter
     print('%s\n' % doc.value['text'])
 '''
+
 
 

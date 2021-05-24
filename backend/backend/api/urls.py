@@ -20,5 +20,5 @@ urlpatterns = [
     path('region_topic_count/food/', views.region_topic_count_food),
     path('region_topic_count/sport/', views.region_topic_count_sport),
     path('region_tweet_count/', views.region_tweet_count),
-    path('sentiment_scartter/', views.sentiment_scatter),
+    #path('sentiment_scartter/', views.sentiment_scatter),
 ]
