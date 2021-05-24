@@ -5,10 +5,6 @@ upstream couchdb {
     {% endfor %}
 }
 
-# upstream backend {
-#     server {{ groups['master-server'].0 }}:8001 fail_timeout=60s;
-# }
-
 server {
     listen 80;
     server_name  localhost;
@@ -29,49 +25,8 @@ server {
         proxy_pass http://localhost:8001;
     }
 
-    location /test {
-        root /var/www/comp90024;
-        index index.html;
-    }
-
     error_page   500 502 503 504  /50x.html;
     location = /50x.html {
         root   /usr/share/nginx/html;
     }
 }
-
-# server {
-#     listen 8001;
-
-#     location / {
-#         proxy_pass http://couchdb;
-#         proxy_redirect off;
-#         proxy_buffering off;
-#         proxy_set_header Host $host;
-#         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-
-#         if ($request_method = 'OPTIONS') {
-#             add_header 'Access-Control-Allow-Origin' '*';
-#             add_header 'Access-Control-Allow-Credentials' 'true';
-#             add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
-#             add_header 'Access-Control-Allow-Headers' '*';
-#             add_header 'Access-Control-Max-Age' 1728000;
-#             add_header 'Content-Type' 'text/plain charset=UTF-8';
-#             add_header 'Content-Length' 0;
-#             return 204;
-#         }
-#         if ($request_method = 'POST') {
-#            add_header 'Access-Control-Allow-Origin' '*';
-#            add_header 'Access-Control-Allow-Credentials' 'true';
-#            add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
-#            add_header 'Access-Control-Allow-Headers' '*';
-#         }
-#         if ($request_method = 'GET') {
-#            add_header 'Access-Control-Allow-Origin' '*';
-#            add_header 'Access-Control-Allow-Credentials' 'true';
-#            add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
-#            add_header 'Access-Control-Allow-Headers' '*';
-#         }
-#     }
-
-# }
