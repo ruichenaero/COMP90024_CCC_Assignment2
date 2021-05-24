@@ -28,7 +28,7 @@ export default function Scenario1() {
       .then(res => { 
         setIsLoaded(true); 
         setCountState(res.data.name);
-
+        console.log(res.data.name);
       }, (error) => {
           setIsLoaded(true);
           setError(error);
@@ -59,7 +59,7 @@ export default function Scenario1() {
   } else if (!isLoaded) {
     return <div>Loading...</div>;
   } else {
-
+    console.log(count.name);
     return (
       
       <Layout style={{ minHeight: '100vh' }}>
