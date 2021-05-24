@@ -21,11 +21,13 @@ print('tweet count of region_tweet db is %d\n' % storage_region.count_tweets())
 
 print("The tweet count of each region", storage_region.get_region_count())
 
+'''
 # get each twitter from db
 # doc.value is the document of twitter
 for doc in storage_region.get_tweets():
     # print the source text of each twitter
     print('%s\n' % doc.value['text'])
+'''
 
 
 
