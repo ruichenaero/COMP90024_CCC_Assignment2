@@ -29,8 +29,9 @@ class CouchDBHandler(object):
             return self.database[_database]
 
         try:
+            exist_database = self.server[_database]
             self.database.update({
-                _database: self.server[_database]
+                _database: exist_database
             })
             # Save views into the db if they doesn't exist
             try:
@@ -118,12 +119,12 @@ class CouchDBBalancer(object):
             return doc.value
 '''
 
-couch_db_banlancer = CouchDBBalancer()
-couch_db_banlancer.connect_database(COUCHDB_REGION_TWEET_DB)
 if __name__ == '__main__':
+
+    couch_db_banlancer = CouchDBBalancer()
+    couch_db_banlancer.connect_database(COUCHDB_REGION_TWEET_DB)
     tweet_database = couch_db_banlancer.get_current_database()
-    coordinates_map = {}
-    for doc in tweet_database.view('statistic/coordinates_map'):
-        coordinates_map[str(doc.key)] = doc.value
-    #print(coordinates_map)
+
+
+
 
