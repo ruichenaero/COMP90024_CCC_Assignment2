@@ -59,7 +59,7 @@ export default function Scenario1() {
   } else if (!isLoaded) {
     return <div>Loading...</div>;
   } else {
-    console.log(count.name);
+    //console.log(count.name);
     return (
       
       <Layout style={{ minHeight: '100vh' }}>
