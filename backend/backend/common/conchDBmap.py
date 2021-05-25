@@ -25,6 +25,14 @@ STATISTIC = {
       "reduce": "function (keys, values, rereduce) {\n  return sum(values);\n}",
       "map": "function (doc) {\n  emit(doc.region, doc.food_related);\n}"
     },
+    "region_sentiment_score": {
+      "reduce": "function (keys, values, rereduce) {\n  return sum(values);\n}",
+      "map": "function (doc) {\n  emit(doc.region, doc.sentiment_score);\n}"
+    },
+    "region_covid_19": {
+      "reduce": "function (keys, values, rereduce) {\n  return sum(values);\n}",
+      "map": "function (doc) {\n  emit(doc.region, doc.covid_19_related);\n}"
+    }
   },
   "language": "javascript"
 }

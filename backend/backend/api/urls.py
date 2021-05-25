@@ -17,8 +17,10 @@ from django.urls import path
 from backend.api import views
 
 urlpatterns = [
+    path('region_tweet_count/', views.region_tweet_count),
     path('region_topic_count/food/', views.region_topic_count_food),
     path('region_topic_count/sport/', views.region_topic_count_sport),
-    path('region_tweet_count/', views.region_tweet_count),
-    #path('sentiment_scartter/', views.sentiment_scatter),
+    path('region_topic_count/covid_19/', views.region_topic_count_covid_19),
+    path('region_sentiment_count/', views.region_sentiment_count),
+    path('sentiment_scartter/', views.sentiment_scatter),
 ]

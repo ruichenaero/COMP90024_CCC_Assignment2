@@ -1,8 +1,8 @@
 import couchdb
 import couchdb.design
 
-from backend.common.conchDBmap import *
-from backend.common.config import *
+from backend.backend.common.conchDBmap import *
+from backend.backend.common.config import *
 
 class CouchDBHandler(object):
 

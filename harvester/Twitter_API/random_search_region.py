@@ -116,12 +116,16 @@ def search_location(query, max_count):
                     # topic count
                     result_dic['food_related'] = 0
                     result_dic['sport_related'] = 0
+                    result_dic['covid_19_related'] = 0
                     word_set = clean_tweet(extract_tweet['text'])
                     if len(FOOD_TOP_HASHTAGS.intersection(word_set)) > 0:
                         result_dic['food_related'] += 1
 
                     if len(SPORTS_TOP_HASHTAGS.intersection(word_set)) > 0:
                         result_dic['sport_related'] += 1
+
+                    if len(COVID_19_TOPIC.intersection(word_set)) > 0:
+                        result_dic['covid_19_related'] += 1
 
                     # combine new key with twitter data
                     result_dic.update(extract_tweet)

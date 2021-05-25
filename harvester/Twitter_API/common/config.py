@@ -38,3 +38,6 @@ FOOD_TOP_HASHTAGS = {'food', 'foodporn', 'foodie', 'nomnom', 'vegetarian', 'snac
 SPORTS_TOP_HASHTAGS = {'sport', 'fitness', 'gym', 'workout', 'fitfam', 'bodybuilding', 'fitnessmotivation', 'yoga',
                        'gymlife', 'crossfit', 'fitnessmodel', 'training', 'train', 'nba', 'soccer', 'golf', 'tennis',
                        'basketball', 'nike', 'ball', 'nfl', 'game', 'gameday', 'win'}
+
+COVID_19_TOPIC = {'covid', 'covid-19', 'covid_19', 'epidemic', 'pandemic', 'coronal', 'coronalvirus', 'virus',
+                  'mask', 'wearamask', 'quarantine', 'stayhome', 'vaccin', 'astrazeneca', 'lockdown', 'pfizer'}

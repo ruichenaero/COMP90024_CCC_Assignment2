@@ -1,126 +1,94 @@
 import json
+import re
+import string
 
 from django.http import HttpResponse, HttpResponseNotAllowed, HttpResponseBadRequest, JsonResponse
-
-from backend.api.utils import *
-from backend.couchDAO.couchDBHandler import *
-
+from backend.backend.couchDAO.couchDBHandler import *
 
 couch_db_banlancer = CouchDBBalancer()
 couch_db_banlancer.connect_database(COUCHDB_REGION_TWEET_DB)
 tweet_database = couch_db_banlancer.get_current_database()
-tweet_parser = Parse("backend/common/AFINN.txt")
+
 
 def region_tweet_count(request):
-    response = JsonResponse({"name":"tweet_count"})
-    response['Access-Contro1-Allow-origin'] = "*"  # 设置请求头
+    count_result = {}
+    for doc in tweet_database.view('statistic/region_tweet_count', reduce='true', group='true'):
+        count_result[str(doc.key)] = doc.value
+
+    geojson_result = region_geojson_fill(count_result)
+    response = JsonResponse(geojson_result)
+    response['Access-Contro1-Allow-origin'] = "*"
     return response
+
 
 def region_topic_count_food(request):
-    docs = tweet_database.view('statistic/region_tweet_map')
-    result = region_food_count(docs)
-    response = JsonResponse(result)
+    food_result = {}
+    for doc in tweet_database.view('statistic/region_food', reduce='true', group='true'):
+        food_result[str(doc.key)] = doc.value
+
+    geojson_result = region_geojson_fill(food_result)
+    response = JsonResponse(geojson_result)
     response['Access-Contro1-Allow-origin'] = "*"  # 设置请求头
     return response
 
+
 def region_topic_count_sport(request):
-    response = JsonResponse({"name": "tweet_count"})
+    sport_result = {}
+    for doc in tweet_database.view('statistic/region_sport', reduce='true', group='true'):
+        sport_result[str(doc.key)] = doc.value
+
+    geojson_result = region_geojson_fill(sport_result)
+    response = JsonResponse(geojson_result)
     response['Access-Contro1-Allow-origin'] = "*"  # 设置请求头
+    return response
+
+def region_topic_count_covid_19(request):
+    covid_19_result = {}
+    for doc in tweet_database.view('statistic/region_covid_19', reduce='true', group='true'):
+        covid_19_result[str(doc.key)] = doc.value
+
+    geojson_result = region_geojson_fill(covid_19_result)
+    response = JsonResponse(geojson_result)
+    response['Access-Contro1-Allow-origin'] = "*"
+    return response
+
+def region_sentiment_count(request):
+    sentiment_result = {}
+    for doc in tweet_database.view('statistic/region_sentiment_score', reduce='true', group='true'):
+        sentiment_result[str(doc.key)] = doc.value
+
+    geojson_result = region_geojson_fill(sentiment_result)
+    response = JsonResponse(geojson_result)
+    response['Access-Contro1-Allow-origin'] = "*"
     return response
 
 def sentiment_scatter(request):
-    tweet_database = couch_db_banlancer.get_current_database()
-    coordinates_map = {}
-    for doc in tweet_database.view('statistic/coordinates_map'):
-       coordinates_map[str(doc.key)] = doc.value
-    return JsonResponse(coordinates_map)
+    sentiment_scatter = {"type": "FeatureCollection", "features": []}
+    for doc in tweet_database.view('statistic/sentiment_scatter', reduce='true', group='true'):
+        coordinates = doc.key
+        sentiment_score = doc.value
+        sentiment_info = {"type": "Feature",
+                            "properties": {"sentiment_score": sentiment_score},
+                            "geometry": {"type": "Point", "coordinates": [coordinates[1], coordinates[0]]}}
+        sentiment_scatter["features"].append(sentiment_info)
+    response = JsonResponse(sentiment_scatter)
+    response['Access-Contro1-Allow-origin'] = '*'
+    return response
 
 
-def region_food_count(docs):
-    region_food_count = {}
-    for value in REGION_MAP.values():
-        region_food_count[value] = 0
-
-    for doc in docs:
-        word_set = clean_tweet(doc.value)
-        if len(FOOD_TOP_HASHTAGS.intersection(word_set)) > 0:
-            print(doc.key)
-            region_food_count[REGION_MAP[doc.key]] += 1
-    """
-    #json_object = json.dumps(region_sport_count, indent=4)
-    #with open("region_sport_count", "a") as outfile:
-    #    outfile.write(json_object)
-    region_food_geo = {}
-    for key, value in region_food_count.items():
-        region_food_geo[REGION_CODE_MAP[key]] = value
-
-    json_object = json.dumps(region_food_geo, indent=4)
-    with open("region_food_geo", "a") as outfile:
-        outfile.write(json_object)
-    """
-    return region_food_count
-
-
-
-def region_sport_count(docs):
-    region_sport_count = {}
-    for value in REGION_MAP.values():
-        region_sport_count[value] = 0
-
-    for doc in docs:
-        word_set = clean_tweet(doc.value)
-        if len(SPORTS_TOP_HASHTAGS.intersection(word_set)) > 0:
-            region_sport_count[REGION_MAP[doc.key]] += 1
-
-    #json_object = json.dumps(region_sport_count, indent=4)
-    #with open("region_sport_count", "a") as outfile:
-    #   outfile.write(json_object)
-
-    region_sport_geo = {}
-    for key, value in region_sport_count.items():
-        region_sport_geo[REGION_CODE_MAP[key]] = value
-
-    json_object = json.dumps(region_sport_geo, indent=4)
-    with open("region_sport_geo", "a") as outfile:
-        outfile.write(json_object)
-
-
-def region_sentimentscore_count(docs):
-    region_sentimentscore_count = {}
-    for value in REGION_MAP.values():
-        region_sentimentscore_count[value] = 0
-
-    for doc in docs:
-        sentiment_score = tweet_parser.parse(doc.value)
-        region_sentimentscore_count[REGION_MAP[doc.key]] += sentiment_score
-
-    #json_object = json.dumps(region_sentimentscore_count, indent=4)
-    #with open("region_sentimentscore_count", "a") as outfile:
-    #   outfile.write(json_object)
-
-    region_sentimentscore_geo = {}
-    for key, value in region_sentimentscore_count.items():
-        region_sentimentscore_geo[REGION_CODE_MAP[key]] = value
-
-    json_object = json.dumps(region_sentimentscore_geo, indent=4)
-    with open("region_sentimentscore_geo", "a") as outfile:
-        outfile.write(json_object)
-
-def coordinate_sentiment(docs):
-    coordinate_sentimentscore = {}
-
-    for doc in docs:
-        sentiment_score = tweet_parser.parse(doc.value)
-        print(str(doc.key))
-        coordinate_sentimentscore["{},{}".format(doc.key[0], doc.key[1])] = sentiment_score
-
-    # json_object = json.dumps(region_sentimentscore_count, indent=4)
-    # with open("region_sentimentscore_count", "a") as outfile:
-    #   outfile.write(json_object)
-
-    json_object = json.dumps(coordinate_sentimentscore, indent=4)
-    with open("coordinate_sentimentscore", "a") as outfile:
-        outfile.write(json_object)
+def region_geojson_fill(result):
+    region_topic_count = {"type": "FeatureCollection", "features": []}
+    for key, value in result.items():
+        region_name = REGION_NAME_MAP[key]
+        region_code = REGION_CODE_MAP[region_name]
+        geo_info = region_code.split(',')
+        coordinates = [float(geo_info[1]), float(geo_info[0])]
+        radius = float(geo_info[2])
+        region_topic_info = {"type": "Feature",
+                            "properties": {"region_name": region_name, "count": value, "radius": radius},
+                            "geometry": {"type": "Point", "coordinates": coordinates}}
+        region_topic_count["features"].append(region_topic_info)
+    return region_topic_count
 
 def make_result(func = HttpResponse, respose=None):
     result = func(respose)
@@ -128,9 +96,25 @@ def make_result(func = HttpResponse, respose=None):
 
 
 if __name__ == '__main__':
-    docs = tweet_database.view('statistic/region_tweet_map')
-    result = region_food_count(docs)
 
+    '''
+    covid_19_result = {}
+    for doc in tweet_database.view('statistic/sentiment_scatter', reduce='true', group='true'):
+        covid_19_result[str(doc.key)] = doc.value
 
-
-
+    geojson_result = region_geojson_fill(covid_19_result)
+    json_object = json.dumps(geojson_result, indent=4)
+    with open("sentiment_scartter.json", "a") as outfile:
+        outfile.write(json_object)
+    '''
+    sentiment_scatter = {"type": "FeatureCollection", "features": []}
+    for doc in tweet_database.view('statistic/sentiment_scatter', reduce='true', group='true'):
+        coordinates = doc.key
+        sentiment_score = doc.value
+        sentiment_info = {"type": "Feature",
+                          "properties": {"sentiment_score": sentiment_score},
+                          "geometry": {"type": "Point", "coordinates": [coordinates[1], coordinates[0]]}}
+        sentiment_scatter["features"].append(sentiment_info)
+    json_object = json.dumps(sentiment_scatter, indent=4)
+    with open("sentiment_scatter.json", "a") as outfile:
+        outfile.write(json_object)
