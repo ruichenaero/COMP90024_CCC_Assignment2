@@ -1,0 +1,18 @@
+{"type":"FeatureCollection",
+    "bbox":[144.3372015,-38.4304179,145.8280001,-37.1940818],
+    "crs":{"type":"name",
+        "properties":{"name":"EPSG:4283"}},
+        "features":[
+    {"type":"Feature",
+        "geometry":
+        {"type":"Point",
+            "coordinates":[144.364647,-38.152047]},
+            "properties":{"hospname":"Geelong Hospital",
+                "ogc_fid":150,
+                "geocode_type":"establishment",
+                "geocode_quality":"GEOMETRIC_CENTER",
+                "radius": 30, 
+                "longitude":144.364647,
+                "latitude":-38.152047},
+                "id":"aihw_hospital_statistics_2012_2013.150"},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[144.4701294,-37.2547402]},"properties":{"hospname":"Kyneton District Health Service","ogc_fid":156,"geocode_type":"establishment","geocode_quality":"GEOMETRIC_CENTER","radius": 20, "longitude":144.4701294,"latitude":-37.2547402},"id":"aihw_hospital_statistics_2012_2013.156"}]}

@@ -5,14 +5,29 @@
             "type": "Feature",
             "properties": {
                 "region_name": "Melbourne City",
-                "count": 2528,
+                "count": 811,
                 "radius": 17.66
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -37.831716,
-                    145.026625
+                    145.026625,
+                    -37.831716
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "region_name": "Nillumbik-Kinglake",
+                "count": 1,
+                "radius": 8.97
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.306394,
+                    -37.544132
                 ]
             }
         },
@@ -20,14 +35,14 @@
             "type": "Feature",
             "properties": {
                 "region_name": "Diamon Creek-Doreen",
-                "count": 23,
+                "count": 1,
                 "radius": 6.79
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -37.632059,
-                    145.151265
+                    145.151265,
+                    -37.632059
                 ]
             }
         },
@@ -35,14 +50,14 @@
             "type": "Feature",
             "properties": {
                 "region_name": "Melbourne Airport",
-                "count": 46,
+                "count": 10,
                 "radius": 7.85
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -37.635542,
-                    144.870431
+                    144.870431,
+                    -37.635542
                 ]
             }
         },
@@ -50,14 +65,14 @@
             "type": "Feature",
             "properties": {
                 "region_name": "Macedon Ranges",
-                "count": 43,
+                "count": 36,
                 "radius": 15.8
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -37.453482,
-                    144.725104
+                    144.725104,
+                    -37.453482
                 ]
             }
         },
@@ -65,14 +80,44 @@
             "type": "Feature",
             "properties": {
                 "region_name": "Wyndham",
-                "count": 115,
+                "count": 17,
                 "radius": 13.14
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -37.921831,
-                    144.626096
+                    144.626096,
+                    -37.921831
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "region_name": "Whittlesea-Wallan",
+                "count": 11,
+                "radius": 13.93
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.088149,
+                    -37.428459
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "region_name": "Mornington Peninsula",
+                "count": 12,
+                "radius": 19.85
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    144.969605,
+                    -38.341791
                 ]
             }
         },
@@ -80,14 +125,14 @@
             "type": "Feature",
             "properties": {
                 "region_name": "Franston-Cranbourne",
-                "count": 88,
+                "count": 48,
                 "radius": 14.1
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -38.086608,
-                    145.194009
+                    145.194009,
+                    -38.086608
                 ]
             }
         },
@@ -95,14 +140,14 @@
             "type": "Feature",
             "properties": {
                 "region_name": "Dandenong Ranges",
-                "count": 32,
+                "count": 2,
                 "radius": 6.88
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -37.916231,
-                    145.302436
+                    145.302436,
+                    -37.916231
                 ]
             }
         },
@@ -110,14 +155,14 @@
             "type": "Feature",
             "properties": {
                 "region_name": "Yarra Ranges",
-                "count": 126,
+                "count": 17,
                 "radius": 18.88
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -37.745579,
-                    145.504487
+                    145.504487,
+                    -37.745579
                 ]
             }
         },
@@ -125,14 +170,29 @@
             "type": "Feature",
             "properties": {
                 "region_name": "Melton-Bacchus Marsh",
-                "count": 63,
+                "count": 18,
                 "radius": 12.66
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    -37.676556,
-                    144.551064
+                    144.551064,
+                    -37.676556
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "region_name": "Cardinia",
+                "count": 11,
+                "radius": 19.9
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    145.587586,
+                    -38.091471
                 ]
             }
         }

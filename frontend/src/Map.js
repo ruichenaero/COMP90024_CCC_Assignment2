@@ -3,7 +3,8 @@ import SidePanel from "./components/SidePanel";
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import { Layout } from 'antd';
 import Hospital_Statistics from './data/Hospital_Statistics.json';
-import Regions from './data/regions.json';
+//port hospital from './data/hospital.json';
+import Regions from './data/region_covid_count.json';
 import axios from "axios";
 
 mapboxgl.accessToken = 'pk.eyJ1IjoieWlmZXlhbmcxIiwiYSI6ImNrb251MG44ZzA0Njkyd3BweWFyMWJvcjYifQ.oEO3lpWd3GLwRu13euHIvA';
@@ -29,28 +30,6 @@ export default function Map() {
   const minCount = math.min(counts);
   const add = (maxCount-minCount)/5;
 
-  
-  /*
-  const getData=()=>{
-    fetch('/Hospital_Statistics.json'
-    ,{
-      headers : { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-       }
-    }
-    )
-      .then(function(response){
-        console.log(response)
-        return response.json();
-      })
-      .then(function(myJson) {
-        //console.log(myJson);
-        setAurinData(myJson.features)
-        console.log(myJson.features);
-      });
-  }
-  */
    const colors = ['#b3d9ff', '#80bfff','#4da6ff', '#1a8cff', '#0073e6', '#0059b3'];
    const colorClasses = getCountRange(regions, colors);
 
@@ -71,7 +50,7 @@ export default function Map() {
     });
 
     return (colorClasses);
-}
+  }
 
 
   useEffect(() => {
@@ -93,24 +72,7 @@ export default function Map() {
     });
   });
 
-  /*
-  useEffect(()=>{
-      getData();
-      setIsLoaded(true);
-      
-  }, [setAurinData]);*/
-  /*
-    useEffect(()=>{
-    axios.get('/Hospital_Statistics.json')
-        .then(res => {
-          setIsLoaded(true);
-          setAurinData(res.data.features);
-          console.log(aurinData);
-        }, (error) => {
-          setIsLoaded(true);
-          //setError(error);
-      });
-     }, [setAurinData]);*/
+  
 
   useEffect(() => {
 
@@ -131,7 +93,7 @@ export default function Map() {
                 type: 'Feature',
                 geometry: {
                   type: 'Point',
-                  coordinates: hospital.geometry.coordinates,
+                  coordinates: aurinData.geometry.coordinates,
                 },
               };
             }),
@@ -147,6 +109,7 @@ export default function Map() {
                 type: 'Feature',
                 properties: {
                   radius: region.properties.radius,
+                  count: region.properties.count,
                 },
                 geometry: {
                   type: 'Point',
@@ -154,60 +117,49 @@ export default function Map() {
                  },
                 };
               }),
-            },
-          
+            },  
         });
       
 
-      map.current.addLayer({
-        'id': 'hospitals_loc',
-        /*'type': 'circle',
-        'source': 'hospital_location',
-        'layout': {
-          // Make the layer visible by default.
-          'visibility': 'visible'
-        },
-        'paint': {
-          'circle-radius': 8,
-          'circle-color': 'rgba(55,148,179,1)',
-        },*/
-        'type': 'symbol',
-        'source': 'hospital_location',
-        'layout': {
-          // Make the layer visible by default.
-          'icon-image': 'exclamation',
-          'icon-size': 0.05,
-         
-        },
-        
-        //'source-layer': 'museum-cusco'
-        //rgba(55,148,179,1)
-      });
+        map.current.addLayer({
+          'id': 'hospitals_loc',
+          /*'type': 'circle',
+          'source': 'hospital_location',
+          'layout': {
+            // Make the layer visible by default.
+            'visibility': 'visible'
+          },
+          'paint': {
+            'circle-radius': 8,
+            'circle-color': 'rgba(55,148,179,1)',
+          },*/
+          'type': 'symbol',
+          'source': 'hospital_location',
+          'layout': {
+            // Make the layer visible by default.
+            'icon-image': 'exclamation',
+            'icon-size': 0.05,
+           
+          },
+          
+          //'source-layer': 'museum-cusco'
+          //rgba(55,148,179,1)
+        });
 
       map.current.addLayer({
-        'id': 'regions_circle',
+        'id': 'regions',
         'type': 'circle',
-        
-        
-        'source': {
-            type: 'vector',
-            url: 'mapbox://styles/yifeyang1/ckp41vh7i0pli19o3x6fe84jh/draft'
-        },
-        'source-layer': 'melbourne-region',
+        'source': 'regions',
+        //'source-layer': 'melbourne_region-4ej08l',
         'paint': {
-            'circle-color': ['interpolate', ['linear'], ['get', 'count'], minCount, '#b3d9ff', math.round(minCount+add), '#80bfff', math.round(minCount+add*2), '#4da6ff', math.round(math.round(minCount+add*3)), '#1a8cff',  math.round(minCount+add*4), '#0073e6', maxCount,  '#0059b3'],
-            'circle-opacity': 0.75,
-            'circle-radius': ['interpolate', ['linear'], ['get', 'count'], minCount, 10, math.round(minCount+add), 15, math.round(minCount+add*2), 20, math.round(minCount+add*3), 25, math.round(minCount+add*4), 30, maxCount, 35]
-        },
+          //'circle-radius': 100,
+          //'circle-color': '#223b53',
+            'circle-color': ['interpolate', ['linear'], ['get', 'count'], minCount, '#fdae6bf', math.round(minCount+add), '#fd8d3c', math.round(minCount+add*2), '#f16913', math.round(math.round(minCount+add*3)), '#d94801',  math.round(minCount+add*4), '#a63603', maxCount,  '#7f2704'],
+            'circle-opacity': 0.45,
+            //'circle-stroke-color': 'black'
+        }
+      });
     });
-    });
-    //console.log(counts);
-    console.log(maxCount);
-    console.log(minCount);
-    console.log(add);
-    console.log(math.round(minCount+add));
-    //console.log(colorClasses[0]);
-
   }, []);
 
 

@@ -45,21 +45,23 @@ export default function SidePanel() {
           <Menu.Item key="sub1-1" icon={<PieChartOutlined />}>
             <NavLink to="/Scenario1">Geo-Map</NavLink>
           </Menu.Item>
-          <Menu.Item key="sub1-2">Statistics</Menu.Item>
+          <Menu.Item key="sub1-2">
+            <NavLink to="/Statistic1">Statistics</NavLink>
+          </Menu.Item> 
         </SubMenu>
 
         <SubMenu key="sub2" icon={<ProjectOutlined />} title="Scenarios-2">
           <Menu.Item key="sub2-1" icon={<PieChartOutlined />}>
             <NavLink to="/Scenario2">Geo-Map</NavLink>
           </Menu.Item>
-          <Menu.Item key="sub2-2">Statistics</Menu.Item>
+          <Menu.Item key="sub2-2"> <NavLink to="/Statistic2">Statistics</NavLink></Menu.Item>
         </SubMenu>
 
         <SubMenu key="sub3" icon={<ProjectOutlined />} title="Scenarios-3">
           <Menu.Item key="sub3-1" icon={<PieChartOutlined />}>
             <NavLink to="/Scenario3">Geo-Map</NavLink>
           </Menu.Item>
-          <Menu.Item key="sub3-2">Statistics</Menu.Item>
+          <Menu.Item key="sub3-2"><NavLink to="/Statistic3">Statistics</NavLink></Menu.Item>
         </SubMenu>
 
       </Menu>
