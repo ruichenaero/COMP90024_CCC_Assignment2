@@ -1,9 +1,7 @@
 import json
-import re
-import string
 
 from django.http import HttpResponse, HttpResponseNotAllowed, HttpResponseBadRequest, JsonResponse
-from backend.backend.couchDAO.couchDBHandler import *
+from backend.couchDAO.couchDBHandler import *
 
 couch_db_banlancer = CouchDBBalancer()
 couch_db_banlancer.connect_database(COUCHDB_REGION_TWEET_DB)
