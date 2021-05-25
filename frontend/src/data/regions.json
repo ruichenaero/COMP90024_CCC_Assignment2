@@ -1,0 +1,140 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "region_name": "Melbourne City",
+                "count": 2528,
+                "radius": 17.66
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -37.831716,
+                    145.026625
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "region_name": "Diamon Creek-Doreen",
+                "count": 23,
+                "radius": 6.79
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -37.632059,
+                    145.151265
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "region_name": "Melbourne Airport",
+                "count": 46,
+                "radius": 7.85
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -37.635542,
+                    144.870431
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "region_name": "Macedon Ranges",
+                "count": 43,
+                "radius": 15.8
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -37.453482,
+                    144.725104
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "region_name": "Wyndham",
+                "count": 115,
+                "radius": 13.14
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -37.921831,
+                    144.626096
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "region_name": "Franston-Cranbourne",
+                "count": 88,
+                "radius": 14.1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -38.086608,
+                    145.194009
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "region_name": "Dandenong Ranges",
+                "count": 32,
+                "radius": 6.88
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -37.916231,
+                    145.302436
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "region_name": "Yarra Ranges",
+                "count": 126,
+                "radius": 18.88
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -37.745579,
+                    145.504487
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "region_name": "Melton-Bacchus Marsh",
+                "count": 63,
+                "radius": 12.66
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -37.676556,
+                    144.551064
+                ]
+            }
+        }
+    ]
+}
