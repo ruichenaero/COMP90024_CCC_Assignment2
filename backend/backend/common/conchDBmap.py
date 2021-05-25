@@ -16,6 +16,9 @@ STATISTIC = {
       "map": "function (doc) {\n if(doc.region != null)\n emit(doc.region, 1);\n}",
       "reduce": "function (keys, values, reduce) {return sum(values);}"
     },
+    "region_tweet_map": {
+      "map": "function (doc) {\n if(doc.region != null)\n emit(doc.region, doc.text);\n}",
+    },
     "coordinates_map": {
       "map": "function (doc) {\n  if(doc.coordinates != null)\n  emit(doc.coordinates.coordinates, doc.text);\n}"
     },

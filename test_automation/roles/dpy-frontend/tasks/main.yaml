@@ -1,4 +1,11 @@
 ---
+# Copy master node ip address to frontend
+- name: Copy master IP
+  copy:
+    dest: "{{ remote_directory }}/COMP90024_CCC_Assignment2/frontend/src/data/config.json"
+    content: |
+      {"master-ip": "{{ groups['master-server'].0 }}"}
+
 # Install Node JS and npm packages
 - name: Install Node.js
   become: yes

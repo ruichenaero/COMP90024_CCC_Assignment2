@@ -10,10 +10,10 @@
     - role: env-images
     - role: env-volumes
     - role: env-security-groups
-    - role: env-instances
+    - role: scale-instance
 
   # Setup and deploy the environment
-- hosts: data-server-3
+- hosts: data-server-scale
   vars_files:
     - host_vars/scale_vars.yaml
   gather_facts: true
@@ -23,9 +23,10 @@
     - role: dpy-volumes
 
 # Launch additional server
-- hosts: data-server-3
+- hosts: data-server-scale
   vars_files:
     - host_vars/scale_vars.yaml
   gather_facts: true
   roles:
-    - role: lauch-couch-scale
+    - role: scale-launch-couch
+    - role: launch-harvester

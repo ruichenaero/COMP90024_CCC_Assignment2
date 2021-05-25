@@ -3,13 +3,13 @@
 availability_zone: melbourne-qh2-uom
 volume_device_comm: /dev/vdb 
 volume_mount_point_comm: /data
-current_directory: /home
+current_directory: /home/chenrui/Documents
 
 # Volume
 volumes:
-  - vol_name: data-vol-3
+  - vol_name: data-vol-scale
     vol_size: 80
-  - vol_name: ins-vol-3
+  - vol_name: ins-vol-scale
     vol_size: 10
 
 # Security group
@@ -26,12 +26,36 @@ security_groups:
     port_range_min: 80
     port_range_max: 80
     remote_ip_prefix: 0.0.0.0/0
+  - name: couchdb
+    description: "Security group for couchdb"
+    protocol: tcp
+    port_range_min: 5984
+    port_range_max: 5984
+    remote_ip_prefix: 0.0.0.0/0
+  - name: couchdb-addition
+    description: "Security group for couchdb addition port"
+    protocol: tcp
+    port_range_min: 5986
+    port_range_max: 5986
+    remote_ip_prefix: 0.0.0.0/0
+  - name: couchdb-range
+    description: "Security group for couchdb range port"
+    protocol: tcp
+    port_range_min: 9100
+    port_range_max: 9150
+    remote_ip_prefix: 0.0.0.0/0
+  - name: couchdb-more
+    description: "Security group for couchdb more port"
+    protocol: tcp
+    port_range_min: 4369
+    port_range_max: 4369
+    remote_ip_prefix: 0.0.0.0/0
 
 # Instance
 instances:
-  - name: data-server-3
-    security_groups: ['ssh', 'http']
-    volumes: ['data-vol-3', 'ins-vol-3']
+  - name: data-server-scale
+    security_groups: ['ssh', 'http', 'couchdb', 'couchdb-more', 'couchdb-addition', 'couchdb-range']
+    volumes: ['data-vol-scale', 'ins-vol-scale']
 
 
 instance_network: qh2-uom-internal
@@ -50,6 +74,7 @@ couchdb_user: admin
 couchdb_password: admin
 couchdb_secret: a192aeb9904e6590849337933b000c99
 couchdb_port: 5984
+couchdb_nodes: 4
 couchdb_share: 4
 couchdb_replica: 3
 cluster_cookie: 'hello'
