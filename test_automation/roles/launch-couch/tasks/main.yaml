@@ -52,7 +52,7 @@
     curl 
     -X POST 
     -H "Content-Type: application/json" http://{{ couchdb_user }}:{{ couchdb_password }}@localhost:5984/_cluster_setup
-    -d '{"action": "enable_cluster", "bind_address":"0.0.0.0", "username": "{{ couchdb_user }}", "password":"{{ couchdb_password }}", "node_count":"{{ groups['all'] | length }}"}'
+    -d '{"action": "enable_cluster", "bind_address":"0.0.0.0", "username": "{{ couchdb_user }}", "password":"{{ couchdb_password }}", "node_count":"{{ couchdb_nodes }}"}'
 
 
 # Configure python config for couchdb in backend
@@ -70,7 +70,7 @@
       COUCHDB_REGION_TWEET_DB = 'region_tweet'
 
 # Configure python config for couchdb in harvester
-- name: Configure conf.py for python couchdb api in backend
+- name: Configure conf.py for python couchdb api in haarvester
   copy:
     dest: "{{ remote_directory }}/COMP90024_CCC_Assignment2/harvester/Twitter_API/config.py"
     content: |
