@@ -10,11 +10,12 @@
   become: yes
   docker_container:
     name: couch-node
-    image: ibmcom/couchdb3:3.0.0
+    image: couchdb:latest
     state: started
     volumes: /data/couchdb:/opt/couchdb/data
     restart_policy: always
     ports:
+      - "5986:5986"
       - "5984:5984"
       - "4369:4369" 
       - "9100-9150:9100-9150"
