@@ -40,6 +40,7 @@ export default function SidePanel() {
         <Menu.Item key="1" icon={<HomeOutlined />}>
           <NavLink to="/" >Visualisation</NavLink>
         </Menu.Item>
+        
         <SubMenu key="sub1" icon={<ProjectOutlined />} title="Scenarios-1">
           <Menu.Item key="sub1-1" icon={<PieChartOutlined />}>
             <NavLink to="/Scenario1">Geo-Map</NavLink>

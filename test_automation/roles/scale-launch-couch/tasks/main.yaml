@@ -27,11 +27,16 @@
 - name: Check connection
   args:
     warn: yes
-  shell: 'curl "http://{{ couchdb_user }}:{{ couchdb_password }}@{{ master_node_ip }}:{{ couchdb_port }}" '
+  shell: >
+    curl "http://{{ couchdb_user }}:{{ couchdb_password }}@{{ groups['master-server'].0 }}:{{ couchdb_port }}"
   register: connection_check
 
 - name: Add Nodes to Cluster
-  shell: 'curl -XPOST "http://{{ couchdb_user }}:{{ couchdb_password }}@{{ master_node_ip }}:{{ couchdb_port }}/_cluster_setup" --header "Content-Type: application/json"  --data "{\"action\": \"add_node\", \"host\":\"{{ item }}\", \"port\": \"{{ couchdb_port }}\", \"username\": \"{{ couchdb_user }}\", \"password\":\"{{ couchdb_password }}\"}"'
+  shell: >
+    curl 
+    -X POST "http://{{ couchdb_user }}:{{ couchdb_password }}@{{ groups['master-server'].0 }}:{{ couchdb_port }}/_cluster_setup" 
+    --header "Content-Type: application/json"  
+    --data "{\"action\": \"add_node\", \"host\":\"{{ item }}\", \"port\": \"{{ couchdb_port }}\", \"username\": \"{{ couchdb_user }}\", \"password\":\"{{ couchdb_password }}\"}"
   args:
     warn: yes
   loop: '{{ groups["all"] }}'
