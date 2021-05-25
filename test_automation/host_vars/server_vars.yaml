@@ -9,6 +9,7 @@ couchdb_user: admin
 couchdb_password: admin
 couchdb_secret: a192aeb9904e6590849337933b000c99
 couchdb_port: 5984
+couchdb_nodes: 4
 couchdb_share: 4
 couchdb_replica: 3
 couchdb_cookie: 'hello'

@@ -27,7 +27,7 @@ export default function Scenario1() {
     axios.get(`http://172.26.128.51:80/api/region_topic_count/food/`)
       .then(res => { 
         setIsLoaded(true); 
-        setCountState(res.data.name);
+        setCountState({name: res.data.name});
         console.log(res.data.name);
       }, (error) => {
           setIsLoaded(true);
