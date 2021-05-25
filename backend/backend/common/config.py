@@ -1,9 +1,9 @@
 # couchDB config
 COUCHDB_URL = 'http://{}:{}@{}:{}/'
-COUCHDB_DOMAIN = '172.26.128.51'
-COUCHDB_DOMAINS = ['172.26.128.51']
+COUCHDB_DOMAIN = '127.0.0.1'
+COUCHDB_DOMAINS = ['127.0.0.1']
 COUCHDB_USERNAME = 'admin'
-COUCHDB_PASSWORD = 'admin'
+COUCHDB_PASSWORD = '123'
 COUCHDB_PORTS = 5984
 COUCHDB_TWEET_DB = 'test_tweet'
 COUCHDB_REGION_TWEET_DB = 'region_tweet'
@@ -14,15 +14,6 @@ REGION_MAP = {'region_1': 'Melbourne City', 'region_2': 'Wyndham', 'region_3': '
               'region_7': 'Yarra Ranges', 'region_8': 'Melton-Bacchus Marsh', 'region_9': 'Cardinia',
               'region_10': 'Nillumbik-Kinglake', 'region_11': 'Diamon Creek-Doreen', 'region_12': 'Melbourne Airport',
               'region_13': 'Macedon Ranges'}
-
-# statistic config
-FOOD_TOP_HASHTAGS = {'food', 'foodporn', 'foodie', 'nomnom', 'vegetarian', 'snack', 'yummy', 'yum', 'healthyfood',
-                     'healthy', 'foodlover', 'foodblogger', 'delicious', 'brunch', 'starbucks', 'breakfast', 'beer',
-                     'chocolate', 'pizza', 'wine', 'vegan', 'coffe'}
-
-SPORTS_TOP_HASHTAGS = {'sport', 'fitness', 'gym', 'workout', 'fitfam', 'bodybuilding', 'fitnessmotivation', 'yoga',
-                       'gymlife', 'crossfit', 'fitnessmodel', 'training', 'train', 'nba', 'soccer', 'golf', 'tennis',
-                       'basketball', 'nike', 'ball', 'nfl', 'game', 'gameday', 'win'}
 
 REGION_CODE_MAP = {
     "Melbourne City": "-37.831716,145.026625,17.66km",

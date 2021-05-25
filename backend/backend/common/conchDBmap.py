@@ -9,21 +9,21 @@ STATISTIC = {
       "map": "function(doc) { emit(doc.id, 1); }",
       "reduce": "function(keys, values) { return sum(values); }"
     },
-    "get_tweets": {
-      "map": "function(doc) { emit((\"0000000000000000000\"+doc.id).slice(-19), doc); }"
-    },
     "region_tweet_count": {
       "map": "function (doc) {\n if(doc.region != null)\n emit(doc.region, 1);\n}",
       "reduce": "function (keys, values, reduce) {return sum(values);}"
     },
-    "region_tweet_map": {
-      "map": "function (doc) {\n if(doc.region != null)\n emit(doc.region, doc.text);\n}",
+    "sentiment_scatter": {
+      "reduce": "function (keys, values, rereduce) {\n  return sum(values);\n}",
+      "map": "function (doc) {\n  emit(doc.geo.coordinates, doc.sentiment_score);\n}"
     },
-    "coordinates_map": {
-      "map": "function (doc) {\n  if(doc.coordinates != null)\n  emit(doc.coordinates.coordinates, doc.text);\n}"
+    "region_sport": {
+      "reduce": "function (keys, values, reduce) {return sum(values);}",
+      "map": "function (doc) {\n  emit(doc.region, doc.sport_related);\n}"
     },
-    "place_map": {
-      "map": "function (doc) {\n  if(doc.place != null)\n  emit(doc.place.bounding_box.coordinates, doc.text);\n}"
+    "region_food": {
+      "reduce": "function (keys, values, rereduce) {\n  return sum(values);\n}",
+      "map": "function (doc) {\n  emit(doc.region, doc.food_related);\n}"
     },
   },
   "language": "javascript"

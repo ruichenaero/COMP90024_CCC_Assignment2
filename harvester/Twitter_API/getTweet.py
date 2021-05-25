@@ -1,7 +1,5 @@
-import json
-
 from TweetStore import TweetStore
-from config import *
+from harvester.Twitter_API.common.config import *
 
 storage_statistic = TweetStore(url=COUCHDB_URL, username=COUCHDB_USERNAME, password=COUCHDB_PASSWORD,
                      domain=COUCHDB_DOMAIN, ports=COUCHDB_PORTS, dbname=COUCHDB_TWEET_DB)

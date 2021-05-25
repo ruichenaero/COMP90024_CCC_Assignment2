@@ -1,9 +1,8 @@
 import tweepy
 from tweepy.streaming import StreamListener
-import time
-import token_file
+from harvester.Twitter_API.common import token_file
 from TweetStore import TweetStore
-from config import *
+from harvester.Twitter_API.common.config import *
 
 
 # This application uses Twitter's Stream API to harvest data in real time

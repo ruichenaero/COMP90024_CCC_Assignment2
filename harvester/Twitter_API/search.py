@@ -2,8 +2,8 @@ import tweepy
 import json
 from TweetStore import TweetStore
 import time
-import token_file
-from config import *
+from harvester.Twitter_API.common import token_file
+from harvester.Twitter_API.common.config import *
 
 
 # This application uses Twitter's Search API to harvest data

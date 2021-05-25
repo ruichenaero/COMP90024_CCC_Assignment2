@@ -1,12 +1,12 @@
 import tweepy
 import json
-import melbourne_region
+from harvester.Twitter_API.common import melbourne_region, token_file
 import time
 import random
-import token_file
 import itertools
 from TweetStore import TweetStore
-from config import *
+from harvester.Twitter_API.common.config import *
+from utils import *
 
 
 # This application uses Twitter's Search API to RANDOMLY search data
@@ -29,6 +29,8 @@ api = tweepy.API(auth, wait_on_rate_limit=True)
 storage = TweetStore(url=COUCHDB_URL, username=COUCHDB_USERNAME, password=COUCHDB_PASSWORD,
                     domain=COUCHDB_DOMAIN, ports=COUCHDB_PORTS, dbname=COUCHDB_REGION_TWEET_DB)
 
+# Sentiment score parser
+parser = Parse("common/AFINN.txt")
 
 # reference: API rate limit error handler from tweepy official documentation
 def limit_handled(cursor):
@@ -42,7 +44,7 @@ def limit_handled(cursor):
 
 
 region_tweet_id = {}
-with open("id_check.json", "r") as file:
+with open("common/id_check.json", "r") as file:
     maxid_file = json.load(file)
 def search_location(query, max_count):
     while True:
@@ -79,16 +81,54 @@ def search_location(query, max_count):
 
                     # get twitter data
                     result = tweet._json
+                    extract_tweet = ORIGIN_TWEET
+                    extract_tweet['_id'] = result['id_str']
+                    extract_tweet['id_str'] = result['id_str']
+                    extract_tweet['created_at'] = result['created_at']
+                    extract_tweet['text'] = result['text']
+                    extract_tweet['user']['id_str'] = result['user']['id_str']
+                    extract_tweet['user']['name'] = result['user']['name']
+                    extract_tweet['user']['followers_count'] = result['user']['followers_count']
+                    extract_tweet['user']['friends_count'] = result['user']['friends_count']
+
+                    if result['geo'] is not None:
+                        extract_tweet['geo'] = result['geo']
+                    else:
+                        result['geo'] = None
+
+                    if result['place'] is not None:
+                        extract_tweet['place']['full_name'] = result['place']['full_name']
+                        extract_tweet['place']['bounding_box']['coordinates'] = result['place']['bounding_box']['coordinates']
+                    else:
+                        result['place'] = None
+
+                    extract_tweet['lang'] = result['lang']
+
                     result_dic = {}
-                    result_dic["_id"] = result["id_str"]
                     # add center coordinate of search area
                     result_dic["center_coordinate"] = center_coordinate
                     result_dic["region"] = region_name
+
+                    # count the sentiment score
+                    sentiment_score = parser.parse(extract_tweet['text'])
+                    result_dic['sentiment_score'] = sentiment_score
+
+                    # topic count
+                    result_dic['food_related'] = 0
+                    result_dic['sport_related'] = 0
+                    word_set = clean_tweet(extract_tweet['text'])
+                    if len(FOOD_TOP_HASHTAGS.intersection(word_set)) > 0:
+                        result_dic['food_related'] += 1
+
+                    if len(SPORTS_TOP_HASHTAGS.intersection(word_set)) > 0:
+                        result_dic['sport_related'] += 1
+
                     # combine new key with twitter data
-                    result_dic.update(result)
+                    result_dic.update(extract_tweet)
 
                     #################### Please check here ##################
                     # store the tweet to the db
+                    # if result_dic['geo'] is not None:
                     storage.save_tweet(result_dic)
 
                     # output data to json
@@ -100,11 +140,11 @@ def search_location(query, max_count):
                 maxid_file[region_name] = search_tweets[-1].id
                 max_id = maxid_file[region_name]
                 json_object1 = json.dumps(maxid_file, indent=4)
-                with open("id_check.json", "w") as outfile:
+                with open("common/id_check.json", "w") as outfile:
                     outfile.write(json_object1)
                 # for testing
                 json_object2 = json.dumps(region_tweet_id, indent=4)
-                with open("each_run_id.json", "w") as outfile:
+                with open("common/each_run_id.json", "w") as outfile:
                     outfile.write(json_object2)
 
         except tweepy.TweepError as error:
