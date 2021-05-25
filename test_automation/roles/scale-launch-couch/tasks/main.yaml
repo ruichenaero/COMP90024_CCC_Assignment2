@@ -9,11 +9,11 @@
 - name: start Couchdb container
   become: yes
   docker_container:
-    name: couchdb
+    name: couch-node
     image: ibmcom/couchdb3:3.0.0
     state: started
-    volumes: /data/couchdb/data:/opt/couchdb/data
-    restart_policy: on-failure
+    volumes: /data/couchdb:/opt/couchdb/data
+    restart_policy: always
     ports:
       - "5984:5984"
       - "4369:4369" 
