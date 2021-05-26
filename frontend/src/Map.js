@@ -161,65 +161,67 @@ export default function Map() {
             'circle-color': ['interpolate', ['linear'], ['get', 'count'], minCount, '#fdae6b', math.round(minCount+add), '#fd8d3c', math.round(minCount+add*2), '#f16913', math.round(math.round(minCount+add*3)), '#d94801',  math.round(minCount+add*4), '#a63603', maxCount,  '#7f2704'],
             'circle-opacity': 0.45,
             //'circle-stroke-color': 'black'
-            'circle-radius': ['interpolate', ['linear'], ['get', 'count'], minCount, 10, math.round(minCount+add), 15, math.round(minCount+add*2), 20, math.round(minCount+add*3), 25, math.round(minCount+add*4), 30, maxCount, 35]
+          'circle-radius': ['interpolate', ['linear'], ['get', 'count'], minCount, 10, math.round(minCount + add), 15, math.round(minCount + add * 2), 20, math.round(minCount + add * 3), 25, math.round(minCount + add * 4), 30, maxCount, 35]
         }
       });
       layerSets.push('regions');
 
+      const incomeLayer = map.current.getLayer('income-layer');
+      layerSets.push('income-layer');
 
       // mouse pointer for every layer
-      for (let index = 0; index < layerSets.length; index++) {
-        let layerName = layerSets[index];
+      // for (let index = 0; index < layerSets.length; index++) {
+      //   let layerName = layerSets[index];
 
-        // Change the icon to a pointer icon when you mouse over a building
-        map.current.on('mouseenter', layerName, function () {
-          map.current.getCanvas().style.cursor = 'pointer';
-        });
+        // // Change the icon to a pointer icon when you mouse over a building
+        // map.current.on('mouseenter', layerName, function () {
+        //   map.current.getCanvas().style.cursor = 'pointer';
+        // });
 
-        // Change it back to a pan icon when it leaves.     
-        map.current.on('mouseleave', layerName, function () {
-          map.current.getCanvas().style.cursor = '';
-        });
+        // // Change it back to a pan icon when it leaves.     
+        // map.current.on('mouseleave', layerName, function () {
+        //   map.current.getCanvas().style.cursor = '';
+        // });
 
-        // Onclick events
-        map.current.on('click', layerName, function (e) {
-          // create a popup card for accident and pedestrian points
-          if (layerName === 'regions') {
-            // popup card for accident points
-            new mapboxgl.Popup()
-              // popup attributes on the popup card
-              .setLngLat(e.lngLat)
-              .setHTML('<h3> Region Details</h3>'
-                + '<p>Region Name: ' + e.features[0].properties.region_name + '</p>'
-                + '<p>Tweets Count: ' + e.features[0].properties.count + '</p>'
-              )
-              .addTo(map);
-          } else if (layerName === 'incomes') {
-            // popup card for pedestrian points
-            new mapboxgl.Popup()
-              // popup attributes on the popup card
-              .setLngLat(e.lngLat)
-              .setHTML('<h3> SA3 Region Details </h3>'
-                + '<p>SA3 Name: ' + e.features[0].properties.sa3_name16 + '</p>'
-                + '<p>SA3 Code: ' + e.features[0].properties.sa3_code_2016 + '</p>'
-                + '<p>Total Incomes: ' + e.features[0].properties.income_aud + '</p>')
-              .addTo(map);
-          }
+        // // Onclick events
+        // map.current.on('click', layerName, function (e) {
+        //   // create a popup card for accident and pedestrian points
+        //   if (layerName === 'regions') {
+        //     // popup card for accident points
+        //     new mapboxgl.Popup()
+        //       // popup attributes on the popup card
+        //       .setLngLat(e.lngLat)
+        //       .setHTML('<h3> Region Details</h3>'
+        //         + '<p>Region Name: ' + e.features[0].properties.region_name + '</p>'
+        //         + '<p>Tweets Count: ' + e.features[0].properties.count + '</p>'
+        //       )
+        //       .addTo(map);
+        //   } else if (layerName === 'incomes') {
+        //     // popup card for pedestrian points
+        //     new mapboxgl.Popup()
+        //       // popup attributes on the popup card
+        //       .setLngLat(e.lngLat)
+        //       .setHTML('<h3> SA3 Region Details </h3>'
+        //         + '<p>SA3 Name: ' + e.features[0].properties.sa3_name16 + '</p>'
+        //         + '<p>SA3 Code: ' + e.features[0].properties.sa3_code_2016 + '</p>'
+        //         + '<p>Total Incomes: ' + e.features[0].properties.income_aud + '</p>')
+        //       .addTo(map);
+        //   }
 
-          // functions that move the camera to the selected location
-          map.current.flyTo({
-            center: e.features[0].geometry.coordinates,
-            zoom: 15
-          });
-        });
-      }
+        //   // functions that move the camera to the selected location
+        //   map.current.flyTo({
+        //     center: e.features[0].geometry.coordinates,
+        //     zoom: 15
+        //   });
+        // });
+      // }
     });
 
     map.current.addControl(new mapboxgl.NavigationControl());       // add a navigation side bar
     map.current.addControl(new mapboxgl.ScaleControl(), 'bottom-right');     // add a scale of the map
   }, []);
 
-  
+
   return (
     <Layout style={{ minHeight: '100vh' }}>
       <SidePanel />
@@ -230,10 +232,10 @@ export default function Map() {
         <div ref={mapContainer} className="map-container" />
 
         <div id="income-legend" class="legend">
-            <div>Total amount of incomes</div>
-            <div class="bar" style={{background: 'linear-gradient', color: '#08306b'}}></div>
-            <p1>0</p1>
-            <p2>280000000</p2>
+          <div>Total amount of incomes</div>
+          <div class="bar" style={{ background: 'linear-gradient', color: '#08306b' }}></div>
+          <p1>0</p1>
+          <p2>280000000</p2>
         </div>
       </Layout>
     </Layout>
