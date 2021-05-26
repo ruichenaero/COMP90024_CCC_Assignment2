@@ -1,0 +1,50 @@
+#
+# Team: Team 47
+# City: Melbourne
+# Xiaoyu Wu (1218098)    
+# Yifei Yang (1136477)
+# Rui Chen (1100500)
+# Wenhai Huo (1101297)
+# Jingyuan Ma (988014)
+#
+---
+# Copy master node ip address to frontend
+- name: Copy master IP
+  copy:
+    dest: "{{ remote_directory }}/COMP90024_CCC_Assignment2/frontend/src/data/config.json"
+    content: |
+      {"master-ip": "{{ groups['master-server'].0 }}"}
+
+# Install Node JS and npm packages
+- name: Install Node.js
+  become: yes
+  apt:
+    name: ['build-essential', 'nodejs']
+    state: latest
+    update_cache: yes
+
+- name: Install npm packages
+  become: yes
+  shell: >
+    npm install
+  args:
+    executable: /bin/bash
+    chdir: "{{ remote_directory }}/COMP90024_CCC_Assignment2/frontend"
+
+- name: Build static site
+  become: yes
+  shell: >
+    node --max_old_space_size=15000 /usr/bin/npm run build
+  args:
+    executable: /bin/bash
+    chdir: "{{ remote_directory }}/COMP90024_CCC_Assignment2/frontend"
+
+- name: Copy front-end source code
+  become: yes
+  copy:
+    src: "{{ remote_directory }}/COMP90024_CCC_Assignment2/frontend/build"
+    dest: "{{ remote_directory }}/comp90024"
+    remote_src: yes
+    directory_mode: yes
+    force: yes
+    mode: '755'
