@@ -108,7 +108,7 @@ export default function Scenario5() {
                     'source': 'sentiment-scatter-neg',
                     'layout': {
                         'icon-image': 'sad',
-                        'icon-size': 0.05,
+                        'icon-size': 0.03,
                     }
                 });
 
@@ -141,7 +141,7 @@ export default function Scenario5() {
                     'source': 'sentiment-scatter-normal',
                     'layout': {
                         'icon-image': 'normal',
-                        'icon-size': 0.05,
+                        'icon-size': 0.03,
                     }
                 });
             } else {
@@ -174,7 +174,7 @@ export default function Scenario5() {
                     'source': 'sentiment-scatter-pos',
                     'layout': {
                         'icon-image': 'happy',
-                        'icon-size': 0.05,
+                        'icon-size': 0.03,
                     }
                 });
             } else {
