@@ -63,6 +63,9 @@ export default function SidePanel() {
           <Menu.Item key="sub3-1">
             <NavLink to="/Scenario3">Geo-Map</NavLink>
           </Menu.Item>
+          <Menu.Item key="sub3-3">
+            <NavLink to="/Scenario5">Geo-Map-scatter</NavLink>
+          </Menu.Item>
           <Menu.Item key="sub3-2" icon={<PieChartOutlined />}>
             <NavLink to="/Statistic3">Statistics</NavLink>
           </Menu.Item>
@@ -70,9 +73,12 @@ export default function SidePanel() {
 
         <SubMenu key="sub4" icon={<ProjectOutlined />} title="Scenarios-4">
           <Menu.Item key="sub4-1">
-            <NavLink to="/Scenario4">Geo-Map</NavLink>
+            <NavLink to="/Scenario4">Geo-Map-Income</NavLink>
           </Menu.Item>
-          <Menu.Item key="sub4-2" icon={<PieChartOutlined />}>
+          <Menu.Item key="sub4-2">
+            <NavLink to="/Scenario6">Geo-Map-Hospitals</NavLink>
+          </Menu.Item>
+          <Menu.Item key="sub4-3" icon={<PieChartOutlined />}>
             <NavLink to="/Statistic4">Statistics</NavLink>
           </Menu.Item>
         </SubMenu>

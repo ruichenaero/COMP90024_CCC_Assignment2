@@ -1,15 +1,10 @@
-import React, { Component, useEffect, useState,useRef } from 'react';
+import React, { useEffect, useState,useRef } from 'react';
 import SidePanel from "../components/SidePanel";
 import { Layout, Breadcrumb } from 'antd';
 import '../App.css';
-import { Bar } from 'react-chartjs-2';
-import Income_data from '../data/Income_data.json';
+import {displayLayer} from '../components/LayerUtils'
 import Regions from '../data/region_sentiment_count.json';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
-//import { map, staticLayers, additionLayers, mapContainer } from '../Map';
-import { hideLayer, displayLayer } from '../components/LayerUtils';
-//import { StoreContext } from '../BaseMap';
-
 
 const { Header, Content, Footer, Sider } = Layout;
 
