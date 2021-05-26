@@ -11,3 +11,6 @@ Directory:
         
     frontend:
         Frontend project for the app
+        
+    harvester:
+        Harvester implementation
