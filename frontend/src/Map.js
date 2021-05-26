@@ -14,14 +14,15 @@ var staticLayers = [];
 var additionLayers = [];
 mapboxgl.accessToken = 'pk.eyJ1IjoieWlmZXlhbmcxIiwiYSI6ImNrb251MG44ZzA0Njkyd3BweWFyMWJvcjYifQ.oEO3lpWd3GLwRu13euHIvA';
 
-export { mapContainer };
-export { map };
-export { staticLayers };
-export { additionLayers };
+//export { mapContainer };
+//export { map };
+//export { staticLayers };
+//export { additionLayers };
+
 
 export default function Map() {
-  mapContainer = useRef(null);
-  map = useRef(null);
+  var mapContainer = useRef(null);
+  var map = useRef(null);
   const [lng, setLng] = useState(145.3607);
   const [lat, setLat] = useState(-37.8636);
   const [zoom, setZoom] = useState(7.96);
@@ -144,10 +145,15 @@ export default function Map() {
 
     map.current.addControl(new mapboxgl.NavigationControl());       // add a navigation side bar
     map.current.addControl(new mapboxgl.ScaleControl(), 'bottom-right');     // add a scale of the map
+
+    
   }, []);
 
+  
 
   return (
+    
+
     <Layout style={{ minHeight: '100vh' }}>
       <SidePanel />
       <Layout>
@@ -164,5 +170,9 @@ export default function Map() {
         </div>
       </Layout>
     </Layout>
+
+
   );
+
+  
 }
