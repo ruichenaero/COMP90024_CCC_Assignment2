@@ -112,6 +112,10 @@ export default function Scenario2() {
   } else {
     displayLayer(map, 'regions-sport');
   }
+  map.current.addControl(new mapboxgl.NavigationControl());       // add a navigation side bar
+  map.current.addControl(new mapboxgl.ScaleControl(), 'bottom-right');     // add a scale of the map
+
+
 });
 }, []);
 

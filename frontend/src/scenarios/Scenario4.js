@@ -85,6 +85,9 @@ export default function Scenario4() {
                 displayLayer(map, 'regions-sentiment');
             }
         });
+        map.current.addControl(new mapboxgl.NavigationControl());       // add a navigation side bar
+        map.current.addControl(new mapboxgl.ScaleControl(), 'bottom-right');     // add a scale of the map
+    
     }, []);
 
     return (
