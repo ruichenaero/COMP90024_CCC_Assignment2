@@ -53,22 +53,58 @@ export default function Scenario6() {
             setZoom(map.current.getZoom().toFixed(2));
         });
     });
+    useEffect(() => {
+        map.current.on('load', () => {
+            if (!map.current.getLayer('regions-cov19')) {
+                map.current.addSource('regions-cov19', {
+                    type: 'geojson',
+                    data: {
+                        type: 'FeatureCollection',
+                        features: regions.features.map(region => {
+                            return {
+                                type: 'Feature',
+                                properties: {
+                                    radius: region.properties.radius,
+                                    count: region.properties.count,
+                                },
+                                geometry: {
+                                    type: 'Point',
+                                    coordinates: region.geometry.coordinates,
+                                },
+                            };
+                        }),
+                    },
+                });
 
-    /*useEffect(() => {
-        map.on('idle', function () {
-            map.setLayoutProperty('income-layer', 'visibility', 'none');
+                map.current.addLayer({
+                    'id': 'regions-cov19',
+                    'type': 'circle',
+                    'source': 'regions-cov19',
+                    'paint': {
+                        'circle-color': ['interpolate', ['linear'], ['get', 'count'], minCount, '#fdae6b', math.round(minCount + add), '#fd8d3c', math.round(minCount + add * 2), '#f16913', math.round(math.round(minCount + add * 3)), '#d94801', math.round(minCount + add * 4), '#a63603', maxCount, '#7f2704'],
+                        'circle-opacity': 0.45,
+                        //'circle-radius': ['interpolate', ['linear'], ['get', 'count'], minCount, 10, math.round(minCount + add), 15, math.round(minCount + add * 2), 20, math.round(minCount + add * 3), 25, math.round(minCount + add * 4), 30, maxCount, 35]
+                        'circle-radius': ['interpolate', ['linear'], ['get', 'count'], minCount, 30, math.round(minCount + add), 55, math.round(minCount + add * 2), 65, math.round(minCount + add * 3), 85, math.round(minCount + add * 4), 95, maxCount, 110]
 
+                    }
+                });
+                //additionLayers.push('regions-sport')
+            } else {
+                displayLayer(map, 'regions-cov19');
+            }
+        });
+       
 
-});
+    }, []);
 
-                
-    }, []);*/
+    
     useEffect(() => {
         map.current.on('load', () => {
           map.current.loadImage('https://i.loli.net/2021/05/25/rdNiyRkwZWafj5x.png', function (error, image) {
             if (error) throw error;
             map.current.addImage('exclamation', image); //38x55px, shadow adds 5px
           });
+
     
           map.current.addSource('hospital_location', {
             type: 'geojson',
@@ -96,6 +132,7 @@ export default function Scenario6() {
               'icon-size': 0.05,
             },
           });
+
            
             map.current.on('idle', function () {
                 map.current.setLayoutProperty('income-layer', 'visibility', 'none');
