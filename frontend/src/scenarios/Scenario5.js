@@ -68,17 +68,17 @@ export default function Scenario5() {
 
     useEffect(() => {
         map.current.on('load', () => {
-            map.current.loadImage('https://i.loli.net/2021/05/27/MboaRglC6ZYpwGA.png', function (error, image) {
+            map.current.loadImage('https://i.loli.net/2021/05/27/fdgFmaCWxSXhy6O.png', function (error, image) {
                     if (error) throw error;
                     map.current.addImage('happy', image); //38x55px, shadow adds 5px
                 });
 
-                map.current.loadImage('https://i.loli.net/2021/05/27/rNhyFgf8EsqdJoi.png', function (error, image) {
+                map.current.loadImage('https://i.loli.net/2021/05/27/vt8ngBa6jk1dW9i.png', function (error, image) {
                     if (error) throw error;
                     map.current.addImage('normal', image); //38x55px, shadow adds 5px
                 });
 
-                map.current.loadImage('https://i.loli.net/2021/05/27/fdxJYwXLEOQzCVj.png', function (error, image) {
+                map.current.loadImage('https://i.loli.net/2021/05/27/hKVx2iHMswZo1Dt.png', function (error, image) {
                     if (error) throw error;
                     map.current.addImage('sad', image); //38x55px, shadow adds 5px
                 });
@@ -108,7 +108,7 @@ export default function Scenario5() {
                     'source': 'sentiment-scatter-neg',
                     'layout': {
                         'icon-image': 'sad',
-                        'icon-size': 0.08,
+                        'icon-size': 0.03,
                     }
                 });
 
@@ -141,7 +141,7 @@ export default function Scenario5() {
                     'source': 'sentiment-scatter-normal',
                     'layout': {
                         'icon-image': 'normal',
-                        'icon-size': 0.1,
+                        'icon-size': 0.03,
                     }
                 });
             } else {
@@ -174,12 +174,14 @@ export default function Scenario5() {
                     'source': 'sentiment-scatter-pos',
                     'layout': {
                         'icon-image': 'happy',
-                        'icon-size': 0.1,
+                        'icon-size': 0.03,
                     }
                 });
             } else {
                 displayLayer(map, 'sentiment-scatter');
             }
+            map.current.addControl(new mapboxgl.NavigationControl());       // add a navigation side bar
+            map.current.addControl(new mapboxgl.ScaleControl(), 'bottom-right');     // add a scale of the map
         
         });
     }, []);

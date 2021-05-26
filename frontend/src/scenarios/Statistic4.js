@@ -44,11 +44,11 @@ export default function Statistic4() {
       };
     
       const data_sport = {
-        labels: Object.keys(food_time_count),
+        labels: Object.keys(sport_time_count),
         datasets: [
           {
             label: 'Count of tweets related to sport',
-            data: Object.values(food_time_count),
+            data: Object.values(sport_time_count),
             fill: false,
                 backgroundColor: '#bdc9e1',
                 borderColor: "#0570b0",
