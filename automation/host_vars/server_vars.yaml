@@ -1,0 +1,30 @@
+#
+# Team: Team 47
+# City: Melbourne
+# Xiaoyu Wu (1218098)    
+# Yifei Yang (1136477)
+# Rui Chen (1100500)
+# Wenhai Huo (1101297)
+# Jingyuan Ma (988014)
+#
+
+# Common variables
+proxy_address: http://wwwproxy.unimelb.edu.au:8000
+remote_directory: /home/ubuntu/COMP90024
+
+# CouchDB
+couchdb_version: 3.1.1
+couchdb_config_path: "{{ remote_directory }}/couchdb/etc"
+couchdb_user: admin
+couchdb_password: admin
+couchdb_secret: a192aeb9904e6590849337933b000c99
+couchdb_port: 5984
+couchdb_nodes: 4
+couchdb_share: 4
+couchdb_replica: 3
+couchdb_cookie: 'hello'
+cluster_communication_port_min: 9100
+cluster_communication_port_max: 9150
+
+# Instance group
+groups: ['master-server','data-server', 'backend-server']

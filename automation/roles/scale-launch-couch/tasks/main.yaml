@@ -1,0 +1,83 @@
+#
+# Team: Team 47
+# City: Melbourne
+# Xiaoyu Wu (1218098)    
+# Yifei Yang (1136477)
+# Rui Chen (1100500)
+# Wenhai Huo (1101297)
+# Jingyuan Ma (988014)
+#
+
+---
+# Set couchdb
+- name: Load Couchdb Image
+  become: yes
+  docker_image:
+    name: ibmcom/couchdb3:3.0.0
+    source: pull
+
+- name: Check if the docker is running
+  become: yes
+  shell: "docker start couch-node"
+  ignore_errors: true
+  no_log: true
+  register: docker_start
+
+- name: start Couchdb container
+  become: yes
+  docker_container:
+    name: couch-node
+    image: couchdb:latest
+    state: started
+    volumes: /data/couchdb:/opt/couchdb/data
+    restart_policy: always
+    ports:
+      - "5986:5986"
+      - "5984:5984"
+      - "4369:4369" 
+      - "9100-9150:9100-9150"
+    env:
+      COUCHDB_USER: '{{ couchdb_user }}'
+      COUCHDB_PASSWORD: '{{ couchdb_password }}'
+      COUCHDB_SECRET: '{{ couchdb_secret }}'
+      ERL_FLAGS: "-setcookie \"{{ couchdb_secret }}\" -name \"couchdb@{{ ansible_default_ipv4.address }}\""
+  when: docker_start.rc != 0
+
+- name: Check connection
+  args:
+    warn: yes
+  shell: >
+    curl "http://{{ couchdb_user }}:{{ couchdb_password }}@{{ groups['master-server'].0 }}:{{ couchdb_port }}"
+  register: connection_check
+
+- name: Enable cluster on each node
+  shell: >
+    curl 
+    -X POST 
+    -H "Content-Type: application/json" http://{{ couchdb_user }}:{{ couchdb_password }}@localhost:5984/_cluster_setup
+    -d '{"action": "enable_cluster", "bind_address":"0.0.0.0", "username": "{{ couchdb_user }}", "password":"{{ couchdb_password }}", "node_count":"{{ couchdb_nodes }}"}'
+
+
+- name: Add Nodes to Cluster
+  shell: >
+    curl 
+    -X POST "http://{{ couchdb_user }}:{{ couchdb_password }}@{{ groups['master-server'].0 }}:{{ couchdb_port }}/_cluster_setup" 
+    --header "Content-Type: application/json"  
+    --data "{\"action\": \"add_node\", \"host\":\"{{ item }}\", \"port\": \"{{ couchdb_port }}\", \"username\": \"{{ couchdb_user }}\", \"password\":\"{{ couchdb_password }}\"}"
+  args:
+    warn: yes
+  loop: '{{ groups["all"] }}'
+
+  # Configure python config for couchdb in harvester
+- name: Configure conf.py for python couchdb api in harvester
+  copy:
+    dest: "{{ remote_directory }}/COMP90024_CCC_Assignment2/harvester/Twitter_API/config.py"
+    content: |
+      COUCHDB_URL = 'http://{}:{}@{}:{}/'
+      COUCHDB_DOMAIN = "{{groups['master-server'].0}}"
+      COUCHDB_DOMAINS = "{{groups['all']}}"
+      COUCHDB_USERNAME = "{{ couchdb_user }}"
+      COUCHDB_PASSWORD = "{{ couchdb_password }}"
+      COUCHDB_PORTS = "{{ couchdb_port }}"
+      COUCHDB_TWEET_DB = 'test_tweet'
+      COUCHDB_REGION_TWEET_DB = 'region_tweet'

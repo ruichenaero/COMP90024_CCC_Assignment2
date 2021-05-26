@@ -1,3 +1,12 @@
+#
+# Team: Team 47
+# City: Melbourne
+# Xiaoyu Wu (1218098)    
+# Yifei Yang (1136477)
+# Rui Chen (1100500)
+# Wenhai Huo (1101297)
+# Jingyuan Ma (988014)
+#
 
 CR_API = {"consumer_key": "XLpXawfnonn8n1LEBJgtmqUaE",
           "consumer_secret": "aDaoN5IWq8NiLZ8GsqK8dzAkBy683yjJt4RcZZ2sVf67hH6f6F",
