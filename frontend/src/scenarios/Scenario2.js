@@ -1,12 +1,14 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { Component, useEffect, useState,useRef } from 'react';
 import SidePanel from "../components/SidePanel";
 import { Layout, Breadcrumb } from 'antd';
 import '../App.css';
-import { Bar } from 'react-chartjs-2';
+//import { Bar } from 'react-chartjs-2';
 import Income_data from '../data/Income_data.json';
 import Regions from '../data/region_sport_count.json';
-import { map, staticLayers, additionLayers, mapContainer } from '../Map';
+//import { map, staticLayers, additionLayers, mapContainer } from '../Map';
 import { hideLayer, displayLayer } from '../components/LayerUtils';
+import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
+//import { StoreContext } from '../BaseMap';
 
 const regions = Regions;
 const counts = Regions.features.map(region => {
@@ -20,12 +22,17 @@ const add = (maxCount - minCount) / 5;
 
 const { Header, Content, Footer, Sider } = Layout;
 
+mapboxgl.accessToken = 'pk.eyJ1IjoieWlmZXlhbmcxIiwiYSI6ImNrb251MG44ZzA0Njkyd3BweWFyMWJvcjYifQ.oEO3lpWd3GLwRu13euHIvA';
 export default function Scenario2() {
 
-  const [count, setCountState] = useState({ name: '' });
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [error, setError] = useState(null);
+  //const { map } = React.useContext(StoreContext);
+  //const { mapContainer } = React.useContext(StoreContext);
 
+  var mapContainer = useRef(null);
+  var map = useRef(null);
+  const [lng, setLng] = useState(145.3607);
+  const [lat, setLat] = useState(-37.8636);
+  const [zoom, setZoom] = useState(9.4);
   // useEffect(() => {
   //   axios.get(`http://172.26.128.51:80/api/region_topic_count/food/`)
   //     .then(res => {
@@ -38,16 +45,38 @@ export default function Scenario2() {
   //     });
   // }, [setCountState]);
 
-
+/*
   hideLayer(map, 'hospitals_loc');
   displayLayer(map, 'incomes-layer');
-
+  /*
   additionLayers.forEach(layer => {
     if (layer != 'regions-sport') {
       hideLayer(map, layer);
     }
-  });
+  });*/
 
+  useEffect(() => {
+    if (map.current) return; // initialize map only once
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: 'mapbox://styles/yifeyang1/ckp41vh7i0pli19o3x6fe84jh/draft',
+      center: [lng, lat],
+      zoom: zoom
+    });
+  });
+  
+  useEffect(() => {
+    if (!map.current) return; // wait for map to initialize
+    map.current.on('move', () => {
+      setLng(map.current.getCenter().lng.toFixed(4));
+      setLat(map.current.getCenter().lat.toFixed(4));
+      setZoom(map.current.getZoom().toFixed(2));
+    });
+  });
+  
+
+  useEffect(() => {
+    map.current.on('load', () => {
   if (!map.current.getLayer('regions-sport')) {
     map.current.addSource('regions-sport', {
       type: 'geojson',
@@ -79,70 +108,12 @@ export default function Scenario2() {
         'circle-radius': ['interpolate', ['linear'], ['get', 'count'], minCount, 10, math.round(minCount + add), 15, math.round(minCount + add * 2), 20, math.round(minCount + add * 3), 25, math.round(minCount + add * 4), 30, maxCount, 35]
       }
     });
-    additionLayers.push('regions-sport')
+    //additionLayers.push('regions-sport')
   } else {
     displayLayer(map, 'regions-sport');
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  const data = {
-    labels: Income_data.features.map(income => {
-      return income.properties.sa3_name16
-    }),
-    datasets: [
-      {
-        label: 'Income aud',
-        data: Income_data.features.map(income => {
-          return income.properties.income_aud
-        }),
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)',
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)',
-        ],
-        borderWidth: 1,
-      },
-    ],
-  };
-
-  const options = {
-    scales: {
-      yAxes: [
-        {
-          ticks: {
-            beginAtZero: true,
-          },
-        },
-      ],
-    },
-  };
-
+});
+}, []);
 
 
 
@@ -151,16 +122,11 @@ export default function Scenario2() {
     <Layout style={{ minHeight: '100vh' }}>
       <SidePanel />
       <Layout className="site-layout">
-        <Header className="site-layout-background" style={{ padding: 0 }} />
-        <Content style={{ margin: '0 16px' }}>
-          <Breadcrumb style={{ margin: '16px 0' }}>
-          </Breadcrumb>
-          <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-            <Bar data={data} options={options} />
-          </div>
+      
+          
           <div ref={mapContainer} className="map-container" />
-        </Content>
-        <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+        
+        
       </Layout>
     </Layout>
   );

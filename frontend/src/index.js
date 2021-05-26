@@ -4,10 +4,13 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// import BaseMap from './BaseMap';
 
 ReactDOM.render(
   <React.StrictMode>
+  
     <App />
+   
   </React.StrictMode>,
   document.getElementById('root')
 );
