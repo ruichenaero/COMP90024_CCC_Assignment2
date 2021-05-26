@@ -1,5 +1,6 @@
 # Editor directories and files
 
+.vs
 .idea
 .vscode
 
