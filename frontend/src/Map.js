@@ -4,7 +4,7 @@ import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-load
 import { Layout } from 'antd';
 import Hospital_Statistics from './data/Hospital_Statistics.json';
 //port hospital from './data/hospital.json';
-import Regions from './data/region_covid_count.json';
+import Regions from './data/region_food_count.json';
 import axios from "axios";
 import { MenuFoldOutlined } from '@ant-design/icons';
 
@@ -32,6 +32,16 @@ export default function Map() {
   //const [isAdded, setIsAdded] = useState(false);
   const aurinData = Hospital_Statistics.features;
 
+
+  const regions = Regions;
+  const counts = Regions.features.map(region => {
+    return parseInt(region.properties.count);
+  });
+
+  const math = require("mathjs");
+  const maxCount = math.max(counts);
+  const minCount = math.min(counts);
+  const add = (maxCount - minCount) / 5;
   // const colors = ['#b3d9ff', '#80bfff', '#4da6ff', '#1a8cff', '#0073e6', '#0059b3'];
   // const colorClasses = getCountRange(regions, colors);
 
@@ -94,6 +104,42 @@ export default function Map() {
 
       map.current.getLayer('income-layer');
       staticLayers.push('income-layer');
+
+      // region layer
+      map.current.addSource('regions-food', {
+        type: 'geojson',
+        data: {
+          type: 'FeatureCollection',
+          features: regions.features.map(region => {
+            return {
+              type: 'Feature',
+              properties: {
+                radius: region.properties.radius,
+                count: region.properties.count,
+              },
+              geometry: {
+                type: 'Point',
+                coordinates: region.geometry.coordinates,
+              },
+            };
+          }),
+        },
+      });
+
+      map.current.addLayer({
+        'id': 'regions-food',
+        'type': 'circle',
+        'source': 'regions-food',
+        'paint': {
+          'circle-color': ['interpolate', ['linear'], ['get', 'count'], minCount, '#fdae6b', math.round(minCount + add), '#fd8d3c', math.round(minCount + add * 2), '#f16913', math.round(math.round(minCount + add * 3)), '#d94801', math.round(minCount + add * 4), '#a63603', maxCount, '#7f2704'],
+          'circle-opacity': 0.45,
+          'circle-radius': 50
+          // 'circle-radius': ['interpolate', ['linear'], ['get', 'count'], minCount, 10, math.round(minCount + add), 15, math.round(minCount + add * 2), 20, math.round(minCount + add * 3), 25, math.round(minCount + add * 4), 30, maxCount, 35]
+        }
+      });
+      additionLayers.push('regions-food')
+
+
 
       // mouse pointer for every layer
       // for (let index = 0; index < staticLayers.length; index++) {
