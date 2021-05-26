@@ -13,6 +13,34 @@ mapboxgl.accessToken = 'pk.eyJ1IjoieWlmZXlhbmcxIiwiYSI6ImNrb251MG44ZzA0Njkyd3Bwe
 export default function Scenario5() {
     const regions = Regions;
 
+    const scores = Regions.features.map(region => {
+        return parseInt(region.properties.sentiment_score);
+    });
+
+    const sentiment_neg = Regions.features.filter(region => 
+             region.properties.sentiment_score < 0
+       
+    );
+
+    const sentiment_normal = Regions.features.filter(region =>
+             region.properties.sentiment_score > 10 && region.properties.sentiment_score < 30
+       
+    );
+
+    const sentiment_pos = Regions.features.filter(region => 
+             region.properties.sentiment_score > 30
+       );
+
+    console.log(sentiment_neg);
+    console.log(sentiment_normal);
+    console.log(sentiment_pos);
+
+
+    const math = require("mathjs");
+    const maxScore = math.max(scores);
+    const minScore = math.min(scores);
+    const add = (maxScore - minScore) / 2;
+
     var mapContainer = useRef(null);
     var map = useRef(null);
     const [lng, setLng] = useState(145.3607);
@@ -40,26 +68,26 @@ export default function Scenario5() {
 
     useEffect(() => {
         map.current.on('load', () => {
-            map.current.loadImage('https://i.loli.net/2021/05/26/jciaY8rfIw49POK.png', function (error, image) {
+            map.current.loadImage('https://i.loli.net/2021/05/27/MboaRglC6ZYpwGA.png', function (error, image) {
                     if (error) throw error;
                     map.current.addImage('happy', image); //38x55px, shadow adds 5px
                 });
 
-                map.current.loadImage('https://i.loli.net/2021/05/26/FXWktYc1mypvbaD.png', function (error, image) {
+                map.current.loadImage('https://i.loli.net/2021/05/27/rNhyFgf8EsqdJoi.png', function (error, image) {
                     if (error) throw error;
                     map.current.addImage('normal', image); //38x55px, shadow adds 5px
                 });
 
-                map.current.loadImage('https://i.loli.net/2021/05/26/dF6ACq1VQ5rxjNG.png', function (error, image) {
+                map.current.loadImage('https://i.loli.net/2021/05/27/fdxJYwXLEOQzCVj.png', function (error, image) {
                     if (error) throw error;
                     map.current.addImage('sad', image); //38x55px, shadow adds 5px
                 });
-            if (!map.current.getLayer('sentiment-scatter')) {
-                map.current.addSource('sentiment-scatter', {
+            if (!map.current.getLayer('sentiment-scatter-neg')) {
+                map.current.addSource('sentiment-scatter-neg', {
                     type: 'geojson',
                     data: {
                         type: 'FeatureCollection',
-                        features: regions.features.map(region => {
+                        features: sentiment_neg.map(region => {
                             return {
                                 type: 'Feature',
                                 properties: {
@@ -74,22 +102,88 @@ export default function Scenario5() {
                     },
                 });
 
+                map.current.addLayer({
+                    'id': 'sentiment-scatter-neg',
+                    'type': 'symbol',
+                    'source': 'sentiment-scatter-neg',
+                    'layout': {
+                        'icon-image': 'sad',
+                        'icon-size': 0.08,
+                    }
+                });
+
+            }
+
+             if (!map.current.getLayer('sentiment-scatter-normal')) {
+                    map.current.addSource('sentiment-scatter-normal', {
+                        type: 'geojson',
+                        data: {
+                            type: 'FeatureCollection',
+                            features: sentiment_normal.map(region => {
+                                return {
+                                    type: 'Feature',
+                                    properties: {
+                                        sentiment_score: region.properties.sentiment_score,
+                                    },
+                                    geometry: {
+                                        type: 'Point',
+                                        coordinates: region.geometry.coordinates,
+                                    },
+                                };
+                            }),
+                        },
+                    });
+
 
                 map.current.addLayer({
-                    'id': 'sentiment-scatter',
+                    'id': 'sentiment-scatter-normal',
                     'type': 'symbol',
-                    'source': 'sentiment-scatter',
+                    'source': 'sentiment-scatter-normal',
                     'layout': {
-                        'icon-image': ['interpolate', ['linear'], ['get', 'sentiment_score'], -30, 'sad', -10, 'normal', 10, 'happy'],
-                        'icon-size': 0.05,
+                        'icon-image': 'normal',
+                        'icon-size': 0.1,
                     }
                 });
             } else {
                 displayLayer(map, 'sentiment-scatter');
             }
+            
+            if (!map.current.getLayer('sentiment-scatter-pos')) {
+                map.current.addSource('sentiment-scatter-pos', {
+                    type: 'geojson',
+                    data: {
+                        type: 'FeatureCollection',
+                        features: sentiment_pos.map(region => {
+                            return {
+                                type: 'Feature',
+                                properties: {
+                                    sentiment_score: region.properties.sentiment_score,
+                                },
+                                geometry: {
+                                    type: 'Point',
+                                    coordinates: region.geometry.coordinates,
+                                },
+                            };
+                        }),
+                    },
+                });
+                
+                map.current.addLayer({
+                    'id': 'sentiment-scatter-pos',
+                    'type': 'symbol',
+                    'source': 'sentiment-scatter-pos',
+                    'layout': {
+                        'icon-image': 'happy',
+                        'icon-size': 0.1,
+                    }
+                });
+            } else {
+                displayLayer(map, 'sentiment-scatter');
+            }
+        
         });
     }, []);
-
+    //['interpolate', ['linear'], ['get', 'sentiment_score'], -30, 'sad', -10, 'normal', 10, 'happy'],
 
     return (
         <Layout style={{ minHeight: '100vh' }}>

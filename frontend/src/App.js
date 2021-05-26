@@ -11,6 +11,7 @@ import Statistic3 from "./scenarios/Statistic3";
 import Scenario4 from "./scenarios/Scenario4";
 import Scenario5 from "./scenarios/Scenario5";
 import Scenario6 from "./scenarios/Scenario6";
+import Statistic4 from "./scenarios/Statistic4";
 //import logo from './logo.svg';
 
 import SidePanel from "./components/SidePanel";
@@ -38,27 +39,11 @@ export default function App() {
         <Route path="/statistic1"><Statistic1/></Route>
         <Route path="/statistic2"><Statistic2/></Route>
         <Route path="/statistic3"><Statistic3/></Route>
+        <Route path="/statistic4"><Statistic4/></Route>
       </Switch>
       
     </Router>
-    /*
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-    */
+    
   );
 }
 
