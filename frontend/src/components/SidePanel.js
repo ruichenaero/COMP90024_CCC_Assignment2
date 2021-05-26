@@ -51,10 +51,10 @@ export default function SidePanel() {
         </SubMenu>
 
         <SubMenu key="sub2" icon={<ProjectOutlined />} title="Scenarios-2">
-          <Menu.Item key="sub2-1" icon={<PieChartOutlined />}>
+          <Menu.Item key="sub2-1">
             <NavLink to="/Scenario2">Geo-Map</NavLink>
           </Menu.Item>
-          <Menu.Item key="sub2-2">
+          <Menu.Item key="sub2-2" icon={<PieChartOutlined />}>
             <NavLink to="/Statistic2">Statistics</NavLink>
           </Menu.Item>
         </SubMenu>
@@ -68,9 +68,16 @@ export default function SidePanel() {
           </Menu.Item>
         </SubMenu>
 
+        <SubMenu key="sub4" icon={<ProjectOutlined />} title="Scenarios-4">
+          <Menu.Item key="sub4-1">
+            <NavLink to="/Scenario4">Geo-Map</NavLink>
+          </Menu.Item>
+          <Menu.Item key="sub4-2" icon={<PieChartOutlined />}>
+            <NavLink to="/Statistic4">Statistics</NavLink>
+          </Menu.Item>
+        </SubMenu>
+
       </Menu>
     </Sider>
-
   );
-
 }

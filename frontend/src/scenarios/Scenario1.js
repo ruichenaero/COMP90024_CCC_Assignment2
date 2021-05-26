@@ -4,7 +4,7 @@ import SidePanel from "../components/SidePanel";
 import { Layout, Breadcrumb } from 'antd';
 //import { map, staticLayers, additionLayers, mapContainer } from '../Map';
 import { hideLayer, displayLayer } from '../components/LayerUtils';
-import { StoreContext } from '../BaseMap';
+// import { StoreContext } from '../BaseMap';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import regions from '../data/region_food_count.json';
 
