@@ -1,9 +1,10 @@
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
+import {map} from '../Map';
 
-function mapboxLayer(map, layerName) {
-    if (!map.getLayer(layerName)) {
+export function mapboxLayer(map, layerName) {
+    if (!map.current.getLayer(layerName)) {
         // Add new layer for map
-        map.addlayer({
+        map.current.addlayer({
             'id': layerName,
             'type': 'circle',
             'source': '',
@@ -13,22 +14,22 @@ function mapboxLayer(map, layerName) {
             }
         });
     }
-    return (map.getLayer(layerName));
+    return (map.current.getLayer(layerName));
 }
 
-function hideLayer(map, layerName) {
+export function hideLayer(map, layerName) {
     // Check if layer exist in map
-    if (map.getLayer(layerName)) {
+    if (map.current.getLayer(layerName)) {
         // Get visibility of the layer
-        var visibility = map.getLayoutProperty(
+        var visibility = map.current.getLayoutProperty(
             layerName,
             'visibility'
         );
 
         // Hiding layer, setting to invisible
         if (visibility === 'visible') {
-            map.setLayoutProperty(
-                clickedLayer,
+            map.current.current.setLayoutProperty(
+                layerName,
                 'visibility',
                 'none'
             );
@@ -36,19 +37,19 @@ function hideLayer(map, layerName) {
     }
 }
 
-function displayLayer(map, layerName) {
+export function displayLayer(map, layerName) {
     // Check if layer exist in map
-    if (map.getLayer(layerName)) {
+    if (map.current.getLayer(layerName)) {
         // Get visibility of the layer
-        var visibility = map.getLayoutProperty(
+        var visibility = map.current.getLayoutProperty(
             layerName,
             'visibility'
         );
 
         // Hiding layer, setting to invisible
         if (visibility === 'none') {
-            map.setLayoutProperty(
-                clickedLayer,
+            map.current.setLayoutProperty(
+                layerName,
                 'visibility',
                 'visible'
             );
