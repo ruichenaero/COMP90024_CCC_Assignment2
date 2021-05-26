@@ -1,11 +1,14 @@
 import React, { Component, useEffect, useState, useRef } from 'react';
 import SidePanel from "../components/SidePanel";
 import '../App.css';
-import { Layout, Breadcrumb } from 'antd';
+import { Layout } from 'antd';
 import Regions from '../data/sentiment_scatter.json';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
+import { hideLayer, displayLayer } from '../components/LayerUtils';
 
 const { Header, Content, Footer, Sider } = Layout;
+
+mapboxgl.accessToken = 'pk.eyJ1IjoieWlmZXlhbmcxIiwiYSI6ImNrb251MG44ZzA0Njkyd3BweWFyMWJvcjYifQ.oEO3lpWd3GLwRu13euHIvA';
 
 export default function Scenario5() {
     const regions = Regions;
@@ -14,7 +17,7 @@ export default function Scenario5() {
     var map = useRef(null);
     const [lng, setLng] = useState(145.3607);
     const [lat, setLat] = useState(-37.8636);
-    const [zoom, setZoom] = useState(7.96);
+    const [zoom, setZoom] = useState(9.4);
 
     useEffect(() => {
         if (map.current) return; // initialize map only once
@@ -37,6 +40,20 @@ export default function Scenario5() {
 
     useEffect(() => {
         map.current.on('load', () => {
+            map.current.loadImage('https://i.loli.net/2021/05/26/jciaY8rfIw49POK.png', function (error, image) {
+                    if (error) throw error;
+                    map.current.addImage('happy', image); //38x55px, shadow adds 5px
+                });
+
+                map.current.loadImage('https://i.loli.net/2021/05/26/FXWktYc1mypvbaD.png', function (error, image) {
+                    if (error) throw error;
+                    map.current.addImage('normal', image); //38x55px, shadow adds 5px
+                });
+
+                map.current.loadImage('https://i.loli.net/2021/05/26/dF6ACq1VQ5rxjNG.png', function (error, image) {
+                    if (error) throw error;
+                    map.current.addImage('sad', image); //38x55px, shadow adds 5px
+                });
             if (!map.current.getLayer('sentiment-scatter')) {
                 map.current.addSource('sentiment-scatter', {
                     type: 'geojson',
@@ -57,20 +74,6 @@ export default function Scenario5() {
                     },
                 });
 
-                map.current.loadImage('https://i.loli.net/2021/05/26/jciaY8rfIw49POK.png', function (error, image) {
-                    if (error) throw error;
-                    map.current.addImage('happy', image); //38x55px, shadow adds 5px
-                });
-
-                map.current.loadImage('https://i.loli.net/2021/05/26/FXWktYc1mypvbaD.png', function (error, image) {
-                    if (error) throw error;
-                    map.current.addImage('normal', image); //38x55px, shadow adds 5px
-                });
-
-                map.current.loadImage('https://i.loli.net/2021/05/26/dF6ACq1VQ5rxjNG.png', function (error, image) {
-                    if (error) throw error;
-                    map.current.addImage('sad', image); //38x55px, shadow adds 5px
-                });
 
                 map.current.addLayer({
                     'id': 'sentiment-scatter',
@@ -82,7 +85,7 @@ export default function Scenario5() {
                     }
                 });
             } else {
-                displayLayer(map, 'regions-sentiment');
+                displayLayer(map, 'sentiment-scatter');
             }
         });
     }, []);

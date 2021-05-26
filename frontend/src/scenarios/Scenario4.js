@@ -4,6 +4,7 @@ import { Layout, Breadcrumb } from 'antd';
 import '../App.css';
 import Regions from '../data/region_covid_count.json';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
+import { hideLayer, displayLayer } from '../components/LayerUtils';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -24,7 +25,7 @@ export default function Scenario4() {
     var map = useRef(null);
     const [lng, setLng] = useState(145.3607);
     const [lat, setLat] = useState(-37.8636);
-    const [zoom, setZoom] = useState(7.96);
+    const [zoom, setZoom] = useState(9.4);
 
 
     useEffect(() => {

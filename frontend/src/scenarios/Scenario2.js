@@ -22,7 +22,7 @@ const add = (maxCount - minCount) / 5;
 
 const { Header, Content, Footer, Sider } = Layout;
 
-
+mapboxgl.accessToken = 'pk.eyJ1IjoieWlmZXlhbmcxIiwiYSI6ImNrb251MG44ZzA0Njkyd3BweWFyMWJvcjYifQ.oEO3lpWd3GLwRu13euHIvA';
 export default function Scenario2() {
 
   //const { map } = React.useContext(StoreContext);
@@ -32,7 +32,7 @@ export default function Scenario2() {
   var map = useRef(null);
   const [lng, setLng] = useState(145.3607);
   const [lat, setLat] = useState(-37.8636);
-  const [zoom, setZoom] = useState(7.96);
+  const [zoom, setZoom] = useState(9.4);
   // useEffect(() => {
   //   axios.get(`http://172.26.128.51:80/api/region_topic_count/food/`)
   //     .then(res => {
