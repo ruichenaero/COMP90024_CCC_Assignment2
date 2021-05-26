@@ -20,7 +20,7 @@
             "type": "Feature",
             "properties": {
                 "region_name": "Nillumbik-Kinglake",
-                "count": 1,
+                "count": 1000,
                 "radius": 8.97
             },
             "geometry": {
@@ -35,7 +35,7 @@
             "type": "Feature",
             "properties": {
                 "region_name": "Diamon Creek-Doreen",
-                "count": 12,
+                "count": 1200,
                 "radius": 6.79
             },
             "geometry": {
@@ -50,7 +50,7 @@
             "type": "Feature",
             "properties": {
                 "region_name": "Melbourne Airport",
-                "count": 87,
+                "count": 870,
                 "radius": 7.85
             },
             "geometry": {
@@ -65,7 +65,7 @@
             "type": "Feature",
             "properties": {
                 "region_name": "Macedon Ranges",
-                "count": 240,
+                "count": 2400,
                 "radius": 15.8
             },
             "geometry": {
@@ -80,7 +80,7 @@
             "type": "Feature",
             "properties": {
                 "region_name": "Wyndham",
-                "count": 190,
+                "count": 1900,
                 "radius": 13.14
             },
             "geometry": {
@@ -95,7 +95,7 @@
             "type": "Feature",
             "properties": {
                 "region_name": "Whittlesea-Wallan",
-                "count": 115,
+                "count": 1150,
                 "radius": 13.93
             },
             "geometry": {
@@ -110,7 +110,7 @@
             "type": "Feature",
             "properties": {
                 "region_name": "Mornington Peninsula",
-                "count": 409,
+                "count": 4090,
                 "radius": 19.85
             },
             "geometry": {
@@ -125,7 +125,7 @@
             "type": "Feature",
             "properties": {
                 "region_name": "Franston-Cranbourne",
-                "count": 259,
+                "count": 2590,
                 "radius": 14.1
             },
             "geometry": {
@@ -140,7 +140,7 @@
             "type": "Feature",
             "properties": {
                 "region_name": "Dandenong Ranges",
-                "count": 118,
+                "count": 1180,
                 "radius": 6.88
             },
             "geometry": {
@@ -155,7 +155,7 @@
             "type": "Feature",
             "properties": {
                 "region_name": "Yarra Ranges",
-                "count": -651,
+                "count": -1300,
                 "radius": 18.88
             },
             "geometry": {
@@ -170,7 +170,7 @@
             "type": "Feature",
             "properties": {
                 "region_name": "Melton-Bacchus Marsh",
-                "count": 350,
+                "count": 3500,
                 "radius": 12.66
             },
             "geometry": {
@@ -185,7 +185,7 @@
             "type": "Feature",
             "properties": {
                 "region_name": "Cardinia",
-                "count": 102,
+                "count": 1020,
                 "radius": 19.9
             },
             "geometry": {
