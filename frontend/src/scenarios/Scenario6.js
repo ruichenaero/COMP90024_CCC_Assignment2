@@ -18,7 +18,11 @@ export default function Scenario6() {
     const counts = Regions.features.map(region => {
         return parseInt(region.properties.count);
     });
-
+    //const toggleGroups = ("income-layer") =>  
+       // if (mapRef.current && !loading) {
+         //   map.setLayoutProperty("income-layer", 'visibility', expression)
+        //}
+    //});
     const math = require("mathjs");
     const maxCount = math.max(counts);
     const minCount = math.min(counts);
@@ -49,48 +53,15 @@ export default function Scenario6() {
             setZoom(map.current.getZoom().toFixed(2));
         });
     });
-/*
-    useEffect(() => {
-        map.current.on('load', () => {
-            hideLayer(map, 'income-layer');
-            displayLayer(map, 'hospitals-loc');
 
-            if (!map.current.getLayer('regions-sentiment')) {
-                map.current.addSource('regions-sentiment', {
-                    type: 'geojson',
-                    data: {
-                        type: 'FeatureCollection',
-                        features: regions.features.map(region => {
-                            return {
-                                type: 'Feature',
-                                properties: {
-                                    radius: region.properties.radius,
-                                    count: region.properties.count,
-                                },
-                                geometry: {
-                                    type: 'Point',
-                                    coordinates: region.geometry.coordinates,
-                                },
-                            };
-                        }),
-                    },
-                });
+    /*useEffect(() => {
+        map.on('idle', function () {
+            map.setLayoutProperty('income-layer', 'visibility', 'none');
 
-                map.current.addLayer({
-                    'id': 'regions-sentiment',
-                    'type': 'circle',
-                    'source': 'regions-sentiment',
-                    'paint': {
-                        'circle-color': ['interpolate', ['linear'], ['get', 'count'], minCount, '#fdae6b', math.round(minCount + add), '#fd8d3c', math.round(minCount + add * 2), '#f16913', math.round(math.round(minCount + add * 3)), '#d94801', math.round(minCount + add * 4), '#a63603', maxCount, '#7f2704'],
-                        'circle-opacity': 0.45,
-                        'circle-radius': ['interpolate', ['linear'], ['get', 'count'], minCount, 10, math.round(minCount + add), 15, math.round(minCount + add * 2), 20, math.round(minCount + add * 3), 25, math.round(minCount + add * 4), 30, maxCount, 35]
-                    }
-                });
-                //additionLayers.push('regions-sport')
-            } else {
-                displayLayer(map, 'regions-sentiment');
-            }
-        });
+
+});
+
+                
     }, []);*/
     useEffect(() => {
         map.current.on('load', () => {
@@ -125,12 +96,23 @@ export default function Scenario6() {
               'icon-size': 0.05,
             },
           });
+           
+            map.current.on('idle', function () {
+                map.current.setLayoutProperty('income-layer', 'visibility', 'none');
+            });
           //staticLayers.push('hospitals_loc');
     
-          map.current.getLayer('income-layer');
+           
           //staticLayers.push('income-layer');
         });
     }, []);
+
+
+    
+     // map.current.setLayoutProperty('income-layer', 'visibility', 'none');
+
+
+
 
 
     return (

@@ -22,8 +22,11 @@ export default function Statistic4() {
             label: 'Count of tweets related to food',
             data: Object.values(food_time_count),
             fill: false,
-            backgroundColor: 'rgba(75, 192, 192)',
-            borderColor: 'rgba(75, 192, 192, 0.2)',
+                backgroundColor: "#fcae91",
+                //'rgba(75, 192, 192)',
+               
+            borderColor: " #e31a1c"
+                    //'rgba(75, 192, 192, 0.2)',
           },
         ],
       };
@@ -47,8 +50,8 @@ export default function Statistic4() {
             label: 'Count of tweets related to sport',
             data: Object.values(food_time_count),
             fill: false,
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgba(255, 99, 132, 0.2)',
+                backgroundColor: '#bdc9e1',
+                borderColor: "#0570b0",
           },
         ],
       };

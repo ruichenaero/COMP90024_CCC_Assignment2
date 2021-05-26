@@ -73,7 +73,7 @@ export default function SidePanel() {
 
         <SubMenu key="sub4" icon={<ProjectOutlined />} title="Scenarios-4">
           <Menu.Item key="sub4-1">
-            <NavLink to="/Scenario4">Geo-Map-Income</NavLink>
+            <NavLink to="/Scenario4">Geo-Map-Cov19</NavLink>
           </Menu.Item>
           <Menu.Item key="sub4-2">
             <NavLink to="/Scenario6">Geo-Map-Hospitals</NavLink>

@@ -49,8 +49,8 @@ export default function Scenario4() {
 
     useEffect(() => {
         map.current.on('load', () => {
-            if (!map.current.getLayer('regions-sentiment')) {
-                map.current.addSource('regions-sentiment', {
+            if (!map.current.getLayer('regions-cov19')) {
+                map.current.addSource('regions-cov19', {
                     type: 'geojson',
                     data: {
                         type: 'FeatureCollection',
@@ -71,18 +71,20 @@ export default function Scenario4() {
                 });
 
                 map.current.addLayer({
-                    'id': 'regions-sentiment',
+                    'id': 'regions-cov19',
                     'type': 'circle',
-                    'source': 'regions-sentiment',
+                    'source': 'regions-cov19',
                     'paint': {
                         'circle-color': ['interpolate', ['linear'], ['get', 'count'], minCount, '#fdae6b', math.round(minCount + add), '#fd8d3c', math.round(minCount + add * 2), '#f16913', math.round(math.round(minCount + add * 3)), '#d94801', math.round(minCount + add * 4), '#a63603', maxCount, '#7f2704'],
                         'circle-opacity': 0.45,
-                        'circle-radius': ['interpolate', ['linear'], ['get', 'count'], minCount, 10, math.round(minCount + add), 15, math.round(minCount + add * 2), 20, math.round(minCount + add * 3), 25, math.round(minCount + add * 4), 30, maxCount, 35]
+                        //'circle-radius': ['interpolate', ['linear'], ['get', 'count'], minCount, 10, math.round(minCount + add), 15, math.round(minCount + add * 2), 20, math.round(minCount + add * 3), 25, math.round(minCount + add * 4), 30, maxCount, 35]
+                         'circle-radius': ['interpolate', ['linear'], ['get', 'count'], minCount, 15, math.round(minCount + add), 30, math.round(minCount + add * 2), 60, math.round(minCount + add * 3), 90, math.round(minCount + add * 4), 105, maxCount, 120]
+
                     }
                 });
                 //additionLayers.push('regions-sport')
             } else {
-                displayLayer(map, 'regions-sentiment');
+                displayLayer(map, 'regions-cov19');
             }
         });
     }, []);
