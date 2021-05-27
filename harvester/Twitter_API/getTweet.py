@@ -1,3 +1,6 @@
+from TweetStore import TweetStore
+from harvester.Twitter_API.common.config import *
+
 #
 # Team: Team 47
 # City: Melbourne
@@ -7,9 +10,6 @@
 # Wenhai Huo (1101297)
 # Jingyuan Ma (988014)
 #
-
-from TweetStore import TweetStore
-from harvester.Twitter_API.common.config import *
 
 storage_statistic = TweetStore(url=COUCHDB_URL, username=COUCHDB_USERNAME, password=COUCHDB_PASSWORD,
                      domain=COUCHDB_DOMAIN, ports=COUCHDB_PORTS, dbname=COUCHDB_TWEET_DB)

@@ -1,3 +1,9 @@
+import tweepy
+from tweepy.streaming import StreamListener
+from harvester.Twitter_API.common import token_file
+from TweetStore import TweetStore
+from harvester.Twitter_API.common.config import *
+
 #
 # Team: Team 47
 # City: Melbourne
@@ -7,13 +13,6 @@
 # Wenhai Huo (1101297)
 # Jingyuan Ma (988014)
 #
-
-import tweepy
-from tweepy.streaming import StreamListener
-from harvester.Twitter_API.common import token_file
-from TweetStore import TweetStore
-from harvester.Twitter_API.common.config import *
-
 
 # This application uses Twitter's Stream API to harvest data in real time
 # from the specified bounding box of Melbourne

@@ -1,3 +1,10 @@
+import tweepy
+import json
+from TweetStore import TweetStore
+import time
+from harvester.Twitter_API.common import token_file
+from harvester.Twitter_API.common.config import *
+
 #
 # Team: Team 47
 # City: Melbourne
@@ -7,14 +14,6 @@
 # Wenhai Huo (1101297)
 # Jingyuan Ma (988014)
 #
-
-import tweepy
-import json
-from TweetStore import TweetStore
-import time
-from harvester.Twitter_API.common import token_file
-from harvester.Twitter_API.common.config import *
-
 
 # This application uses Twitter's Search API to harvest data
 # up to 7 days ago from the whole area of Melbourne

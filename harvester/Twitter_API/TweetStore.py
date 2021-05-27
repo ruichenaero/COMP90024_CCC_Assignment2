@@ -1,3 +1,6 @@
+import couchdb
+import couchdb.design
+
 #
 # Team: Team 47
 # City: Melbourne
@@ -7,10 +10,6 @@
 # Wenhai Huo (1101297)
 # Jingyuan Ma (988014)
 #
-
-import couchdb
-import couchdb.design
-
 
 class TweetStore(object):
     def __init__(self, url, username, password, domain, ports, dbname):

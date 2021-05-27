@@ -1,3 +1,6 @@
+import re
+import string
+
 #
 # Team: Team 47
 # City: Melbourne
@@ -7,10 +10,6 @@
 # Wenhai Huo (1101297)
 # Jingyuan Ma (988014)
 #
-
-
-import re
-import string
 
 class Parse:
     def __init__(self, file_name: str):
