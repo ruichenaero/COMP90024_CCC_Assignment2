@@ -14,3 +14,14 @@ Directory:
         
     harvester:
         Harvester implementation
+        
+        
+YouTube Video Links:
+
+For Web Server: https://youtu.be/cNIMBkXoY0o
+For Creating Instance: https://youtu.be/OyQNab7vXGc
+For Deployment: https://youtu.be/ChLX77-nfiI
+For Launching System: https://youtu.be/OxKGyEMK0Dk
+For Scale Up: 
+For Twitter Harvester and CouchDB: 
+
