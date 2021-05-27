@@ -1,11 +1,11 @@
 import tweepy
 import json
-from harvester.Twitter_API.common import melbourne_region, token_file
+from common import melbourne_region, token_file
 import time
 import random
 import itertools
 from TweetStore import TweetStore
-from harvester.Twitter_API.common.config import *
+from common.config import *
 from utils import *
 
 '''

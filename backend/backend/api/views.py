@@ -114,7 +114,7 @@ if __name__ == '__main__':
     json_object = json.dumps(geojson_result, indent=4)
     with open("sentiment_scartter.json", "a") as outfile:
         outfile.write(json_object)
-    '''
+    
     sentiment_scatter = {"type": "FeatureCollection", "features": []}
     for doc in tweet_database.view('statistic/sentiment_scatter', reduce='true', group='true'):
         coordinates = doc.key
@@ -123,6 +123,4 @@ if __name__ == '__main__':
                           "properties": {"sentiment_score": sentiment_score},
                           "geometry": {"type": "Point", "coordinates": [coordinates[1], coordinates[0]]}}
         sentiment_scatter["features"].append(sentiment_info)
-    json_object = json.dumps(sentiment_scatter, indent=4)
-    with open("sentiment_scatter.json", "a") as outfile:
-        outfile.write(json_object)
+    '''
