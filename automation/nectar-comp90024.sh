@@ -20,3 +20,6 @@ ansible-playbook --ask-become-pass deploy_nectar.yaml -i inventory/hosts.ini
 
 # Lanuch nector application
 ansible-playbook --ask-become-pass launch_nectar.yaml -i inventory/hosts.ini
+
+# Scale up the system
+ansible-playbook --ask-become-pass scale-up.yaml -i inventory/hosts.ini
