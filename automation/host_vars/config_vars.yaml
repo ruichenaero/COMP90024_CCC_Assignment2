@@ -81,7 +81,7 @@ security_groups:
 # Instance
 instances:
   - name: backend-server
-    security_groups: ['ssh', 'http', 'couchdb', 'couchdb-more', 'couchdb-addition', 'couchdb-range']
+    security_groups: ['ssh', 'http', 'server-port', 'couchdb', 'couchdb-more', 'couchdb-addition', 'couchdb-range']
     volumes: ['data-vol-1', 'ins-vol-1', 'backend-vol']
   - name: data-server
     security_groups: ['ssh', 'http', 'couchdb', 'couchdb-more', 'couchdb-addition', 'couchdb-range']
