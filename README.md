@@ -28,3 +28,5 @@ For Launching System: https://youtu.be/OxKGyEMK0Dk
 
 For Scale Up: https://youtu.be/YRw8Er_pl7I
 
+For Twitter Harvesters and CouchDB: https://youtu.be/dHXrBitQVXg
+
