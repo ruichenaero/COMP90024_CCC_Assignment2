@@ -5,15 +5,16 @@ import time
 from harvester.Twitter_API.common import token_file
 from harvester.Twitter_API.common.config import *
 
-#
-# Team: Team 47
-# City: Melbourne
-# Xiaoyu Wu (1218098)    
-# Yifei Yang (1136477)
-# Rui Chen (1100500)
-# Wenhai Huo (1101297)
-# Jingyuan Ma (988014)
-#
+'''
+Team 47 
+City: Melbourne
+Team Members:
+    Xiaoyu Wu (1218098) 
+    Yifei Yang (1136477)
+    Rui Chen (1100500)
+    Wenhai Huo (1101297)
+    Jingyuan Ma (988014)
+'''
 
 # This application uses Twitter's Search API to harvest data
 # up to 7 days ago from the whole area of Melbourne

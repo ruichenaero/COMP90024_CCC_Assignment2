@@ -8,15 +8,17 @@ from TweetStore import TweetStore
 from harvester.Twitter_API.common.config import *
 from utils import *
 
-#
-# Team: Team 47
-# City: Melbourne
-# Xiaoyu Wu (1218098)    
-# Yifei Yang (1136477)
-# Rui Chen (1100500)
-# Wenhai Huo (1101297)
-# Jingyuan Ma (988014)
-#
+'''
+Team 47 
+City: Melbourne
+Team Members:
+    Xiaoyu Wu (1218098) 
+    Yifei Yang (1136477)
+    Rui Chen (1100500)
+    Wenhai Huo (1101297)
+    Jingyuan Ma (988014)
+'''
+
 # This application uses Twitter's Search API to RANDOMLY search data
 # up to 7 days ago from 13 specified regions at Melbourne
 

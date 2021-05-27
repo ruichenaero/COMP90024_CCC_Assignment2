@@ -4,15 +4,16 @@ from harvester.Twitter_API.common import token_file
 from TweetStore import TweetStore
 from harvester.Twitter_API.common.config import *
 
-#
-# Team: Team 47
-# City: Melbourne
-# Xiaoyu Wu (1218098)    
-# Yifei Yang (1136477)
-# Rui Chen (1100500)
-# Wenhai Huo (1101297)
-# Jingyuan Ma (988014)
-#
+'''
+Team 47 
+City: Melbourne
+Team Members:
+    Xiaoyu Wu (1218098) 
+    Yifei Yang (1136477)
+    Rui Chen (1100500)
+    Wenhai Huo (1101297)
+    Jingyuan Ma (988014)
+'''
 
 # This application uses Twitter's Stream API to harvest data in real time
 # from the specified bounding box of Melbourne
