@@ -19,8 +19,6 @@ import { hideLayer, displayLayer } from '../components/LayerUtils';
 const { Header, Content, Footer, Sider } = Layout;
 
 export default function Scenario4() {
-    //const { map } = React.useContext(StoreContext);
-    //const { mapContainer } = React.useContext(StoreContext);
     const regions = Regions;
     const counts = Regions.features.map(region => {
         return parseInt(region.properties.count);
@@ -37,6 +35,17 @@ export default function Scenario4() {
     const [lat, setLat] = useState(-37.8636);
     const [zoom, setZoom] = useState(9.4);
 
+    useEffect(() => {
+        axios.get(`http://172.26.129.170:80/api/region_topic_count/covid_19/`)
+            .then(res => {
+                setIsLoaded(true);
+                setCountState({ name: res.data.name });
+                console.log(res.data.name);
+            }, (error) => {
+                setIsLoaded(true);
+                setError(error);
+            });
+    }, [setCountState]);
 
     useEffect(() => {
         if (map.current) return; // initialize map only once
@@ -88,7 +97,7 @@ export default function Scenario4() {
                         'circle-color': ['interpolate', ['linear'], ['get', 'count'], minCount, '#fdae6b', math.round(minCount + add), '#fd8d3c', math.round(minCount + add * 2), '#f16913', math.round(math.round(minCount + add * 3)), '#d94801', math.round(minCount + add * 4), '#a63603', maxCount, '#7f2704'],
                         'circle-opacity': 0.45,
                         //'circle-radius': ['interpolate', ['linear'], ['get', 'count'], minCount, 10, math.round(minCount + add), 15, math.round(minCount + add * 2), 20, math.round(minCount + add * 3), 25, math.round(minCount + add * 4), 30, maxCount, 35]
-                         'circle-radius': ['interpolate', ['linear'], ['get', 'count'], minCount, 15, math.round(minCount + add), 30, math.round(minCount + add * 2), 60, math.round(minCount + add * 3), 90, math.round(minCount + add * 4), 105, maxCount, 120]
+                        'circle-radius': ['interpolate', ['linear'], ['get', 'count'], minCount, 15, math.round(minCount + add), 30, math.round(minCount + add * 2), 60, math.round(minCount + add * 3), 90, math.round(minCount + add * 4), 105, maxCount, 120]
 
                     }
                 });
@@ -99,7 +108,7 @@ export default function Scenario4() {
         });
         map.current.addControl(new mapboxgl.NavigationControl());       // add a navigation side bar
         map.current.addControl(new mapboxgl.ScaleControl(), 'bottom-right');     // add a scale of the map
-    
+
     }, []);
 
     return (

@@ -8,11 +8,11 @@
 // Jingyuan Ma (988014)
 //
 
-import React, { useEffect, useState,useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import SidePanel from "../components/SidePanel";
 import { Layout, Breadcrumb } from 'antd';
 import '../App.css';
-import {displayLayer} from '../components/LayerUtils'
+import { displayLayer } from '../components/LayerUtils'
 import Regions from '../data/region_sentiment_count.json';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 
@@ -25,20 +25,31 @@ export default function Scenario3() {
   //const { mapContainer } = React.useContext(StoreContext);
   const regions = Regions;
   const counts = Regions.features.map(region => {
-  return parseInt(region.properties.count);
-});
+    return parseInt(region.properties.count);
+  });
 
-const math = require("mathjs");
-const maxCount = math.max(counts);
-const minCount = math.min(counts);
-const add = (maxCount - minCount) / 5;
+  const math = require("mathjs");
+  const maxCount = math.max(counts);
+  const minCount = math.min(counts);
+  const add = (maxCount - minCount) / 5;
 
-var mapContainer = useRef(null);
+  var mapContainer = useRef(null);
   var map = useRef(null);
   const [lng, setLng] = useState(145.3607);
   const [lat, setLat] = useState(-37.8636);
   const [zoom, setZoom] = useState(9.4);
 
+  useEffect(() => {
+    axios.get(`http://172.26.129.170:80/api/region_sentiment_count/`)
+      .then(res => {
+        setIsLoaded(true);
+        setCountState({ name: res.data.name });
+        console.log(res.data.name);
+      }, (error) => {
+        setIsLoaded(true);
+        setError(error);
+      });
+  }, [setCountState]);
 
   useEffect(() => {
     if (map.current) return; // initialize map only once
@@ -49,7 +60,7 @@ var mapContainer = useRef(null);
       zoom: zoom
     });
   });
-  
+
   useEffect(() => {
     if (!map.current) return; // wait for map to initialize
     map.current.on('move', () => {
@@ -61,48 +72,48 @@ var mapContainer = useRef(null);
 
   useEffect(() => {
     map.current.on('load', () => {
-  if (!map.current.getLayer('regions-sentiment')) {
-    map.current.addSource('regions-sentiment', {
-      type: 'geojson',
-      data: {
-        type: 'FeatureCollection',
-        features: regions.features.map(region => {
-          return {
-            type: 'Feature',
-            properties: {
-              radius: region.properties.radius,
-              count: region.properties.count,
-            },
-            geometry: {
-              type: 'Point',
-              coordinates: region.geometry.coordinates,
-            },
-          };
-        }),
-      },
-    });
+      if (!map.current.getLayer('regions-sentiment')) {
+        map.current.addSource('regions-sentiment', {
+          type: 'geojson',
+          data: {
+            type: 'FeatureCollection',
+            features: regions.features.map(region => {
+              return {
+                type: 'Feature',
+                properties: {
+                  radius: region.properties.radius,
+                  count: region.properties.count,
+                },
+                geometry: {
+                  type: 'Point',
+                  coordinates: region.geometry.coordinates,
+                },
+              };
+            }),
+          },
+        });
 
-    map.current.addLayer({
-      'id': 'regions-sentiment',
-      'type': 'circle',
-      'source': 'regions-sentiment',
-      'paint': {
-        'circle-color': ['interpolate', ['linear'], ['get', 'count'], minCount, '#fdae6b', math.round(minCount + add), '#fd8d3c', math.round(minCount + add * 2), '#f16913', math.round(math.round(minCount + add * 3)), '#d94801', math.round(minCount + add * 4), '#a63603', maxCount, '#7f2704'],
-        'circle-opacity': 0.45,
-          //'circle-radius': ['interpolate', ['linear'], ['get', 'count'], minCount, 10, math.round(minCount + add), 15, math.round(minCount + add * 2), 20, math.round(minCount + add * 3), 25, math.round(minCount + add * 4), 30, maxCount, 35]
-         'circle-radius': ['interpolate', ['linear'], ['get', 'count'], minCount, 15, math.round(minCount + add), 30, math.round(minCount + add * 2), 60, math.round(minCount + add * 3), 80, math.round(minCount + add * 4), 95, maxCount, 110]
+        map.current.addLayer({
+          'id': 'regions-sentiment',
+          'type': 'circle',
+          'source': 'regions-sentiment',
+          'paint': {
+            'circle-color': ['interpolate', ['linear'], ['get', 'count'], minCount, '#fdae6b', math.round(minCount + add), '#fd8d3c', math.round(minCount + add * 2), '#f16913', math.round(math.round(minCount + add * 3)), '#d94801', math.round(minCount + add * 4), '#a63603', maxCount, '#7f2704'],
+            'circle-opacity': 0.45,
+            //'circle-radius': ['interpolate', ['linear'], ['get', 'count'], minCount, 10, math.round(minCount + add), 15, math.round(minCount + add * 2), 20, math.round(minCount + add * 3), 25, math.round(minCount + add * 4), 30, maxCount, 35]
+            'circle-radius': ['interpolate', ['linear'], ['get', 'count'], minCount, 15, math.round(minCount + add), 30, math.round(minCount + add * 2), 60, math.round(minCount + add * 3), 80, math.round(minCount + add * 4), 95, maxCount, 110]
+          }
+        });
+        //additionLayers.push('regions-sport')
+      } else {
+        displayLayer(map, 'regions-sentiment');
       }
+
+      map.current.addControl(new mapboxgl.NavigationControl());       // add a navigation side bar
+      map.current.addControl(new mapboxgl.ScaleControl(), 'bottom-right');     // add a scale of the map
+
     });
-    //additionLayers.push('regions-sport')
-  } else {
-    displayLayer(map, 'regions-sentiment');
-  }
-
-  map.current.addControl(new mapboxgl.NavigationControl());       // add a navigation side bar
-  map.current.addControl(new mapboxgl.ScaleControl(), 'bottom-right');     // add a scale of the map
-
-});
-}, []);
+  }, []);
 
 
 
@@ -110,7 +121,7 @@ var mapContainer = useRef(null);
     <Layout style={{ minHeight: '100vh' }}>
       <SidePanel />
       <Layout className="site-layout">
-      <div ref={mapContainer} className="map-container" />
+        <div ref={mapContainer} className="map-container" />
       </Layout>
     </Layout>
   );

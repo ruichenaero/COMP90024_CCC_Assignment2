@@ -49,6 +49,18 @@ const maxCount = math.max(counts);
 const minCount = math.min(counts);
 const add = (maxCount - minCount) / 5;
 
+  useEffect(() => {
+    axios.get(`http://172.26.129.170:80/api/region_topic_count/food/`)
+      .then(res => {
+        setIsLoaded(true);
+        setCountState({ name: res.data.name });
+        console.log(res.data.name);
+      }, (error) => {
+        setIsLoaded(true);
+        setError(error);
+      });
+  }, [setCountState]);
+
 useEffect(() => {
   if (map.current) return; // initialize map only once
   map.current = new mapboxgl.Map({
@@ -68,62 +80,6 @@ useEffect(() => {
   });
 });
 
-
-  //const [count, setCountState] = useState({ name: '' });
-  //const [isLoaded, setIsLoaded] = useState(false);
-  //const [error, setError] = useState(null);
-  /*
-  const [account, setAccountState] = useState({
-    username:'',
-    name: '',
-    description: '',
-    email:'',
-    photoUrl: '',
-    likeEmail: '',
-    commentEmail: '',
-  });*/
-
-  // useEffect(() => {
-  //   axios.get(`http://172.26.128.51:80/api/region_topic_count/food/`)
-  //     .then(res => {
-  //       setIsLoaded(true);
-  //       setCountState({ name: res.data.name });
-  //       console.log(res.data.name);
-  //     }, (error) => {
-  //       setIsLoaded(true);
-  //       setError(error);
-  //     });
-  // }, [setCountState]);
-
-  /*
-  axios.get(`http://localhost:8000/account/${window.location.pathname.split('/')[2]}`)
-    .then(res => {
-      setIsLoaded(true);
-      setAccountState({ username:res.data.account.username, name: res.data.account.name, 
-                        description:res.data.account.description, email:res.data.account.email,
-                        photoUrl: res.data.account.photoUrl, likeEmail:res.data.account.likeEmail,
-                        commentEmail:res.data.account.commentEmail});
-      setLikeEmail(res.data.account.likeEmail);
-      setCommentEmail(res.data.account.commentEmail);
-      if (res.data.account.hasOwnProperty('photoUrl')){
-         setHasPhoto(true);
-      }
-    }, (error) => {
-      setIsLoaded(true);
-      setError(error);
-  });
- }, [setAccountState]); */
- /*
- useEffect(() => {
-  hideLayer(map, 'hospitals_loc');
-  displayLayer(map, 'incomes-layer');
-  /*
-  additionLayers.forEach(layer => {
-    if (layer != 'regions-food') {
-      hideLayer(map, layer);
-    }
-  });
- */
   useEffect(() => {
     map.current.on('load', () => {
   if (!map.current.getLayer('regions-food')) {

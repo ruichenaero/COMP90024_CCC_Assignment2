@@ -27,35 +27,41 @@ export default function Scenario5() {
         return parseInt(region.properties.sentiment_score);
     });
 
-    const sentiment_neg = Regions.features.filter(region => 
-             region.properties.sentiment_score < 0
-       
+    const sentiment_neg = Regions.features.filter(region =>
+        region.properties.sentiment_score < 0
+
     );
 
     const sentiment_normal = Regions.features.filter(region =>
-             region.properties.sentiment_score > 10 && region.properties.sentiment_score < 30
-       
+        region.properties.sentiment_score > 10 && region.properties.sentiment_score < 30
+
     );
 
-    const sentiment_pos = Regions.features.filter(region => 
-             region.properties.sentiment_score > 30
-       );
+    const sentiment_pos = Regions.features.filter(region =>
+        region.properties.sentiment_score > 30
+    );
 
     console.log(sentiment_neg);
     console.log(sentiment_normal);
     console.log(sentiment_pos);
-
-
-    const math = require("mathjs");
-    const maxScore = math.max(scores);
-    const minScore = math.min(scores);
-    const add = (maxScore - minScore) / 2;
 
     var mapContainer = useRef(null);
     var map = useRef(null);
     const [lng, setLng] = useState(145.3607);
     const [lat, setLat] = useState(-37.8636);
     const [zoom, setZoom] = useState(9.4);
+
+    useEffect(() => {
+        axios.get(`http://172.26.129.170:80/api/sentiment_scartter/`)
+            .then(res => {
+                setIsLoaded(true);
+                setCountState({ name: res.data.name });
+                console.log(res.data.name);
+            }, (error) => {
+                setIsLoaded(true);
+                setError(error);
+            });
+    }, [setCountState]);
 
     useEffect(() => {
         if (map.current) return; // initialize map only once
@@ -79,19 +85,19 @@ export default function Scenario5() {
     useEffect(() => {
         map.current.on('load', () => {
             map.current.loadImage('https://i.loli.net/2021/05/27/fdgFmaCWxSXhy6O.png', function (error, image) {
-                    if (error) throw error;
-                    map.current.addImage('happy', image); //38x55px, shadow adds 5px
-                });
+                if (error) throw error;
+                map.current.addImage('happy', image); //38x55px, shadow adds 5px
+            });
 
-                map.current.loadImage('https://i.loli.net/2021/05/27/vt8ngBa6jk1dW9i.png', function (error, image) {
-                    if (error) throw error;
-                    map.current.addImage('normal', image); //38x55px, shadow adds 5px
-                });
+            map.current.loadImage('https://i.loli.net/2021/05/27/vt8ngBa6jk1dW9i.png', function (error, image) {
+                if (error) throw error;
+                map.current.addImage('normal', image); //38x55px, shadow adds 5px
+            });
 
-                map.current.loadImage('https://i.loli.net/2021/05/27/hKVx2iHMswZo1Dt.png', function (error, image) {
-                    if (error) throw error;
-                    map.current.addImage('sad', image); //38x55px, shadow adds 5px
-                });
+            map.current.loadImage('https://i.loli.net/2021/05/27/hKVx2iHMswZo1Dt.png', function (error, image) {
+                if (error) throw error;
+                map.current.addImage('sad', image); //38x55px, shadow adds 5px
+            });
             if (!map.current.getLayer('sentiment-scatter-neg')) {
                 map.current.addSource('sentiment-scatter-neg', {
                     type: 'geojson',
@@ -124,25 +130,25 @@ export default function Scenario5() {
 
             }
 
-             if (!map.current.getLayer('sentiment-scatter-normal')) {
-                    map.current.addSource('sentiment-scatter-normal', {
-                        type: 'geojson',
-                        data: {
-                            type: 'FeatureCollection',
-                            features: sentiment_normal.map(region => {
-                                return {
-                                    type: 'Feature',
-                                    properties: {
-                                        sentiment_score: region.properties.sentiment_score,
-                                    },
-                                    geometry: {
-                                        type: 'Point',
-                                        coordinates: region.geometry.coordinates,
-                                    },
-                                };
-                            }),
-                        },
-                    });
+            if (!map.current.getLayer('sentiment-scatter-normal')) {
+                map.current.addSource('sentiment-scatter-normal', {
+                    type: 'geojson',
+                    data: {
+                        type: 'FeatureCollection',
+                        features: sentiment_normal.map(region => {
+                            return {
+                                type: 'Feature',
+                                properties: {
+                                    sentiment_score: region.properties.sentiment_score,
+                                },
+                                geometry: {
+                                    type: 'Point',
+                                    coordinates: region.geometry.coordinates,
+                                },
+                            };
+                        }),
+                    },
+                });
 
 
                 map.current.addLayer({
@@ -157,7 +163,7 @@ export default function Scenario5() {
             } else {
                 displayLayer(map, 'sentiment-scatter');
             }
-            
+
             if (!map.current.getLayer('sentiment-scatter-pos')) {
                 map.current.addSource('sentiment-scatter-pos', {
                     type: 'geojson',
@@ -177,7 +183,7 @@ export default function Scenario5() {
                         }),
                     },
                 });
-                
+
                 map.current.addLayer({
                     'id': 'sentiment-scatter-pos',
                     'type': 'symbol',
@@ -192,7 +198,7 @@ export default function Scenario5() {
             }
             map.current.addControl(new mapboxgl.NavigationControl());       // add a navigation side bar
             map.current.addControl(new mapboxgl.ScaleControl(), 'bottom-right');     // add a scale of the map
-        
+
         });
     }, []);
     //['interpolate', ['linear'], ['get', 'sentiment_score'], -30, 'sad', -10, 'normal', 10, 'happy'],

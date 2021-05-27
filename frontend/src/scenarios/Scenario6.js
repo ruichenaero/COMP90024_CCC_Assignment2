@@ -21,18 +21,12 @@ import Hospital_Statistics from '../data/Hospital_Statistics.json';
 const { Header, Content, Footer, Sider } = Layout;
 
 export default function Scenario6() {
-    //const { map } = React.useContext(StoreContext);
-    //const { mapContainer } = React.useContext(StoreContext);
     const aurinData = Hospital_Statistics.features;
     const regions = Regions;
     const counts = Regions.features.map(region => {
         return parseInt(region.properties.count);
     });
-    //const toggleGroups = ("income-layer") =>  
-       // if (mapRef.current && !loading) {
-         //   map.setLayoutProperty("income-layer", 'visibility', expression)
-        //}
-    //});
+
     const math = require("mathjs");
     const maxCount = math.max(counts);
     const minCount = math.min(counts);
@@ -44,6 +38,17 @@ export default function Scenario6() {
     const [lat, setLat] = useState(-37.8636);
     const [zoom, setZoom] = useState(9.4);
 
+    useEffect(() => {
+        axios.get(`http://172.26.129.170:80/api/region_topic_count/covid_19/`)
+            .then(res => {
+                setIsLoaded(true);
+                setCountState({ name: res.data.name });
+                console.log(res.data.name);
+            }, (error) => {
+                setIsLoaded(true);
+                setError(error);
+            });
+    }, [setCountState]);
 
     useEffect(() => {
         if (map.current) return; // initialize map only once
@@ -103,63 +108,63 @@ export default function Scenario6() {
                 displayLayer(map, 'regions-cov19');
             }
         });
-       
+
 
     }, []);
 
-    
+
     useEffect(() => {
         map.current.on('load', () => {
-          map.current.loadImage('https://i.loli.net/2021/05/25/rdNiyRkwZWafj5x.png', function (error, image) {
-            if (error) throw error;
-            map.current.addImage('exclamation', image); //38x55px, shadow adds 5px
-          });
+            map.current.loadImage('https://i.loli.net/2021/05/25/rdNiyRkwZWafj5x.png', function (error, image) {
+                if (error) throw error;
+                map.current.addImage('exclamation', image); //38x55px, shadow adds 5px
+            });
 
-    
-          map.current.addSource('hospital_location', {
-            type: 'geojson',
-            data: {
-              type: 'FeatureCollection',
-              features: aurinData.map(hospital => {
-                return {
-                  type: 'Feature',
-                  geometry: {
-                    type: 'Point',
-                    coordinates: hospital.geometry.coordinates,
-                  },
-                };
-              }),
-            },
-          });
-    
-          map.current.addLayer({
-            'id': 'hospitals_loc',
-            'type': 'symbol',
-            'source': 'hospital_location',
-            'layout': {
-              // Make the layer visible by default.
-              'icon-image': 'exclamation',
-              'icon-size': 0.05,
-            },
-          });
 
-           
+            map.current.addSource('hospital_location', {
+                type: 'geojson',
+                data: {
+                    type: 'FeatureCollection',
+                    features: aurinData.map(hospital => {
+                        return {
+                            type: 'Feature',
+                            geometry: {
+                                type: 'Point',
+                                coordinates: hospital.geometry.coordinates,
+                            },
+                        };
+                    }),
+                },
+            });
+
+            map.current.addLayer({
+                'id': 'hospitals_loc',
+                'type': 'symbol',
+                'source': 'hospital_location',
+                'layout': {
+                    // Make the layer visible by default.
+                    'icon-image': 'exclamation',
+                    'icon-size': 0.05,
+                },
+            });
+
+
             map.current.on('idle', function () {
                 map.current.setLayoutProperty('income-layer', 'visibility', 'none');
             });
-          //staticLayers.push('hospitals_loc');
-    
-           
-          //staticLayers.push('income-layer');
+            //staticLayers.push('hospitals_loc');
+
+
+            //staticLayers.push('income-layer');
         });
         map.current.addControl(new mapboxgl.NavigationControl());       // add a navigation side bar
         map.current.addControl(new mapboxgl.ScaleControl(), 'bottom-right');     // add a scale of the map
-    
+
     }, []);
 
 
-    
-     // map.current.setLayoutProperty('income-layer', 'visibility', 'none');
+
+    // map.current.setLayoutProperty('income-layer', 'visibility', 'none');
 
 
 
